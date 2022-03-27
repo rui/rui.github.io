@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## 南墙的日常
 
 You can use the [editor on GitHub](https://github.com/rui/rui.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
