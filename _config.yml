@@ -1,3 +1,15 @@
 theme: jekyll-theme-leap-day
 title: 南墙的日常
 description: 日常记录
+
+
+navigation:
+  - name: 首页
+    url: /
+  - name: 关于
+    url: /about
+  - name: 归档
+    url: /archive
+  - name: 标签
+    url: /tags
+
