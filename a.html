@@ -1,6 +1,367 @@
 <html>
-<body>
-<h1> a </h1>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Rui ZHANG@USTC</title>
+  <style type="text/css"  class="link">
+body {
+padding: 0;
+margin: 0;
+font: 76% tahoma, verdana, sans-serif;
+background: #ffffff url(images/bk.jpg) top right repeat;
+color: #303030;
+/* width: 960px; */
+}
+
+.web-body{ /*整个body的属性*/
+	margin:0px auto; width:964px;
+}
+
+a {
+text-decoration: none;
+color: #286ea0;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+#toptabs {
+margin: 10px auto -13px auto;
+font-size: 1.2em;
+width: 100%; /*960px;*/
+}
+
+#toptabs p {
+text-align: right;
+color: #808080;
+}
+
+.toptab {
+padding: 3px 5px 3px 5px;
+margin: 0 0 0 4px;
+text-decoration: none;
+background: #f0f0f0 ;
+color: #808080;
+border-bottom: 1px solid #e0e0e0;
+}
+
+.toptab:hover {
+background: #fafafa ;
+border-bottom: 1px solid #eaeaea;
+color: #505050;
+text-decoration: none;
+}
+
+.activetoptab {
+padding: 3px 5px 3px 5px;
+margin: 0 0 0 4px;
+color: #505050;
+text-decoration: none;
+background: #ffffff ;
+border-bottom: 1px solid #ffffff;
+}
+
+.activetoptab:hover {
+text-decoration: none;
+}
+
+#container {
+margin: 0 auto 15px auto;
+width: 960px;
+padding: 5px 20px 20px 20px;
+background: #ffffff;
+}
+
+#logo {
+margin: 15px 0 0 0;
+}
+
+#logo h1 a {
+color: #303030;
+}
+
+#logo h1 a:hover {
+text-decoration: none;
+}
+
+#navitabs {
+clear: both;
+}
+
+.navitext {
+text-align: justify;
+}
+
+.navitab {
+padding: 4px 8px 4px 8px;
+margin: 0 0 4px 0;
+font-size: 1.3em;
+text-decoration: none;
+letter-spacing: 1px;
+background: #e0e0e0 ;
+border-bottom: 1px solid #ffffff;
+border-left: 1px solid #ffffff;
+}
+
+.navitab:hover {
+text-decoration: none;
+background: #d0d0d0 ;
+}
+
+.activenavitab {
+padding: 4px 8px 5px 8px;
+color: #ffffff;
+margin: 0 0 5px 0;
+font-size: 1.5em;
+text-decoration: none;
+letter-spacing: 1px;
+background: #505050 ;
+}
+
+.activenavitab:hover {
+text-decoration: none;
+}
+
+#desc {
+height: 50px;
+color: #ffffff;
+padding: 0;
+background: #505050;
+clear: both;
+margin: 5px 0 0 0;
+vertical-align:middle;
+}
+
+#desc p {
+width: 920px;
+font-size: 1.3em;
+line-height: 1.3em;
+padding: 0 0 0 15px;
+}
+
+#desc h2 {
+padding: 15px 15px 0 15px;
+color: #ffffff;
+vertical-align:middle;
+}
+
+#desc a {
+color: #ffffff;
+text-decoration: underline;
+}
+
+#main {
+width: 750px;
+float: left;
+padding: 0 15px 0 0;
+border-right: 1px solid #d0d0d0;
+}
+
+/* ol of this is used to give publication */
+ol.publication{
+font-size: 1.3em;
+text-align: left;
+}
+
+img.photo{
+width: 45%;	
+}
+
+#bioMain {
+width: 585px;
+padding: 0 0 0 0;
+}
+
+#bioMain p {
+margin: 0 0 0 0;
+line-height: 1.5em;
+text-align: justify;
+text-indent: 2em;
+}
+
+.block {
+background: #f0f0f0;
+padding: 15px;
+}
+
+#sidebar {
+width:170px;
+float:right;
+}
+
+#sidebar p {
+font-size: 1.2em;
+line-height: 1.5em;
+margin: 0 0 12px 0;
+}
+
+.sidelink {
+text-align: left;
+display: block;
+width: 140px;
+background: #f0f0f0 ;
+padding: 3px 4px 3px 8px;
+margin: 5px 10px 5px 0;
+}
+
+.sidelink:hover {
+background: #e0e0e0 ;
+text-decoration: none;
+}
+
+#footer {
+clear: both;
+background: #fafafa;
+color: #808080;
+font-size: 1.2em;
+padding: 8px 0 8px 0;
+border-top: 1px solid #d0d0d0;
+border-bottom: 1px solid #d0d0d0;
+text-align: center;
+}
+
+#footer a {
+color: #808080;
+}
+
+h1 {
+margin: 0 0 20px 0;
+font-size: 2.2em;
+font-weight: normal;
+}
+
+h2 {
+margin: 0 0 20px 0;
+font-size: 1.8em;
+font-weight: normal;
+}
+
+h3 {
+margin: 20px 0 10px 0;
+font-size: 1.5em;
+font-weight: normal;
+}
+
+p {
+margin: 0 0 15px 0;
+font-size: 1.3em;
+font-weight: normal;
+line-height: 1.3em;
+text-align: left;
+}
+
+.bottom {
+margin: 0 0 0 0;
+text-align: justify;
+}
+
+.right {
+text-align: right;
+}
+
+.cvSection {
+border-bottom: 1px solid #d0d0d0;
+margin-right: -15px;
+color: #286ea0;
+}
+
+.sectionHeading {
+border-bottom: 1px solid #d0d0d0;
+margin-right: -15px;
+}
+
+.sectionHeadingAlt {
+border-bottom: 1px solid #d0d0d0;
+margin-top: 30px;
+margin-right: -15px;
+margin-bottom: 10px;
+}
+
+.album {
+margin: 0 15px 0 0;
+float: left;
+border: 0px;
+}
+
+.altalbum {
+margin: 0 0 0 15px;
+float: right;
+border: 0px;
+}
+
+a img {
+border: 0;
+}
+
+.photo {
+padding: 5px;
+display: block;
+margin: 0 auto 15px auto;
+background-color: #f0f0f0;
+}
+
+.hide {
+display: none;
+}
+
+.tableDate {
+width: 150px;
+font-size: 1.0em;
+background-color: #f0f0f0;
+font-weight: normal;
+vertical-align: top;
+}
+
+.tableText {
+width: 430px;
+font-size: 1.0em;
+background-color: #f0f0f0;
+font-weight: normal;
+vertical-align: top;
+}
+
+.tableText1 {
+width: 750px;
+font-size: 1.3em;
+background-color: #f0f0f0;
+font-weight: normal;
+vertical-align: top;
+}
+
+  </style>
+</head>
+
+<body style="clear:both;">
+<div  class="web-body">
+
+<div align="center" id="toptabs">
+  <h1 align="left">Rui ZHANG@USTC</h1>
+</div> <!-- div #toptabs -->
+
+<div id="container" align="center">
+
+<h2 id="desc">Contact Infomation</h2>
+
+<div id=main>
+  <h3 class="cvSection">Mailing Address</h3>
+        <p>Rui ZHANG</p>
+        <p><a href="http://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a>，<a href="http://math.ustc.edu.cn/" target="_blank">School of Mathematical Sciences</a></p>
+        <p>Hefei, Anhui 230026, P.R. China.</p>
+        </br>
+  <h3 class="cvSection">E-Mail</h3>
+        <p>E-Mail: rui at ustc.edu.cn </p>
+        </br>
+  <h3 class="cvSection">Office</h3>
+        <p>Room 14-15</p>
+</div> <!-- div #main -->
+
+</div> <!-- div #container -->
+
+<div id="footer">
+This web has been visited <IMG SRC="/cgi-bin/Count.cgi?df=rui.dat&dd=cdr&md=7"> times
+</div> <!-- div #footer -->
+
+</div> <!-- div .web-body -->
 </body>
 </html>
 
