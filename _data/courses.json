@@ -1,0 +1,99 @@
+{
+    "title":"南墙的知识点滴",
+    "head":"南墙的知识点滴",
+    "baseurl":".",
+    "ppts":
+    [
+	{
+	    "family":"大学数学",
+	    "courses":[
+		{"name-cn":"数学分析讲义",
+		 "name-en":"Mathematical Analysis",
+		 "subcourses":[
+		     {"name-cn":"第一册",
+		      "name-en":"Volume I",
+		      "url":"/college-math/math-analysis/index.html"},
+		     {"name-cn":"第二册",
+		      "name-en":"Volume II",
+		      "url":"/college-math/math-analysis/index2.html"}
+		 ]},
+		{"name-cn":"微积分",
+		 "name-en":"Calculus",
+		 "subcourses":[
+		     {"name-cn":"单变量微积分",
+		      "name-en":"One Variable Calculus",
+		      "url":"/college-math/calculus/index.html"},
+		     {"name-cn":"多变量微积分",
+		      "name-en":"Multivariable Calculus",
+		      "url":"/college-math/calculus/index2.html"}
+		 ]},
+		{"name-cn":"微积分-预科",
+		 "name-en":"Calculus Beginner",
+		 "url":"/college-math/preview/calculus.html"},
+		{"name-cn":"线性代数",
+		 "name-en":"Linear Algegra",
+		 "url":"/college-math/lin-alg/index.html"},
+		{"name-cn":"数值方法",
+		 "name-en":"Numerical Methods",
+		 "url":"/college-math/num/num.html"},
+		{"name-cn":"复变函数",
+		 "name-en":"Complex Function",
+		 "url":"/college-math/complex-function/index.html"},
+		{"name-cn":"数理方程",
+		 "name-en":"Mathematical Physics Equation",
+		 "url":"/college-math/mpequ/index.html"},
+		{"name-cn":"概率论",
+		 "name-en":"Probability",
+		 "url":"/college-math/probability/index.html"},
+		{"name-cn":"高分辨数值方法",
+		 "name-en":"High Resolution Numerical Methods",
+		 "url":"/hpc/index.html"}
+	    ]
+	},
+	{
+	    "family":"编程",
+	    "courses":[
+		{"name-cn":"Python",
+		 "name-en":"Python",
+		 "url":"/program/python/ppt.html",
+		 "subcourses":[
+		     {"name-cn":"Python 3",
+		      "name-en":"Python 3",
+		      "url":"/program/python/python3.html"},
+		     {"name-cn":"SymPy",
+		      "name-en":"SymPy",
+		      "url":"/ppt.php?data=program/python/sympy.json"},
+		     {"name-cn":"NumPy",
+		      "name-en":"NumPy",
+		      "url":"/ppt.php?data=program/python/numpy.json"}
+		 ]
+		},
+		{"name-cn":"Node JS",
+		 "name-en":"Node JS",
+		 "url":"/program/nodejs/index.html"
+		},
+		{"name-cn":"Mongo DB",
+		 "name-en":"MongoDB",
+		 "url":"/program/mongodb/index.html"
+		}
+	    ]
+	},
+	{
+	    "family":"图像",
+	    "courses":[
+		{"name-cn":"SVG",
+		 "name-en":"SVG",
+		 "url":"/program/svg/index.html"},
+		{"name-cn":"Meta Post",
+		 "name-en":"Meta Post",
+		 "url":"/latex/metapost/mp-web.html"},
+		{"name-cn":"TikZ",
+		 "name-en":"TikZ",
+		 "url":"/ppt.php?data=latex/tikz/tikz.json"},
+		{"name-cn":"Asymptote",
+		 "name-en":"Asymptote",
+		 "url":"/latex/asymptote/index.html"}
+	    ]
+	}
+    ]
+}

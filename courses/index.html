@@ -1,0 +1,19 @@
+---
+layout: page
+title: 教程
+permalink: /courses/
+---
+
+{% assign courses = site.data.courses %}
+<h2> {{ courses.head }} </h2>
+
+ {% for ppt in courses.ppts %}
+    <h3> {{ ppt.family }} </h3>
+<ul class="archive">
+    {% for cc in ppt.courses %}
+    <li>
+      {{ cc["name-cn"] }}
+    </li>
+    {% endfor %}
+</ul>
+ {% endfor %}
