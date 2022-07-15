@@ -14,19 +14,7 @@ permalink: /courses/
 <ol class="archive">
     {% for cc in ppt.courses %}
     <li>
-      {% if cc["url"] %}
-      <a href='{{base_url}}{{cc["url"]}}'> {{ cc["name-cn"] }} </a> ({{ cc["name-en"] }})
-      {% else %}
-      {{ cc["name-cn"] }} ({{ cc["name-en"] }})
-      {% endif %}
-      {% if cc["subcourses"] %}
-      <ul>
-	{% for subcourse in cc.subcourses %}
-	<li>
-	  <a href="{{base_url}}{{subsourse.url}}"> {{subcourse["name-cn"]}} </a> ({{ subcourse["name-en"] }})
-	</li>
-	{% endfor %}
-      </ul>
+      {{ cc.name-cn }}
     </li>
     {% endfor %}
 </ol>
