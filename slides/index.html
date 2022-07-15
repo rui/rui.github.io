@@ -19,15 +19,16 @@ permalink: /slides/
       {% else %}
       {{ cc["name-cn"] }} ({{ cc["name-en"] }})
       {% endif %}
-      {% if cc["subcourses"] %}
+      {% if cc.subcourses != nil %}
       <ul>
 	{% for subcourse in cc.subcourses %}
 	<li>
-	  <a href="{{base_url}}{{subsourse.url}}"> {{subcourse["name-cn"]}} </a> ({{ subcourse["name-en"] }})
+	  <a href="{{base_url}}{{subsourse.url}}"> {{ subcourse.name-cn }} </a> ({{ subcourse.name-en }})
 	</li>
+	{% endfor %}
 	{% endfor %}
       </ul>
     </li>
-    {% endfor %}
+    {% endif %}
 </ol>
  {% endfor %}

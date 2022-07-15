@@ -9,8 +9,8 @@ permalink: /courses/
 
 {% assign base_url = courses.baseurl %}
 
- {% for ppt in courses.ppts %}
-    <h3> {{ ppt.family }} </h3>
+{% for ppt in courses.ppts %}
+<h3> {{ ppt.family }} </h3>
 <ol class="archive">
     {% for cc in ppt.courses %}
     <li>
@@ -18,4 +18,4 @@ permalink: /courses/
     </li>
     {% endfor %}
 </ol>
- {% endfor %}
+{% endfor %}
