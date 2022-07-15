@@ -7,7 +7,7 @@
 # 井号后面的文字是说明文档，不会被程序读取。
 
 # 描述/签名
-name: 南墙的主页
+name: 南墙@中国科大
 description: 科大的学校个人主页实在是太丑了
 
 # 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）
@@ -56,7 +56,7 @@ footer-links:
   weibo:  #请输入你的微博个性域名 https://www.weibo.com/<thispart>
   behance: # https://www.behance.net/<>
   dribbble: # https://dribbble.com/<>
-  email: rui [at] ustcmath.cn
+  email: nq [at] ustcmath.cn
   facebook: #https://www.facebook.com/<>
   flickr: #https://www.flickr.com/<>
   github: rui #https://github.com/<>
@@ -70,7 +70,7 @@ footer-links:
   youtube: # channel/<your_long_string> or user/<user-name>
 
 # 站点页脚的文字
-footer-text: Copyright (c) 2019 来自中世界
+footer-text: Copyright (c) 2022
 
 #
 # 评论，注意，请不要同时添加多种不同的评论区
