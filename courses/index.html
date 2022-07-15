@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 教程
+title: 课程
 permalink: /courses/
 ---
 
@@ -9,13 +9,22 @@ permalink: /courses/
 
 {% assign base_url = courses.baseurl %}
 
-{% for ppt in courses.ppts %}
-<h3> {{ ppt.family }} </h3>
+ {% for ppt in courses.ppts %}
+    <h3> {{ ppt.family }} </h3>
 <ol class="archive">
     {% for cc in ppt.courses %}
     <li>
-      {{ cc.name-cn }}
+      {% if cc.url %}
+      <a href='{{base_url}}{{ cc.url }}'> {{ cc.name_cn }} </a> ( {{ cc.name_en }} )
+      {% else %}
+      {{ cc.name_cn }} ( {{ cc.name_en }} )
+      {% endif %}
+      <ul>
+      {% for subcc in cc.subcourses %}
+      <li> <a href='{{base_url}}{{ subcc.url }}'>{{ subcc.name_cn }}</a> ( {{ subcc.name_en }} ) </li>
+      {% endfor %}
+      </ul>
     </li>
     {% endfor %}
 </ol>
-{% endfor %}
+ {% endfor %}

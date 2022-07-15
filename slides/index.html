@@ -14,20 +14,17 @@ permalink: /slides/
 <ol class="archive">
     {% for cc in ppt.courses %}
     <li>
-      {% if cc["url"] %}
-      <a href='{{base_url}}{{cc["url"]}}'> {{ cc["name-cn"] }} </a> ({{ cc["name-en"] }})
+      {% if cc.url %}
+      <a href='{{base_url}}{{ cc.url }}'> {{ cc.name_cn }} </a> ( {{ cc.name_en }} )
       {% else %}
-      {{ cc["name-cn"] }} ({{ cc["name-en"] }})
+      {{ cc.name_cn }} ( {{ cc.name_en }} )
       {% endif %}
-      {% if cc.subcourses != nil %}
       <ul>
-	{% for subcourse in cc.subcourses %}
-	<li>
-	  <a href="{{base_url}}{{subsourse.url}}"> {{ subcourse.name-cn }} </a> ({{ subcourse.name-en }})
-	</li>
-	{% endfor %}
+      {% for subcc in cc.subcourses %}
+      <li> <a href='{{base_url}}{{ subcc.url }}'>{{ subcc.name_cn }}</a> ( {{ subcc.name_en }} ) </li>
+      {% endfor %}
       </ul>
     </li>
-    {% endif %}
+    {% endfor %}
 </ol>
  {% endfor %}
