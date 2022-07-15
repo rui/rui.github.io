@@ -1,0 +1,33 @@
+---
+layout: page
+title: PPT
+permalink: /slides/
+---
+
+{% assign courses = site.data.courses %}
+<h2> {{ courses.head }} </h2>
+
+{% assign base_url = courses.baseurl %}
+
+ {% for ppt in courses.ppts %}
+    <h3> {{ ppt.family }} </h3>
+<ol class="archive">
+    {% for cc in ppt.courses %}
+    <li>
+      {% if cc["url"] %}
+      <a href='{{base_url}}{{cc["url"]}}'> {{ cc["name-cn"] }} </a> ({{ cc["name-en"] }})
+      {% else %}
+      {{ cc["name-cn"] }} ({{ cc["name-en"] }})
+      {% endif %}
+      {% if cc["subcourses"] %}
+      <ul>
+	{% for subcourse in cc.subcourses %}
+	<li>
+	  <a href="{{base_url}}{{subsourse.url}}"> {{subcourse["name-cn"]}} </a> ({{ subcourse["name-en"] }})
+	</li>
+	{% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+</ol>
+ {% endfor %}
