@@ -349,6 +349,12 @@ img {
   }
 }
 
+.slogan {
+  text-align:center;
+  color: #399268;
+  /*margin: 100px auto 0;*/
+}
+
 .site-info {
   text-align:center;
   margin: 100px auto 0;
@@ -424,6 +430,23 @@ nav {
       color: $link-color;
     }
   }
+}
+
+// courses
+.courses {
+
+  a {
+    margin: 0 10px;
+    text-align: right;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    @include mobile {
+      margin: 0 10px;
+      color: $link-color;
+    }
+  }
+
 }
 
 // content

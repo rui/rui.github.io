@@ -5,13 +5,13 @@ permalink: /courses/
 ---
 
 {% assign courses = site.data.courses %}
-<h2> {{ courses.head }} </h2>
+<!-- h2> {{ courses.head }} </h2 -->
 
 {% assign base_url = courses.baseurl %}
 
  {% for ppt in courses.ppts %}
     <h3> {{ ppt.family }} </h3>
-<ol class="archive">
+<ol class="courses">
     {% for cc in ppt.courses %}
     <li>
       {% if cc.url %}

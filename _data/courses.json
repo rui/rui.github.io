@@ -1,7 +1,7 @@
 {
     "title":"南墙的知识点滴",
     "head":"南墙的知识点滴",
-    "baseurl":".",
+    "baseurl":"/slides",
     "ppts":
     [
 	{
@@ -12,7 +12,7 @@
 		 "subcourses":[
 		     {"name_cn":"第一册",
 		      "name_en":"Volume I",
-		      "url":"/college-math/math-analysis/index.html"},
+		      "url":"/college-math/math-analysis/index1.html"},
 		     {"name_cn":"第二册",
 		      "name_en":"Volume II",
 		      "url":"/college-math/math-analysis/index2.html"}
@@ -22,7 +22,7 @@
 		 "subcourses":[
 		     {"name_cn":"单变量微积分",
 		      "name_en":"One Variable Calculus",
-		      "url":"/college-math/calculus/index.html"},
+		      "url":"/college-math/calculus/index1.html"},
 		     {"name_cn":"多变量微积分",
 		      "name_en":"Multivariable Calculus",
 		      "url":"/college-math/calculus/index2.html"}
