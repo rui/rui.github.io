@@ -1,0 +1,30 @@
+---
+layout: page
+title: 微积分(I)
+# permalink: /courses/
+---
+
+{% assign courses = site.data.courses %}
+<!-- h2> {{ courses.head }} </h2 -->
+
+{% assign base_url = courses.baseurl %}
+
+ {% for ppt in courses.ppts %}
+    <h3> {{ ppt.family }} </h3>
+<ol class="courses">
+    {% for cc in ppt.courses %}
+    <li>
+      {% if cc.url %}
+      <a href='{{base_url}}{{ cc.url }}'> {{ cc.name_cn }} </a> ( {{ cc.name_en }} )
+      {% else %}
+      {{ cc.name_cn }} ( {{ cc.name_en }} )
+      {% endif %}
+      <ul>
+      {% for subcc in cc.subcourses %}
+      <li> <a href='{{base_url}}{{ subcc.url }}'>{{ subcc.name_cn }}</a> ( {{ subcc.name_en }} ) </li>
+      {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+</ol>
+ {% endfor %}
