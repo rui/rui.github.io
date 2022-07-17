@@ -14,6 +14,12 @@
       <div class="container">
         {{ content }}
       </div>
+      <hr/>
+      <div class="slogan">
+       {% if site.footer-text %}
+        <p>{{ site.footer-text }}</p>
+       {% endif %}
+      </div>
     </div>
 
     {% include analytics.html %}

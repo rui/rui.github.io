@@ -18,6 +18,8 @@ url:
 # 那么就写成 "/repository-name"
 baseurl: 
 
+# 我们的口号（箴言）是
+slogan: 前进！前进！！不择手段地前进！！！
 
 #
 # 下面的设定都是可选的
@@ -42,8 +44,16 @@ navigation:
     url: /archive
   - name: 标签
     url: /tags
+  - name: 类别
+    url: /categories
   - name: 课程
     url: /courses
+#  - name: 课程
+#    url: /courses
+#  - name: 课程
+#    url: /courses
+#  - name: 课程
+#    url: /courses
 
 # 每页的文章数
 paginate: 8
