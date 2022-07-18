@@ -11,3 +11,11 @@ permalink: /about/
 
 本人的研究方向是**高精度数值格式**。
 
+<div class="publications">
+<h6> 论文 </h6>
+<ol>
+{% for ref in site.data.cv-publications %}
+  <li> <span class="author">{{ ref.authors | join: " , " }}</span>, <b class="title"> {{ref.title}} </b>, <i class="journal"> {{ ref.journal }}</i>, <b>{{ref.volume}}</b>({{ref.year}}), PP.{{ref.pages}} </li>
+{% endfor %}
+</ol>
+</div>

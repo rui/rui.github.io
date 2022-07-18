@@ -1,0 +1,89 @@
+{
+    "baseurl":"/slides/college-math/calculus/",
+    "baseurl2":"//www.nwall.top/ppt/college-math/calculus/",
+    "chapters":
+    [
+	{
+	    "chapter":"第1章、实数与函数",
+	    "sections":[
+		{"section":"第1.1章、实数",
+		 "url":"chap1_1.html"},
+		{"section":"第1.2章、函数",
+		 "url":"chap1_2.html"}
+	    ]
+	},
+	{
+	    "chapter":"第2章 极限理论",
+	    "sections":[
+		{"section":"第2.1章、数列极限",
+		 "url":"chap2_1.html"},
+		{"section":"第2.2章、函数极限",
+		 "url":"chap2_2.html"},
+		{"section":"第2.3章、无穷小量与无穷大量",
+		 "url":"chap2_3.html"},
+		{"section":"第2.4章、函数的连续性",
+		 "url":"chap2_4.html"},
+		{"section":"第2.0章、复习",
+		 "url":"chap2_0.html"}
+	    ]
+	},
+	{
+	    "chapter":"第3章 单变量函数的微分学",
+	    "sections":[
+		{"section":"第3.1章、导数",
+		 "url":"chap3_1.html"},
+		{"section":"第3.2章、微分",
+		 "url":"chap3_2.html"},
+		{"section":"第3.3章、微分中值定理",
+		 "url":"chap3_3.html"},
+		{"section":"第3.4章、洛必达法则",
+		 "url":"chap3_4.html"},
+		{"section":"第3.5章、Taylor公式",
+		 "url":"chap3_5.html"},
+		{"section":"第3.6章、函数的单调性、凹凸性",
+		 "url":"chap3_6.html"},
+		{"section":"第3.0章、复习",
+		 "url":"chap3_0.html"}
+	    ]
+	},
+	{
+	    "chapter":"第4章 单变量函数的积分学",
+	    "sections":[
+		{"section":"第4.1章、不定积分",
+		 "url":"chap4_1.html"},
+		{"section":"第4.2章、不定积分的计算",
+		 "url":"chap4_2.html"},
+		{"section":"第4.3章、定积分的概念",
+		 "url":"chap4_3.html"},
+		{"section":"第4.4章、定积分的基本性质 ",
+		 "url":"chap4_4.html"},
+		{"section":"第4.5章、定积分的计算方法",
+		 "url":"chap4_5.html"},
+		{"section":"第4.6章、定积分的应用",
+		 "url":"chap4_6.html"},
+		{"section":"第4.7章、广义积分",
+		 "url":"chap4_7.html"},
+		{"section":"第4.0章、习题",
+		 "url":"chap4_0.html"}
+	    ]
+	},
+	{
+	    "chapter":"第5章 微分方程",
+	    "sections":[
+		{"section":"第5.1章、微分方程的基本概念",
+		 "url":"chap5_1.html"},
+		{"section":"第5.2章、一阶微分方程",
+		 "url":"chap5_2.html"},
+		{"section":"第5.3章、可降阶的二阶微分方程",
+		 "url":"chap5_3.html"},
+		{"section":"第5.4章、二阶线性微分方程的解结构",
+		 "url":"chap5_4.html"},
+		{"section":"第5.5章、二阶常系数线性微分方程",
+		 "url":"chap5_5.html"},
+		{"section":"第5.0章、习题",
+		 "url":"chap5_0.html"}
+	    ]
+	}
+    ]
+}
+

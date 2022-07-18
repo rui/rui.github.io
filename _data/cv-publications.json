@@ -1,0 +1,38 @@
+[
+	{
+		"type": "article",
+		"title": "用半拉格朗日ENO和WENO格式解Vlasov方程",
+		"authors": ["张瑞", "刘儒勋"],
+		"journal": "中国科学技术大学学报",
+		"year": 2005,
+		"volume": 35,
+		"pages": "759-769"
+	},
+	{
+		"type": "article",
+		"title": "On the order of accuracy and numerical performance of two classes of finite volume WENO schemes",
+		"authors": ["Rui Zhang", "Chi-Wang Shu", "Mengping Zhang"],
+		"journal": "Communications in Computational Physics",
+		"year": 2011,
+		"volume": 9,
+		"pages": "72-109"
+	},
+	{
+		"type": "article",
+		"title": "High order positivity-preserving finite folume WENO schemes for a hierarchical size-structured population model",
+		"authors": ["Rui Zhang", "Chi-Wang Shu", "Mengping Zhang"],
+		"journal": "Journal of Computational and Applied Mathematics",
+		"year": 2011,
+		"volume": 236,
+		"pages": "937-949"
+	},
+	{
+		"type": "article",
+		"title": "A lattice Boltzmann model for the generalized Burgers–Huxley equation",
+		"authors": ["Yali Duan", "Linghua Kong", "Rui Zhang"],
+		"journal": "Physica A",
+		"year": 2012,
+		"volume": 391,
+		"pages": "625-632"
+	}
+]
