@@ -54,7 +54,7 @@ navigation:
 #    url: /courses
 
 # 每页的文章数
-paginate: 5
+paginate: 7
 
 # 文章简介的区分标记
 excerpt_separator: <!-- more -->
