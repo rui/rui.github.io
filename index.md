@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 关于
-permalink: /about/
+permalink: /
 ---
 
 毕业于[中国科学技术大学](http://www.ustc.edu.cn){:target="_blank"}，

@@ -36,8 +36,8 @@ favicon: /images/favicon.ico
 navigation:
   - name: 首页
     url: /
-  - name: 关于
-    url: /about
+  - name: 博客
+    url: /blog/
   - name: 归档
     url: /archive
   - name: 标签
@@ -46,8 +46,8 @@ navigation:
     url: /categories
   - name: 课程
     url: /courses
-#  - name: 课程
-#    url: /courses
+#  - name: 博客
+#    url: /blogs
 #  - name: 课程
 #    url: /courses
 #  - name: 课程
