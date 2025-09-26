@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 1.2.3" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta name="author" content="张瑞" />
+  <title>极限理论</title>
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.25em;
+  }
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.5em;
+  }
+  .madoko .toc-contents>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  .madoko dl {
+    margin-left: 0em;
+  }
+  .madoko blockquote {
+    font-style: italic;
+  }
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  .madoko .footnote {
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  .madoko .equation-before {
+    float: right;
+  }
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  .madoko .hidden {
+    display: none;
+  }
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  .madoko ul.list-style-type-dash {
+      list-style-type: none !important;
+  }
+  .madoko ul.list-style-type-dash > li:before {
+      content: "\2013";
+      position: absolute;
+      margin-left: -1em;
+  }
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .math-rendering {
+    text-align: left;
+    white-space: pre;
+    color: gray;
+  }
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  .madoko span.math-rendering {
+    display:inline-block;
+    width:8em;
+    overflow-x:auto;
+    font-size:70%;
+  }
+  .madoko span.math-rendering::-webkit-scrollbar {
+    width:4px;
+  }
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  body.madoko, .madoko .serif {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+  }
+  .madoko .sans-serif {
+    font-family: "Calibri", "Optima", sans-serif;
+  }
+  .madoko .symbol {
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  body.madoko {
+    -webkit-text-size-adjust: 100%;       
+    text-rendering: optimizeLegibility;
+  }
+  body.madoko {
+    max-width: 88ex; 
+    margin: 1em auto;
+    padding: 0em 2em;
+  }
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  .madoko p {
+    text-align: justify;
+  }
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 {
+    margin-top: 1.22em;
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  {
+    margin-top: 1ex;
+  }
+  .madoko h5, .madoko h6 {
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 {
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 {
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt,
+  .madoko .monospace, .madoko .token-indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token-indent {
+    font-size: 0.95em;
+  }
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 0.5em;
+    }
+    .madoko li {
+      text-align: left;
+    }
+  }
+  
+    </style>
+  <link rel="stylesheet" type="text/css" href="../../../static/js/reveal.js-2.6.2/css/reveal.min.css"  class="link">
+  <link rel="stylesheet" type="text/css" href="../../../static/js/reveal.js-2.6.2/css/theme/sky.css"  class="link">
+  <script src="../../../static/js/reveal.js-2.6.2/lib/js/head.min.js"  class="script preview"></script>
+  <script src="../../../static/js/reveal.js-2.6.2/js/reveal.js"  class="script preview"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link rel="stylesheet" href="../../../static/js/reveal.js-2.6.2/css/theme/sky.css" id="theme">    
+      <!--[if lt IE 9]>
+      <script src="../../../static/js/reveal.js-2.6.2/lib/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      body.madoko {
+        margin: 0pt;
+        padding: 0pt;
+        max-width: 100%;      
+      }
+      .madoko .reveal h1 {
+          font-size: 3.7em;
+      }
+      .madoko .reveal h2 {
+          font-size: 2.1em;
+      }
+      .reveal .authorblock .author {
+          font-size: 120%;
+          margin-bottom: 1ex;
+      }        
+      .reveal table {
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .reveal pre table {
+        margin-left: 0pt;
+      }
+      .madoko .reveal pre.pretty {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+      }
+      .reveal li p {
+          text-align: left;
+      }
+      .reveal h2 {
+          margin-bottom: 0.7em;
+      }
+      .reveal section ul,
+      .reveal section ol {
+          margin-top: 0.35em;
+          margin-bottom: 0.35em;
+      }
+      .reveal section img.math-display {
+          padding: 1em;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img.math-inline {
+          margin: 0pt;
+          padding: 0pt;
+          background-color: none;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img {
+          box-shadow: none;
+          border: none;
+      }
+      .madoko .reveal pre {
+          border: 1px solid black;
+          word-wrap: normal;
+          background-color: white;
+          font-size: 0.7em;
+          padding: 0.7em;
+          line-height: 100%;
+          width: 100%;
+      }      
+      .reveal pre code, .reveal code {
+          padding: 0pt;
+      }
+      .reveal nav.toc {
+          line-height: 1em;
+          font-size: 60%;
+          overflow-y: auto;
+      }    
+      .reveal .tocitem {
+          text-align: left;
+      }
+      .reveal .toc>.tocblock .tocblock {
+          margin-left: 0.5em;
+      }   
+      .reveal .toc>.tocblock .tocblock .tocblock {
+          margin-left: 1em;
+      }
+      .reveal .bibliography {
+        height: 18em;
+        overflow-y: auto;
+        font-size: 0.8em;
+        line-height: 1.25;
+      }
+      .reveal section[data-smaller=""],
+      .reveal section[data-smaller="true"] {
+        font-size: 80%;
+        width: 110%;
+      }
+      .reveal .slides>section[data-smaller=""],
+      .reveal .slides>section[data-smaller="true"] {
+        left: -55%;
+      }
+      .reveal .details {
+        display: none;
+      }
+      .reveal[data-details=""] .details,
+      .reveal[data-details="true"] .details {
+        display: initial;
+      }
+      /* Display in the preview window */
+      html, body.madoko.preview, body.madoko.preview-full, .body.madoko {
+        height  : 100% !important;
+        width   : auto!important;
+        padding : 0pt !important;
+        margin  : 0pt !important;
+      }
+      body.madoko.preview, body.madoko.preview-full, .preview .body.madoko {
+        overflow: hidden !important;
+      }
+      body.preview .reveal .slides .fragment {
+        visibility: visible;
+        opacity: 0.5;
+      }
+      body.preview .reveal .slides .fragment.visible {
+        opacity: 1.0;
+      }
+      .preview .reveal div.notes,
+      .preview .reveal aside.notes {
+        display  : block;
+        position : absolute;
+        width    : 30%;
+        left     : 70%;
+        top      : -15%;
+        font-size: 50%;
+        border   : 1px solid black;
+        border-radius   : 10px;
+        background-color: white;
+      }
+      /* 'static' display in the preview window, unused for now */
+      body.preview.static div.reveal, 
+      body.preview.static div.ticreveal .slides, 
+      body.preview.static div.reveal section {
+        display: block !important;
+        position: relative !important;
+        width: auto !important;      
+      }
+      body.preview.static div.reveal section {
+        border: solid 1px black;
+        padding: 1em !important;
+        margin-top: 1em;
+        min-height: 15em;
+        top: 0pt;
+      }
+      body.madoko.preview.static section {
+        font-size: 75%;
+      }
+      body.madoko.preview.static {
+        padding: 0em 1em !important;
+      }
+      body.madoko.preview.static .reveal pre {
+        width: 95%;
+      }    
+      body.preview .reveal[data-details="false"] .details {
+        display: initial;
+        color: gray;
+      }
+      body.preview .reveal[data-long="false"] section[data-long] {
+        border-left: 2px black solid;
+      }
+      </style>
+      <script>    
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      window.revealConfig = {
+          controls: true,
+          progress: true,
+          history: true,
+          center: /^\s*(true|1)\s*$/i.test("true"),
+          slideNumber: /^\s*(true|1)\s*$/i.test("true"),
+          dependencies: [
+            { src: '../../../static/js/reveal.js-2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../../../static/js/reveal.js-2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: '../../../static/js/reveal.js-2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          ],
+      };
+      function revealAddFragments() {
+        [].forEach.call(document.querySelectorAll( ".fragmented" ), function(elem0) {
+          var elem = (/^H\d$/.test(elem0.nodeName) ? elem0.parentNode : elem0);
+          [].forEach.call(elem.children, function(item) {
+            if (item==elem0) return;
+            if (item && !/\bfragment(ed)?\b/.test(item.className) && item.nodeType===1) {
+              item.className = item.className + " fragment";
+            }
+          });
+        });
+      }
+      function revealQuotedList(listType) {
+        //compatibility with Rmarkdown slides
+        [].forEach.call( document.querySelectorAll("blockquote>" + listType), function(ul) {
+          if (!/\bfragmented\b/.test(ul.className)) {
+            ul.className = ul.className + " fragmented";
+          }        
+          var quote = ul.parentNode;
+          if (quote.childElementCount===1) {
+            quote.parentNode.replaceChild(ul,quote);
+          }
+        });
+      }
+      function revealBuildToFragmented() {
+        [].forEach.call(document.querySelectorAll( ".build" ), function(elem) {
+          if (elem && !/\bfragmented\b/.test(elem.className) && elem.nodeType===1) {
+            elem.className = elem.className + " fragmented";
+          }
+        });
+      }
+      function revealDivNotesToAside() {
+        [].forEach.call(document.querySelectorAll("div.notes"), function(elem) {
+          var aside = document.createElement("ASIDE");
+          if (elem.id) aside.id = elem.id;
+          aside.className = elem.className;
+          [].forEach.call(elem.attributes, function(attr) {
+            aside.setAttribute( attr.name, attr.value );
+          });
+          aside.innerHTML = elem.innerHTML;
+          elem.parentNode.replaceChild(aside,elem);
+        });
+      }
+      function revealDataQuery() {
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        window.location.search.replace(/\bdata-(\w+)(?:=(\w+))?\b/g, function(matched,key,value) {
+          reveal.setAttribute("data-" + key, (value ? value : ""));
+          return matched;
+        });
+      }
+      function revealRemoveLong() {
+        // remove parts for 'long' presentation
+        if (/\bpreview(?![\w\-])/.test(document.body.className)) return;
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        var value = reveal.hasAttribute("data-long") ? reveal.getAttribute("data-long") : null;
+        if (value==null || value=="false" || value=="0") {
+          [].forEach.call( document.querySelectorAll("section[data-long]"), function(elem) {
+            elem.parentNode.removeChild(elem);
+          });
+        }
+      }
+      revealConfig.onLoad = function() {
+        revealConfig.getEmbeddedImages();
+        revealDataQuery();
+        revealRemoveLong();
+        revealQuotedList("ul");
+        revealQuotedList("ol");
+        revealBuildToFragmented();
+        revealDivNotesToAside();
+        revealAddFragments();
+      };
+      document.addEventListener("load",revealConfig.onLoad);    
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof Reveal !== "undefined" && !Reveal.isReady()) {
+          revealConfig.onLoad();
+          Reveal.initialize(revealConfig);
+        }
+      });    
+      // add support for printing:
+      // use  ?print-pdf to get a pdf-printable version (in Chrome)
+      // use  ?print-paper to get a paper-printable version.
+      revealConfig.initPrint = function() {
+        var cssLink = null;
+        var bodyClass = null;
+        var cap = window.location.search.match(/\bprint-(\w+)\b/);
+        if (cap) {
+          bodyClass = cap[0];
+          cssLink = "../../../static/js/reveal.js-2.6.2/css/print/" + cap[1] + ".css";
+        }
+        if (cssLink) {
+          var link  = document.createElement( "link" );
+          link.rel  = "stylesheet";
+          link.type = "text/css";
+          link.href = cssLink;
+          var head = document.getElementsByTagName( 'head' )[0];
+          if (head) head.appendChild( link );
+        }
+        if (bodyClass) {
+          document.body.className = document.body.className + " " + bodyClass;
+        }
+      };
+      revealConfig.getEmbeddedImages = function() {
+        var images = {};
+        [].forEach.call( document.querySelectorAll("img[data-linkid]"), function(img) {
+          var linkid = img.getAttribute("data-linkid");
+          if (linkid) images["/" + linkid] = img.src;
+          var path = img.getAttribute("data-path");
+          if (path) images["/" + path] = img.src;
+        });     
+        [].forEach.call( document.querySelectorAll("section"), function(slide) {
+          var attrName = "data-background";
+          var image = slide.getAttribute(attrName);
+          if (!image) {
+            attrName = "data-background-image";
+            image = slide.getAttribute(attrName);
+          }
+          if (!image) return;
+          var cap = /^\s*!?\[([^\]]+)\]\s*$/.exec(image);
+          var href = images["/" + (cap ? cap[1] : image)];
+          if (!href) return;
+          if (attrName==="data-background" && /^data:/.test(href)) href = "url(" + href + ")";
+          slide.setAttribute(attrName, href);
+        });
+      };    
+      </script>
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0">
+<div class="reveal" data-long="false" data-details="false" data-line="15" style="line-adjust:0">
+<div class="slides" data-line="15" style="line-adjust:0">
+<div class="mathdefs input-mathdefs" data-line="15"></div>
+<section class="titleblock align-center para-block" data-line="19" style="text-align:center;line-adjust:0">
+<div class="titleheader align-center" data-line="19" style="text-align:center;line-adjust:0">
+<h1 class="title para-block" data-line="19" style="font-weight:bold;margin-bottom:0.5ex;font-size:3em;line-adjust:0"><span data-line="19"></span>极限理论</h1>
+<h2 class="subtitle para-block" data-line="22" style="margin-bottom:0.5ex;font-size:1.8em;line-adjust:0"><span data-line="22"></span>复习</h2></div>
+<div class="authors align-center" data-line="27" style="text-align:center;width:80%;line-adjust:0"><table class="authorrow columns block" data-line="27" style="margin-top:2ex;width:100%;line-adjust:0">
+<tbody><tr><td class="author column" data-line="27" style="text-align:center;font-size:x-large;line-adjust:0">
+<div class="authorname" data-line="27" style="font-size:1.4em;line-adjust:0"><span data-line="27"></span>张瑞</div>
+<div class="authoraddress" data-line="30" style="line-adjust:0"><span data-line="30"></span>中国科学技术大学数学科学学院</div>
+<div class="authoremail email" data-line="33" style="line-adjust:0"><span data-line="33"></span>rui [at] ustc [dot] edu [dot] cn</div></td></tr></tbody></table></div></section>
+<section id="chap2_review" class="section section1" data-section-depth="1" data-line="21"><h2 id="heading-chap2_review" class="h1" data-heading-depth="1" style="display:block">复习</h2></section>
+<section class="slide section" data-line="23"><h4 id="section" class="h3" data-line="24" data-heading-depth="3" style="color:#006;background-color:#cff;display:block;position:relative;top:1px"><span data-line="24"></span>函数极限</h4>
+<div class="center align-center" data-line="25" style="text-align:center">
+<p class="p noindent" data-line="26"><span data-line="26"></span><img src="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap2-function.png" alt="chap2-mind-function" data-path="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap2-function.png" data-linkid="chap2-mind-function" style="width:800px"></p></div></section>
+<section class="slide section" data-line="30"><h4 id="section" class="h3" data-line="31" data-heading-depth="3" style="color:#006;background-color:#cff;display:block;position:relative;top:1px"><span data-line="31"></span>函数连续</h4>
+<div class="center align-center" data-line="32" style="text-align:center">
+<p class="p noindent" data-line="33"><span data-line="33"></span><img src="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap2-continue.png" alt="chap2-mind-continue" data-path="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap2-continue.png" data-linkid="chap2-mind-continue" style="width:800px"></p></div></section>
+<section class="slide section" data-line="37"><h4 id="section" class="h3" data-line="38" data-heading-depth="3" style="color:#006;background-color:#cff;display:block;position:relative;top:1px"><span data-line="38"></span>数列极限</h4>
+<div class="center align-center" data-line="39" style="text-align:center">
+<p class="p noindent" data-line="40"><span data-line="40"></span><img src="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap2-array.png" alt="chap2-mind-array" data-path="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap2-array.png" data-linkid="chap2-mind-array" style="width:800px"></p></div></section>
+<section id="chap2-excise" class="section section2" data-section-depth="2" data-line="54"><h3 id="heading-chap2-excise" class="h2" data-heading-depth="2" style="display:block;position:relative;top:1px">习题</h3></section>
+<section class="slide section" data-line="56">
+
+<div class="example" data-line="58" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:\83F2 \8D6B \91D1 \54E5 \5C14 \8328 [77](4)">
+<p class="p noindent" data-line="59"><span data-line="59"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">1</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="59"></span>求
+<span data-line="60"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.8071em;height:2.4004em;width:5.2558em" viewBox='34.67 52.072 50.055 22.861'><desc>$\displaystyle\lim_{n\to+\infty}\frac{\sqrt[n]{n!}}{n}$</desc><g id='math-4cee98'><use x='41.414' y='67.9' xlink:href='#g6-108'/><use x='44.181' y='67.9' xlink:href='#g6-105'/><use x='46.948' y='67.9' xlink:href='#g6-109'/><use x='34.869' y='73.878' xlink:href='#g4-110'/><use x='39.794' y='73.878' xlink:href='#g1-33'/><use x='47.737' y='73.878' xlink:href='#g7-43'/><use x='53.853' y='73.878' xlink:href='#g1-49'/><use x='67.418' y='56.232' xlink:href='#g5-110'/><use x='66.271' y='52.67' xlink:href='#g0-112'/><rect x='74.573' y='52.271' height='.398' width='8.747'/><use x='74.573' y='61.16' xlink:href='#g3-110'/><use x='80.553' y='61.16' xlink:href='#g6-33'/><rect x='64.651' y='65.21' height='.398' width='18.67'/><use x='70.996' y='74.734' xlink:href='#g3-110'/></g></svg></p></div>
+<div class="example" data-line="65" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="66"><span data-line="66"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">2</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="66"></span>设<span data-line="66"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7230em;height:1.4540em;width:10.8188em" viewBox='88.468 54.164 103.036 13.848'><desc>$\displaystyle\lim_{n\to\infty}n(A_n-A_{n-1})=0$</desc><g id='math-8d2a40'><use x='92.154' y='61.836' xlink:href='#g6-108'/><use x='94.921' y='61.836' xlink:href='#g6-105'/><use x='97.689' y='61.836' xlink:href='#g6-109'/><use x='88.667' y='67.813' xlink:href='#g4-110'/><use x='93.592' y='67.813' xlink:href='#g1-33'/><use x='101.535' y='67.813' xlink:href='#g1-49'/><use x='111.138' y='61.836' xlink:href='#g3-110'/><use x='117.118' y='61.836' xlink:href='#g6-40'/><use x='120.992' y='61.836' xlink:href='#g3-65'/><use x='128.464' y='63.33' xlink:href='#g4-110'/><use x='136.101' y='61.836' xlink:href='#g0-0'/><use x='146.063' y='61.836' xlink:href='#g3-65'/><use x='153.535' y='63.33' xlink:href='#g4-110'/><use x='158.46' y='63.33' xlink:href='#g1-0'/><use x='164.687' y='63.33' xlink:href='#g7-49'/><use x='169.156' y='61.836' xlink:href='#g6-41'/><use x='175.798' y='61.836' xlink:href='#g6-61'/><use x='186.314' y='61.836' xlink:href='#g6-48'/></g></svg><span data-line="66"></span>。
+</p>
+<p class="p indent para-continue" data-line="68"><span data-line="68"></span>试证：若极限
+<span data-line="69"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7625em;height:2.1819em;width:11.5710em" viewBox='34.67 51.674 110.2 20.78'><desc>$\displaystyle\lim_{n\to\infty}\frac{A_1+A_2+\cdots+A_n}{n}$</desc><g id='math-07ddc3'><use x='38.356' y='65.421' xlink:href='#g6-108'/><use x='41.123' y='65.421' xlink:href='#g6-105'/><use x='43.89' y='65.421' xlink:href='#g6-109'/><use x='34.869' y='71.398' xlink:href='#g4-110'/><use x='39.794' y='71.398' xlink:href='#g1-33'/><use x='47.737' y='71.398' xlink:href='#g1-49'/><use x='58.535' y='58.681' xlink:href='#g3-65'/><use x='66.007' y='60.175' xlink:href='#g7-49'/><use x='72.69' y='58.681' xlink:href='#g6-43'/><use x='82.653' y='58.681' xlink:href='#g3-65'/><use x='90.125' y='60.175' xlink:href='#g7-50'/><use x='96.808' y='58.681' xlink:href='#g6-43'/><use x='106.771' y='58.681' xlink:href='#g0-1'/><use x='111.198' y='58.681' xlink:href='#g0-1'/><use x='115.626' y='58.681' xlink:href='#g0-1'/><use x='120.608' y='58.681' xlink:href='#g6-43'/><use x='130.57' y='58.681' xlink:href='#g3-65'/><use x='138.042' y='60.175' xlink:href='#g4-110'/><rect x='58.535' y='62.731' height='.398' width='84.93'/><use x='98.01' y='72.254' xlink:href='#g3-110'/></g></svg><span data-line="69"></span>存在，则有
+</p>
+<div class="math para-block" data-line="70">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="71" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:2.1819em;width:16.5525em" viewBox='181.104 52.67 157.643 20.78'><desc>\[\lim_{n\to\infty}A_n=\lim_{n\to\infty}\frac{A_1+A_2+\cdots+A_n}{n}
+\]</desc><g id='math-a8c53c'><use x='184.789' y='66.417' xlink:href='#g6-108'/><use x='187.557' y='66.417' xlink:href='#g6-105'/><use x='190.324' y='66.417' xlink:href='#g6-109'/><use x='181.303' y='72.394' xlink:href='#g4-110'/><use x='186.228' y='72.394' xlink:href='#g1-33'/><use x='194.17' y='72.394' xlink:href='#g1-49'/><use x='203.773' y='66.417' xlink:href='#g3-65'/><use x='211.245' y='67.911' xlink:href='#g4-110'/><use x='219.436' y='66.417' xlink:href='#g6-61'/><use x='233.438' y='66.417' xlink:href='#g6-108'/><use x='236.205' y='66.417' xlink:href='#g6-105'/><use x='238.973' y='66.417' xlink:href='#g6-109'/><use x='229.952' y='72.394' xlink:href='#g4-110'/><use x='234.877' y='72.394' xlink:href='#g1-33'/><use x='242.819' y='72.394' xlink:href='#g1-49'/><use x='253.617' y='59.677' xlink:href='#g3-65'/><use x='261.089' y='61.171' xlink:href='#g7-49'/><use x='267.773' y='59.677' xlink:href='#g6-43'/><use x='277.735' y='59.677' xlink:href='#g3-65'/><use x='285.207' y='61.171' xlink:href='#g7-50'/><use x='291.89' y='59.677' xlink:href='#g6-43'/><use x='301.853' y='59.677' xlink:href='#g0-1'/><use x='306.281' y='59.677' xlink:href='#g0-1'/><use x='310.709' y='59.677' xlink:href='#g0-1'/><use x='315.69' y='59.677' xlink:href='#g6-43'/><use x='325.653' y='59.677' xlink:href='#g3-65'/><use x='333.125' y='61.171' xlink:href='#g4-110'/><rect x='253.617' y='63.727' height='.398' width='84.93'/><use x='293.092' y='73.251' xlink:href='#g3-110'/></g></svg></div></div></div>
+<div class="example" data-line="75" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent para-continue" data-line="76"><span data-line="76"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">3</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="76"></span> 若<span data-line="76"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7218em;height:1.3960em;width:5.4723em" viewBox='88.468 54.718 52.117 13.295'><desc>$\displaystyle \lim_{n\to\infty} a_n=a$</desc><g id='math-078967'><use x='92.154' y='61.836' xlink:href='#g6-108'/><use x='94.921' y='61.836' xlink:href='#g6-105'/><use x='97.689' y='61.836' xlink:href='#g6-109'/><use x='88.667' y='67.813' xlink:href='#g4-110'/><use x='93.592' y='67.813' xlink:href='#g1-33'/><use x='101.535' y='67.813' xlink:href='#g1-49'/><use x='111.138' y='61.836' xlink:href='#g3-97'/><use x='116.404' y='63.33' xlink:href='#g4-110'/><use x='124.594' y='61.836' xlink:href='#g6-61'/><use x='135.11' y='61.836' xlink:href='#g3-97'/></g></svg><span data-line="76"></span>, <span data-line="76"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7218em;height:1.3960em;width:5.2643em" viewBox='34.67 54.718 50.136 13.295'><desc>$\displaystyle \lim_{n\to\infty}b_n=b$</desc><g id='math-7aec19'><use x='38.356' y='61.836' xlink:href='#g6-108'/><use x='41.123' y='61.836' xlink:href='#g6-105'/><use x='43.89' y='61.836' xlink:href='#g6-109'/><use x='34.869' y='67.813' xlink:href='#g4-110'/><use x='39.794' y='67.813' xlink:href='#g1-33'/><use x='47.737' y='67.813' xlink:href='#g1-49'/><use x='57.339' y='61.836' xlink:href='#g3-98'/><use x='61.615' y='63.33' xlink:href='#g4-110'/><use x='69.805' y='61.836' xlink:href='#g6-61'/><use x='80.321' y='61.836' xlink:href='#g3-98'/></g></svg><span data-line="76"></span>，则
+</p>
+<div class="math para-block" data-line="77">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="78" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:2.1936em;width:17.2975em" viewBox='178.154 52.67 164.738 20.891'><desc>\[\lim_{n\to\infty}\frac{a_1b_n+a_2b_{n-1}+\cdots+a_nb_1}n=ab
+\]</desc><g id='math-61a409'><use x='181.84' y='66.528' xlink:href='#g6-108'/><use x='184.607' y='66.528' xlink:href='#g6-105'/><use x='187.375' y='66.528' xlink:href='#g6-109'/><use x='178.353' y='72.505' xlink:href='#g4-110'/><use x='183.278' y='72.505' xlink:href='#g1-33'/><use x='191.221' y='72.505' xlink:href='#g1-49'/><use x='202.019' y='59.788' xlink:href='#g3-97'/><use x='207.285' y='61.282' xlink:href='#g7-49'/><use x='211.755' y='59.788' xlink:href='#g3-98'/><use x='216.03' y='61.282' xlink:href='#g4-110'/><use x='223.667' y='59.788' xlink:href='#g6-43'/><use x='233.63' y='59.788' xlink:href='#g3-97'/><use x='238.896' y='61.282' xlink:href='#g7-50'/><use x='243.365' y='59.788' xlink:href='#g3-98'/><use x='247.641' y='61.282' xlink:href='#g4-110'/><use x='252.566' y='61.282' xlink:href='#g1-0'/><use x='258.793' y='61.282' xlink:href='#g7-49'/><use x='265.476' y='59.788' xlink:href='#g6-43'/><use x='275.438' y='59.788' xlink:href='#g0-1'/><use x='279.866' y='59.788' xlink:href='#g0-1'/><use x='284.294' y='59.788' xlink:href='#g0-1'/><use x='289.275' y='59.788' xlink:href='#g6-43'/><use x='299.238' y='59.788' xlink:href='#g3-97'/><use x='304.504' y='61.282' xlink:href='#g4-110'/><use x='309.927' y='59.788' xlink:href='#g3-98'/><use x='314.203' y='61.282' xlink:href='#g7-49'/><rect x='202.019' y='63.838' height='.398' width='116.653'/><use x='257.356' y='73.361' xlink:href='#g3-110'/><use x='322.635' y='66.528' xlink:href='#g6-61'/><use x='333.151' y='66.528' xlink:href='#g3-97'/><use x='338.417' y='66.528' xlink:href='#g3-98'/></g></svg></div></div></div></section>
+<section class="slide section" data-line="85">
+<div class="example" data-line="86" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:2013\7814 \5165 \5B66 \8BD5 \9898 ">
+<p class="p noindent para-continue" data-line="87"><span data-line="87"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">4</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="87"></span>已知<span data-line="87"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.3939em;height:1.2864em;width:9.1703em" viewBox='88.468 53.219 87.336 12.251'><desc>$\ln x+\frac1x\geq1, \forall x&gt;0$</desc><g id='math-131cfd'><use x='88.667' y='61.836' xlink:href='#g6-108'/><use x='91.435' y='61.836' xlink:href='#g6-110'/><use x='98.63' y='61.836' xlink:href='#g3-120'/><use x='106.538' y='61.836' xlink:href='#g6-43'/><use x='117.969' y='57.913' xlink:href='#g7-49'/><rect x='117.696' y='59.146' height='.398' width='4.518'/><use x='117.696' y='65.271' xlink:href='#g4-120'/><use x='126.177' y='61.836' xlink:href='#g0-21'/><use x='136.693' y='61.836' xlink:href='#g6-49'/><use x='141.674' y='61.836' xlink:href='#g3-59'/><use x='146.102' y='61.836' xlink:href='#g0-56'/><use x='151.637' y='61.836' xlink:href='#g3-120'/><use x='160.098' y='61.836' xlink:href='#g3-62'/><use x='170.614' y='61.836' xlink:href='#g6-48'/></g></svg><span data-line="87"></span>，且等号成立的充要条件是<span data-line="87"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.7160em;width:2.5585em" viewBox='34.67 55.216 24.367 6.819'><desc>$x=1$</desc><g id='math-a25551'><use x='34.869' y='61.836' xlink:href='#g3-120'/><use x='43.331' y='61.836' xlink:href='#g6-61'/><use x='53.847' y='61.836' xlink:href='#g6-49'/></g></svg><span data-line="87"></span>。
+若正项数列<span data-line="88"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.2562em" viewBox='88.468 54.164 21.488 10.361'><desc>$\{x_n\}$</desc><g id='math-19feba'><use x='88.667' y='61.836' xlink:href='#g0-102'/><use x='93.649' y='61.836' xlink:href='#g3-120'/><use x='99.343' y='63.33' xlink:href='#g4-110'/><use x='104.766' y='61.836' xlink:href='#g0-103'/></g></svg><span data-line="88"></span>满足
+</p>
+<div class="math para-block" data-line="89">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="90" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:2.3853em;width:7.9290em" viewBox='168.968 52.67 75.514 22.717'><desc>\[\ln x_n+\frac1{x_{n+1}}&lt;1
+\]</desc><g id='math-cc5bad'><use x='169.167' y='66.029' xlink:href='#g6-108'/><use x='171.934' y='66.029' xlink:href='#g6-110'/><use x='179.129' y='66.029' xlink:href='#g3-120'/><use x='184.823' y='67.524' xlink:href='#g4-110'/><use x='192.46' y='66.029' xlink:href='#g6-43'/><use x='211.73' y='59.29' xlink:href='#g6-49'/><rect x='203.618' y='63.339' height='.398' width='21.204'/><use x='203.618' y='72.863' xlink:href='#g3-120'/><use x='209.312' y='74.358' xlink:href='#g4-110'/><use x='214.237' y='74.358' xlink:href='#g7-43'/><use x='220.353' y='74.358' xlink:href='#g7-49'/><use x='228.785' y='66.029' xlink:href='#g3-60'/><use x='239.301' y='66.029' xlink:href='#g6-49'/></g></svg></div></div>
+<p class="p noindent para-continued" data-line="92"><span data-line="92"></span>证明<span data-line="92"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7218em;height:1.3960em;width:3.5696em" viewBox='88.468 54.718 33.996 13.295'><desc>$\displaystyle\lim_{n\to\infty}x_n$</desc><g id='math-666e37'><use x='92.154' y='61.836' xlink:href='#g6-108'/><use x='94.921' y='61.836' xlink:href='#g6-105'/><use x='97.689' y='61.836' xlink:href='#g6-109'/><use x='88.667' y='67.813' xlink:href='#g4-110'/><use x='93.592' y='67.813' xlink:href='#g1-33'/><use x='101.535' y='67.813' xlink:href='#g1-49'/><use x='111.138' y='61.836' xlink:href='#g3-120'/><use x='116.832' y='63.33' xlink:href='#g4-110'/></g></svg><span data-line="92"></span>存在，并求这个极限。
+</p></div></section>
+<section class="slide section" data-line="97">
+
+<div class="example" data-line="99" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="100"><span data-line="100"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">5</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="100"></span>求极限 <span data-line="100"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.0297em;height:2.8282em;width:10.2295em" viewBox='34.67 51.674 97.424 26.935'><desc>$\displaystyle \lim \left(1+\frac{\sqrt[n]{n}-1}a\right)^{\frac{n}{\ln n}}$</desc><g id='math-377d4c'><use x='34.869' y='68.945' xlink:href='#g6-108'/><use x='37.637' y='68.945' xlink:href='#g6-105'/><use x='40.404' y='68.945' xlink:href='#g6-109'/><use x='50.367' y='54.897' xlink:href='#g9-18'/><use x='57.7' y='68.945' xlink:href='#g6-49'/><use x='64.896' y='68.945' xlink:href='#g6-43'/><use x='78.821' y='58.854' xlink:href='#g5-110'/><use x='77.674' y='55.029' xlink:href='#g0-112'/><rect x='85.976' y='54.63' height='.398' width='5.98'/><use x='85.976' y='62.205' xlink:href='#g3-110'/><use x='94.17' y='62.205' xlink:href='#g0-0'/><use x='104.132' y='62.205' xlink:href='#g6-49'/><rect x='76.054' y='66.255' height='.398' width='33.06'/><use x='89.951' y='75.778' xlink:href='#g3-97'/><use x='110.309' y='54.897' xlink:href='#g9-19'/><use x='122.321' y='54.018' xlink:href='#g5-110'/><rect x='118.838' y='54.782' height='.339' width='11.352'/><use x='118.838' y='59.095' xlink:href='#g8-108'/><use x='120.845' y='59.095' xlink:href='#g8-110'/><use x='125.803' y='59.095' xlink:href='#g5-110'/></g></svg><span data-line="100"></span>, <span data-line="100"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0643em;height:0.7568em;width:2.5136em" viewBox='88.468 55.216 23.939 7.208'><desc>$a&gt;0$</desc><g id='math-323c5f'><use x='88.667' y='61.836' xlink:href='#g3-97'/><use x='96.701' y='61.836' xlink:href='#g3-62'/><use x='107.217' y='61.836' xlink:href='#g6-48'/></g></svg></p></div>
+<div class="example" data-line="103" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="104"><span data-line="104"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">6</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="104"></span>求<span data-line="104"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7156em;height:1.9815em;width:13.1004em" viewBox='34.67 51.674 124.766 18.871'><desc>$\displaystyle \lim \left(1+\sin\left(\pi \sqrt{1+4n^2}\right)\right)^n$</desc><g id='math-d845e6'><use x='34.869' y='63.87' xlink:href='#g6-108'/><use x='37.637' y='63.87' xlink:href='#g6-105'/><use x='40.404' y='63.87' xlink:href='#g6-109'/><use x='50.367' y='52.811' xlink:href='#g9-16'/><use x='56.317' y='63.87' xlink:href='#g6-49'/><use x='63.512' y='63.87' xlink:href='#g6-43'/><use x='73.474' y='63.87' xlink:href='#g6-115'/><use x='77.404' y='63.87' xlink:href='#g6-105'/><use x='80.172' y='63.87' xlink:href='#g6-110'/><use x='87.367' y='52.811' xlink:href='#g9-16'/><use x='93.317' y='63.87' xlink:href='#g3-25'/><use x='99.353' y='54.085' xlink:href='#g9-112'/><rect x='109.316' y='53.686' height='.398' width='32.588'/><use x='109.316' y='63.87' xlink:href='#g6-49'/><use x='116.511' y='63.87' xlink:href='#g6-43'/><use x='126.474' y='63.87' xlink:href='#g6-52'/><use x='131.455' y='63.87' xlink:href='#g3-110'/><use x='137.435' y='60.992' xlink:href='#g7-50'/><use x='141.904' y='52.811' xlink:href='#g9-17'/><use x='147.854' y='52.811' xlink:href='#g9-17'/><use x='153.804' y='54.876' xlink:href='#g4-110'/></g></svg></p></div>
+<div class="example" data-line="107" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:\83F2 \8D6B \91D1 \54E5 \5C14 \8328 [77](2)">
+<p class="p noindent para-continue" data-line="108"><span data-line="108"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">7</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="108"></span>求极限
+</p>
+<div class="math para-block" data-line="109">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="110" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:1.9596em;width:20.0382em" viewBox='111.305 52.172 190.84 18.663'><desc>\[\lim_{x\to+\infty}\left(\sqrt[k]{(x+a_1)(x+a_2)\cdots(x+a_k)}-x\right)
+\]</desc><g id='math-7ba633'><use x='117.845' y='63.828' xlink:href='#g6-108'/><use x='120.612' y='63.828' xlink:href='#g6-105'/><use x='123.379' y='63.828' xlink:href='#g6-109'/><use x='111.504' y='69.806' xlink:href='#g4-120'/><use x='116.022' y='69.806' xlink:href='#g1-33'/><use x='123.964' y='69.806' xlink:href='#g7-43'/><use x='130.08' y='69.806' xlink:href='#g1-49'/><use x='139.683' y='52.77' xlink:href='#g9-16'/><use x='148.4' y='59.479' xlink:href='#g5-107'/><use x='146.723' y='54.824' xlink:href='#g9-112'/><rect x='156.685' y='54.425' height='.398' width='121.44'/><use x='156.685' y='63.828' xlink:href='#g6-40'/><use x='160.56' y='63.828' xlink:href='#g3-120'/><use x='168.467' y='63.828' xlink:href='#g6-43'/><use x='178.43' y='63.828' xlink:href='#g3-97'/><use x='183.696' y='65.323' xlink:href='#g7-49'/><use x='188.166' y='63.828' xlink:href='#g6-41'/><use x='192.04' y='63.828' xlink:href='#g6-40'/><use x='195.914' y='63.828' xlink:href='#g3-120'/><use x='203.822' y='63.828' xlink:href='#g6-43'/><use x='213.785' y='63.828' xlink:href='#g3-97'/><use x='219.051' y='65.323' xlink:href='#g7-50'/><use x='223.52' y='63.828' xlink:href='#g6-41'/><use x='229.055' y='63.828' xlink:href='#g0-1'/><use x='233.483' y='63.828' xlink:href='#g0-1'/><use x='237.911' y='63.828' xlink:href='#g0-1'/><use x='242.338' y='63.828' xlink:href='#g6-40'/><use x='246.213' y='63.828' xlink:href='#g3-120'/><use x='254.121' y='63.828' xlink:href='#g6-43'/><use x='264.083' y='63.828' xlink:href='#g3-97'/><use x='269.349' y='65.323' xlink:href='#g4-107'/><use x='274.251' y='63.828' xlink:href='#g6-41'/><use x='280.339' y='63.828' xlink:href='#g0-0'/><use x='290.302' y='63.828' xlink:href='#g3-120'/><use x='295.996' y='52.77' xlink:href='#g9-17'/></g></svg></div></div>
+<p class="p noindent para-continued" data-line="112"><span data-line="112"></span>其中<span data-line="112"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2372em;height:0.7102em;width:6.1189em" viewBox='88.468 57.209 58.275 6.764'><desc>$a_1, a_2,\cdots, a_k$</desc><g id='math-eb370b'><use x='88.667' y='61.836' xlink:href='#g3-97'/><use x='93.934' y='63.33' xlink:href='#g7-49'/><use x='98.403' y='61.836' xlink:href='#g3-59'/><use x='102.831' y='61.836' xlink:href='#g3-97'/><use x='108.097' y='63.33' xlink:href='#g7-50'/><use x='112.566' y='61.836' xlink:href='#g3-59'/><use x='116.994' y='61.836' xlink:href='#g0-1'/><use x='121.422' y='61.836' xlink:href='#g0-1'/><use x='125.85' y='61.836' xlink:href='#g0-1'/><use x='131.938' y='61.836' xlink:href='#g3-59'/><use x='136.366' y='61.836' xlink:href='#g3-97'/><use x='141.632' y='63.33' xlink:href='#g4-107'/></g></svg><span data-line="112"></span>是常数。</p></div>
+<div class="example" data-line="115" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:2018\7814 \5165 \5B66 \8BD5 \9898 ">
+<p class="p noindent" data-line="116"><span data-line="116"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">8</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="116"></span>求
+<span data-line="117"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.8106em;height:1.6605em;width:16.7772em" viewBox='88.468 53.029 159.783 15.814'><desc>$\displaystyle\lim_{x\to+\infty}x^2\left(\arctan(x+1)-\arctan(x)\right)$</desc><g id='math-dfb2c2'><use x='95.008' y='61.836' xlink:href='#g6-108'/><use x='97.776' y='61.836' xlink:href='#g6-105'/><use x='100.543' y='61.836' xlink:href='#g6-109'/><use x='88.667' y='67.813' xlink:href='#g4-120'/><use x='93.185' y='67.813' xlink:href='#g1-33'/><use x='101.128' y='67.813' xlink:href='#g7-43'/><use x='107.244' y='67.813' xlink:href='#g1-49'/><use x='116.847' y='61.836' xlink:href='#g3-120'/><use x='122.541' y='57.722' xlink:href='#g7-50'/><use x='128.67' y='61.836' xlink:href='#g6-40'/><use x='132.545' y='61.836' xlink:href='#g6-97'/><use x='137.526' y='61.836' xlink:href='#g6-114'/><use x='141.428' y='61.836' xlink:href='#g6-99'/><use x='145.856' y='61.836' xlink:href='#g6-116'/><use x='149.73' y='61.836' xlink:href='#g6-97'/><use x='154.712' y='61.836' xlink:href='#g6-110'/><use x='160.246' y='61.836' xlink:href='#g6-40'/><use x='164.121' y='61.836' xlink:href='#g3-120'/><use x='172.029' y='61.836' xlink:href='#g6-43'/><use x='181.991' y='61.836' xlink:href='#g6-49'/><use x='186.973' y='61.836' xlink:href='#g6-41'/><use x='193.061' y='61.836' xlink:href='#g0-0'/><use x='203.023' y='61.836' xlink:href='#g6-97'/><use x='208.005' y='61.836' xlink:href='#g6-114'/><use x='211.907' y='61.836' xlink:href='#g6-99'/><use x='216.335' y='61.836' xlink:href='#g6-116'/><use x='220.209' y='61.836' xlink:href='#g6-97'/><use x='225.19' y='61.836' xlink:href='#g6-110'/><use x='230.725' y='61.836' xlink:href='#g6-40'/><use x='234.599' y='61.836' xlink:href='#g3-120'/><use x='240.293' y='61.836' xlink:href='#g6-41'/><use x='244.168' y='61.836' xlink:href='#g6-41'/></g></svg></p></div></section>
+<section class="slide section" data-line="124">
+
+<div class="example" data-line="126" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:2018\7814 \5165 \5B66 \8BD5 \9898 ">
+<p class="p noindent" data-line="127"><span data-line="127"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">9</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="127"></span>若
+<span data-line="128"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.0293em;height:2.9121em;width:12.2792em" viewBox='34.67 51.674 116.945 27.734'><desc>$\displaystyle\lim_{x\to0}\left(\frac{1-\tan x}{1+\tan x}\right)^{\frac1{\sin(kx)}}=e$</desc><g id='math-24d733'><use x='36.166' y='69.743' xlink:href='#g6-108'/><use x='38.934' y='69.743' xlink:href='#g6-105'/><use x='41.701' y='69.743' xlink:href='#g6-109'/><use x='34.869' y='75.898' xlink:href='#g4-120'/><use x='39.387' y='75.898' xlink:href='#g1-33'/><use x='47.33' y='75.898' xlink:href='#g7-48'/><use x='52.961' y='55.696' xlink:href='#g9-18'/><use x='61.49' y='63.004' xlink:href='#g6-49'/><use x='68.685' y='63.004' xlink:href='#g0-0'/><use x='78.648' y='63.004' xlink:href='#g6-116'/><use x='82.522' y='63.004' xlink:href='#g6-97'/><use x='87.504' y='63.004' xlink:href='#g6-110'/><use x='94.699' y='63.004' xlink:href='#g3-120'/><rect x='61.49' y='67.053' height='.398' width='38.903'/><use x='61.49' y='76.577' xlink:href='#g6-49'/><use x='68.685' y='76.577' xlink:href='#g6-43'/><use x='78.648' y='76.577' xlink:href='#g6-116'/><use x='82.522' y='76.577' xlink:href='#g6-97'/><use x='87.504' y='76.577' xlink:href='#g6-110'/><use x='94.699' y='76.577' xlink:href='#g3-120'/><use x='101.588' y='55.696' xlink:href='#g9-19'/><use x='119.259' y='55.083' xlink:href='#g8-49'/><rect x='110.118' y='55.848' height='.339' width='21.672'/><use x='110.118' y='60.261' xlink:href='#g8-115'/><use x='112.85' y='60.261' xlink:href='#g8-105'/><use x='114.857' y='60.261' xlink:href='#g8-110'/><use x='118.593' y='60.261' xlink:href='#g8-40'/><use x='121.291' y='60.261' xlink:href='#g5-107'/><use x='125.148' y='60.261' xlink:href='#g5-120'/><use x='129.092' y='60.261' xlink:href='#g8-41'/><use x='136.251' y='69.743' xlink:href='#g6-61'/><use x='146.767' y='69.743' xlink:href='#g3-101'/></g></svg><span data-line="130"></span>，则<span data-line="130"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.7683em;width:2.2185em" viewBox='88.468 54.718 21.129 7.317'><desc>$k=?$</desc><g id='math-f62d7f'><use x='88.667' y='61.836' xlink:href='#g3-107'/><use x='96.935' y='61.836' xlink:href='#g6-61'/><use x='104.684' y='61.836' xlink:href='#g6-63'/></g></svg></p></div>
+<div class="example" data-line="133" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="134"><span data-line="134"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">10</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="134"></span>若
+<span data-line="135"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.8150em;height:1.9596em;width:12.9418em" viewBox='34.67 51.674 123.255 18.663'><desc>$\displaystyle\lim_{x\to+\infty}\left((ax+b)e^{\frac1x}-x\right)=2$</desc><g id='math-8ee518'><use x='41.21' y='63.33' xlink:href='#g6-108'/><use x='43.977' y='63.33' xlink:href='#g6-105'/><use x='46.745' y='63.33' xlink:href='#g6-109'/><use x='34.869' y='69.308' xlink:href='#g4-120'/><use x='39.387' y='69.308' xlink:href='#g1-33'/><use x='47.33' y='69.308' xlink:href='#g7-43'/><use x='53.446' y='69.308' xlink:href='#g1-49'/><use x='63.048' y='52.271' xlink:href='#g9-16'/><use x='68.998' y='63.33' xlink:href='#g6-40'/><use x='72.873' y='63.33' xlink:href='#g3-97'/><use x='78.139' y='63.33' xlink:href='#g3-120'/><use x='86.047' y='63.33' xlink:href='#g6-43'/><use x='96.009' y='63.33' xlink:href='#g3-98'/><use x='100.285' y='63.33' xlink:href='#g6-41'/><use x='104.159' y='63.33' xlink:href='#g3-101'/><use x='110.27' y='56.539' xlink:href='#g8-49'/><rect x='109.994' y='57.304' height='.339' width='3.944'/><use x='109.994' y='61.617' xlink:href='#g5-120'/><use x='117.845' y='63.33' xlink:href='#g0-0'/><use x='127.807' y='63.33' xlink:href='#g3-120'/><use x='133.501' y='52.271' xlink:href='#g9-17'/><use x='142.218' y='63.33' xlink:href='#g6-61'/><use x='152.734' y='63.33' xlink:href='#g6-50'/></g></svg><span data-line="137"></span>，求<span data-line="137"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.7683em;width:2.1940em" viewBox='34.67 54.718 20.895 7.317'><desc>$a=?$</desc><g id='math-0a81c4'><use x='34.869' y='61.836' xlink:href='#g3-97'/><use x='42.903' y='61.836' xlink:href='#g6-61'/><use x='50.651' y='61.836' xlink:href='#g6-63'/></g></svg><span data-line="137"></span>, <span data-line="137"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.7683em;width:2.0900em" viewBox='88.468 54.718 19.905 7.317'><desc>$b=?$</desc><g id='math-a96d61'><use x='88.667' y='61.836' xlink:href='#g3-98'/><use x='95.71' y='61.836' xlink:href='#g6-61'/><use x='103.459' y='61.836' xlink:href='#g6-63'/></g></svg></p></div>
+<div class="example" data-line="140" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="141"><span data-line="141"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">11</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="141"></span>已知<span data-line="141"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="141"></span>满足
+<span data-line="142"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.8257em;height:2.5098em;width:14.1900em" viewBox='34.67 52.072 135.143 23.903'><desc>$\displaystyle\lim_{x\to0}\frac{\sqrt{1+f(x)\sin(2x)}-1}{e^{3x}-1}=2$</desc><g id='math-fc33b5'><use x='36.166' y='68.112' xlink:href='#g6-108'/><use x='38.934' y='68.112' xlink:href='#g6-105'/><use x='41.701' y='68.112' xlink:href='#g6-109'/><use x='34.869' y='74.267' xlink:href='#g4-120'/><use x='39.387' y='74.267' xlink:href='#g1-33'/><use x='47.33' y='74.267' xlink:href='#g7-48'/><use x='54.157' y='52.67' xlink:href='#g9-112'/><rect x='64.119' y='52.271' height='.398' width='68.867'/><use x='64.119' y='61.188' xlink:href='#g6-49'/><use x='71.314' y='61.188' xlink:href='#g6-43'/><use x='81.277' y='61.188' xlink:href='#g3-102'/><use x='87.227' y='61.188' xlink:href='#g6-40'/><use x='91.101' y='61.188' xlink:href='#g3-120'/><use x='96.795' y='61.188' xlink:href='#g6-41'/><use x='102.33' y='61.188' xlink:href='#g6-115'/><use x='106.26' y='61.188' xlink:href='#g6-105'/><use x='109.027' y='61.188' xlink:href='#g6-110'/><use x='114.562' y='61.188' xlink:href='#g6-40'/><use x='118.436' y='61.188' xlink:href='#g6-50'/><use x='123.418' y='61.188' xlink:href='#g3-120'/><use x='129.112' y='61.188' xlink:href='#g6-41'/><use x='135.2' y='61.188' xlink:href='#g0-0'/><use x='145.163' y='61.188' xlink:href='#g6-49'/><rect x='54.157' y='65.422' height='.398' width='95.987'/><use x='86.758' y='74.946' xlink:href='#g3-101'/><use x='91.397' y='72.068' xlink:href='#g7-51'/><use x='95.368' y='72.068' xlink:href='#g4-120'/><use x='102.598' y='74.946' xlink:href='#g0-0'/><use x='112.561' y='74.946' xlink:href='#g6-49'/><use x='154.107' y='68.112' xlink:href='#g6-61'/><use x='164.623' y='68.112' xlink:href='#g6-50'/></g></svg><span data-line="144"></span>，
+则<span data-line="145"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7411em;height:1.4726em;width:5.5770em" viewBox='34.67 54.164 53.114 14.025'><desc>$\displaystyle\lim_{x\to0}f(x)=?$</desc><g id='math-309283'><use x='36.166' y='61.836' xlink:href='#g6-108'/><use x='38.934' y='61.836' xlink:href='#g6-105'/><use x='41.701' y='61.836' xlink:href='#g6-109'/><use x='34.869' y='67.99' xlink:href='#g4-120'/><use x='39.387' y='67.99' xlink:href='#g1-33'/><use x='47.33' y='67.99' xlink:href='#g7-48'/><use x='52.961' y='61.836' xlink:href='#g3-102'/><use x='58.911' y='61.836' xlink:href='#g6-40'/><use x='62.785' y='61.836' xlink:href='#g3-120'/><use x='68.479' y='61.836' xlink:href='#g6-41'/><use x='75.121' y='61.836' xlink:href='#g6-61'/><use x='82.87' y='61.836' xlink:href='#g6-63'/></g></svg></p></div>
+<div class="example" data-line="148" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="149"><span data-line="149"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">12</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="149"></span>已知<span data-line="149"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.0313em;height:2.5524em;width:15.7501em" viewBox='34.67 51.674 150.001 24.309'><desc>$\displaystyle \lim_{x\to 0} \frac1{2^x-1}\ln\left(1+\frac{f(x)}{1-\cos x}\right)=4$</desc><g id='math-68a47e'><use x='36.166' y='66.319' xlink:href='#g6-108'/><use x='38.934' y='66.319' xlink:href='#g6-105'/><use x='41.701' y='66.319' xlink:href='#g6-109'/><use x='34.869' y='72.474' xlink:href='#g4-120'/><use x='39.387' y='72.474' xlink:href='#g1-33'/><use x='47.33' y='72.474' xlink:href='#g7-48'/><use x='65.244' y='59.579' xlink:href='#g6-49'/><rect x='54.157' y='63.629' height='.398' width='27.155'/><use x='54.157' y='73.153' xlink:href='#g6-50'/><use x='59.138' y='70.275' xlink:href='#g4-120'/><use x='66.368' y='73.153' xlink:href='#g0-0'/><use x='76.33' y='73.153' xlink:href='#g6-49'/><use x='84.168' y='66.319' xlink:href='#g6-108'/><use x='86.935' y='66.319' xlink:href='#g6-110'/><use x='94.13' y='52.271' xlink:href='#g9-18'/><use x='101.464' y='66.319' xlink:href='#g6-49'/><use x='108.659' y='66.319' xlink:href='#g6-43'/><use x='129.046' y='59.579' xlink:href='#g3-102'/><use x='134.996' y='59.579' xlink:href='#g6-40'/><use x='138.871' y='59.579' xlink:href='#g3-120'/><use x='144.565' y='59.579' xlink:href='#g6-41'/><rect x='119.817' y='63.629' height='.398' width='37.851'/><use x='119.817' y='73.153' xlink:href='#g6-49'/><use x='127.012' y='73.153' xlink:href='#g0-0'/><use x='136.975' y='73.153' xlink:href='#g6-99'/><use x='141.403' y='73.153' xlink:href='#g6-111'/><use x='146.384' y='73.153' xlink:href='#g6-115'/><use x='151.974' y='73.153' xlink:href='#g3-120'/><use x='158.864' y='52.271' xlink:href='#g9-19'/><use x='168.965' y='66.319' xlink:href='#g6-61'/><use x='179.481' y='66.319' xlink:href='#g6-52'/></g></svg><span data-line="149"></span>，
+</p>
+<p class="p indent" data-line="151"><span data-line="151"></span>求<span data-line="151"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.7747em;height:2.2516em;width:4.2298em" viewBox='88.468 51.674 40.284 21.444'><desc>$\displaystyle \lim_{x\to 0}\frac{f(x)}{x^3}$</desc><g id='math-ba6378'><use x='89.965' y='66.085' xlink:href='#g6-108'/><use x='92.732' y='66.085' xlink:href='#g6-105'/><use x='95.5' y='66.085' xlink:href='#g6-109'/><use x='88.667' y='72.239' xlink:href='#g4-120'/><use x='93.185' y='72.239' xlink:href='#g1-33'/><use x='101.128' y='72.239' xlink:href='#g7-48'/><use x='107.955' y='59.345' xlink:href='#g3-102'/><use x='113.905' y='59.345' xlink:href='#g6-40'/><use x='117.779' y='59.345' xlink:href='#g3-120'/><use x='123.473' y='59.345' xlink:href='#g6-41'/><rect x='107.955' y='63.395' height='.398' width='19.393'/><use x='112.57' y='72.919' xlink:href='#g3-120'/><use x='118.263' y='70.041' xlink:href='#g7-51'/></g></svg></p></div></section>
+<section class="slide section" data-line="155">
+
+<div class="example" data-line="157" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent para-continue" data-line="158"><span data-line="158"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">13</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="158"></span>函数<span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="158"></span>在<span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0909em" viewBox='34.67 54.164 19.913 10.361'><desc>$[a,b]$</desc><g id='math-2c3d33'><use x='34.869' y='61.836' xlink:href='#g6-91'/><use x='37.637' y='61.836' xlink:href='#g3-97'/><use x='42.903' y='61.836' xlink:href='#g3-59'/><use x='47.331' y='61.836' xlink:href='#g3-98'/><use x='51.606' y='61.836' xlink:href='#g6-93'/></g></svg><span data-line="158"></span>上连续，<span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.1887em;height:0.6491em;width:1.1101em" viewBox='34.67 57.347 10.572 6.182'><desc>$x_1$</desc><g id='math-aa687d'><use x='34.869' y='61.836' xlink:href='#g3-120'/><use x='40.563' y='63.33' xlink:href='#g7-49'/></g></svg><span data-line="158"></span>, <span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.1887em;height:0.6491em;width:1.1101em" viewBox='88.468 57.347 10.572 6.182'><desc>$x_2$</desc><g id='math-873209'><use x='88.667' y='61.836' xlink:href='#g3-120'/><use x='94.361' y='63.33' xlink:href='#g7-50'/></g></svg><span data-line="158"></span>, <span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.5067em;width:1.4377em" viewBox='34.67 57.209 13.692 4.826'><desc>$\cdots$</desc><g id='math-749717'><use x='34.869' y='61.836' xlink:href='#g0-1'/><use x='39.297' y='61.836' xlink:href='#g0-1'/><use x='43.725' y='61.836' xlink:href='#g0-1'/></g></svg><span data-line="158"></span>, <span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.1887em;height:0.6491em;width:1.2101em" viewBox='88.468 57.347 11.525 6.182'><desc>$x_n$</desc><g id='math-5bef92'><use x='88.667' y='61.836' xlink:href='#g3-120'/><use x='94.361' y='63.33' xlink:href='#g4-110'/></g></svg><span data-line="158"></span>, <span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.5067em;width:1.4377em" viewBox='34.67 57.209 13.692 4.826'><desc>$\cdots$</desc><g id='math-749717'><use x='34.869' y='61.836' xlink:href='#g0-1'/><use x='39.297' y='61.836' xlink:href='#g0-1'/><use x='43.725' y='61.836' xlink:href='#g0-1'/></g></svg><span data-line="158"></span>是<span data-line="158"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0909em" viewBox='34.67 54.164 19.913 10.361'><desc>$[a,b]$</desc><g id='math-2c3d33'><use x='34.869' y='61.836' xlink:href='#g6-91'/><use x='37.637' y='61.836' xlink:href='#g3-97'/><use x='42.903' y='61.836' xlink:href='#g3-59'/><use x='47.331' y='61.836' xlink:href='#g3-98'/><use x='51.606' y='61.836' xlink:href='#g6-93'/></g></svg><span data-line="158"></span>上的一个点列，求
+</p>
+<div class="math para-block" data-line="159">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="160" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:3.8077em;width:9.0396em" viewBox='163.679 53.068 86.091 36.264'><desc>\[\lim_{n\to\infty}\sqrt[n]{\frac1n\sum_{k=1}^ne^{f(x_k)}}
+\]</desc><g id='math-699703'><use x='167.365' y='73.872' xlink:href='#g6-108'/><use x='170.132' y='73.872' xlink:href='#g6-105'/><use x='172.9' y='73.872' xlink:href='#g6-109'/><use x='163.879' y='79.849' xlink:href='#g4-110'/><use x='168.803' y='79.849' xlink:href='#g1-33'/><use x='176.746' y='79.849' xlink:href='#g1-49'/><use x='189.116' y='70.427' xlink:href='#g5-110'/><use x='187.969' y='53.666' xlink:href='#g9-118'/><use x='187.969' y='59.245' xlink:href='#g9-117'/><use x='187.969' y='65.223' xlink:href='#g9-117'/><use x='187.969' y='71.201' xlink:href='#g9-116'/><rect x='198.485' y='53.268' height='.398' width='51.086'/><use x='200.18' y='67.132' xlink:href='#g6-49'/><rect x='199.681' y='71.182' height='.398' width='5.98'/><use x='199.681' y='80.706' xlink:href='#g3-110'/><use x='213.299' y='61.419' xlink:href='#g4-110'/><use x='208.567' y='64.407' xlink:href='#g9-88'/><use x='208.516' y='85.855' xlink:href='#g4-107'/><use x='212.92' y='85.855' xlink:href='#g7-61'/><use x='219.036' y='85.855' xlink:href='#g7-49'/><use x='224.668' y='73.872' xlink:href='#g3-101'/><use x='229.307' y='70.994' xlink:href='#g4-102'/><use x='233.973' y='70.994' xlink:href='#g7-40'/><use x='237.087' y='70.994' xlink:href='#g4-120'/><use x='241.604' y='72.051' xlink:href='#g5-107'/><use x='245.96' y='70.994' xlink:href='#g7-41'/></g></svg></div></div></div>
+<div class="example" data-line="165" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:wechat(\9AD8 \6570 \53D4 )">
+<p class="p noindent para-continue" data-line="166"><span data-line="166"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">14</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="166"></span>设<span data-line="166"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="166"></span>, <span data-line="166"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:1.9908em" viewBox='88.468 54.164 18.96 10.361'><desc>$g(x)$</desc><g id='math-e84fec'><use x='88.667' y='61.836' xlink:href='#g3-103'/><use x='93.777' y='61.836' xlink:href='#g6-40'/><use x='97.651' y='61.836' xlink:href='#g3-120'/><use x='103.345' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="166"></span>均为<span data-line="166"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0909em" viewBox='34.67 54.164 19.913 10.361'><desc>$[a,b]$</desc><g id='math-2c3d33'><use x='34.869' y='61.836' xlink:href='#g6-91'/><use x='37.637' y='61.836' xlink:href='#g3-97'/><use x='42.903' y='61.836' xlink:href='#g3-59'/><use x='47.331' y='61.836' xlink:href='#g3-98'/><use x='51.606' y='61.836' xlink:href='#g6-93'/></g></svg><span data-line="166"></span>上严格单调增的正的连续函数，证明：存在<span data-line="166"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:4.1076em" viewBox='88.468 54.164 39.12 10.361'><desc>$\xi\in(a,b)$</desc><g id='math-16532e'><use x='88.667' y='61.836' xlink:href='#g3-24'/><use x='96.252' y='61.836' xlink:href='#g0-50'/><use x='105.661' y='61.836' xlink:href='#g6-40'/><use x='109.535' y='61.836' xlink:href='#g3-97'/><use x='114.801' y='61.836' xlink:href='#g3-59'/><use x='119.229' y='61.836' xlink:href='#g3-98'/><use x='123.505' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="166"></span>，满足
+</p>
+<div class="math para-block" data-line="167">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="168" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:1.0879em;width:14.6189em" viewBox='137.111 56.157 139.228 10.361'><desc>\[f(a)g(b)+f(b)g(a)=2f(\xi)g(\xi)
+\]</desc><g id='math-3f2aad'><use x='137.31' y='63.828' xlink:href='#g3-102'/><use x='143.26' y='63.828' xlink:href='#g6-40'/><use x='147.135' y='63.828' xlink:href='#g3-97'/><use x='152.401' y='63.828' xlink:href='#g6-41'/><use x='156.275' y='63.828' xlink:href='#g3-103'/><use x='161.384' y='63.828' xlink:href='#g6-40'/><use x='165.259' y='63.828' xlink:href='#g3-98'/><use x='169.534' y='63.828' xlink:href='#g6-41'/><use x='175.623' y='63.828' xlink:href='#g6-43'/><use x='185.585' y='63.828' xlink:href='#g3-102'/><use x='191.535' y='63.828' xlink:href='#g6-40'/><use x='195.41' y='63.828' xlink:href='#g3-98'/><use x='199.685' y='63.828' xlink:href='#g6-41'/><use x='203.56' y='63.828' xlink:href='#g3-103'/><use x='208.669' y='63.828' xlink:href='#g6-40'/><use x='212.543' y='63.828' xlink:href='#g3-97'/><use x='217.809' y='63.828' xlink:href='#g6-41'/><use x='224.451' y='63.828' xlink:href='#g6-61'/><use x='234.967' y='63.828' xlink:href='#g6-50'/><use x='239.949' y='63.828' xlink:href='#g3-102'/><use x='245.899' y='63.828' xlink:href='#g6-40'/><use x='249.773' y='63.828' xlink:href='#g3-24'/><use x='254.59' y='63.828' xlink:href='#g6-41'/><use x='258.464' y='63.828' xlink:href='#g3-103'/><use x='263.574' y='63.828' xlink:href='#g6-40'/><use x='267.448' y='63.828' xlink:href='#g3-24'/><use x='272.265' y='63.828' xlink:href='#g6-41'/></g></svg></div></div></div></section>
+<section class="slide section" data-line="174">
+
+<div class="example" data-line="176" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:wechat(\9AD8 \6570 \53D4 )">
+<p class="p noindent para-continue" data-line="177"><span data-line="177"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">15</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="177"></span>函数<span data-line="177"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="177"></span>在<span data-line="177"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.1650em" viewBox='88.468 54.164 20.619 10.361'><desc>$[0,a]$</desc><g id='math-13596d'><use x='88.667' y='61.836' xlink:href='#g6-91'/><use x='91.435' y='61.836' xlink:href='#g6-48'/><use x='96.416' y='61.836' xlink:href='#g3-59'/><use x='100.844' y='61.836' xlink:href='#g3-97'/><use x='106.11' y='61.836' xlink:href='#g6-93'/></g></svg><span data-line="177"></span>上连续，且<span data-line="177"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:5.3904em" viewBox='34.67 54.164 51.337 10.361'><desc>$f(0)=f(a)$</desc><g id='math-fe1da2'><use x='34.869' y='61.836' xlink:href='#g3-102'/><use x='40.819' y='61.836' xlink:href='#g6-40'/><use x='44.694' y='61.836' xlink:href='#g6-48'/><use x='49.675' y='61.836' xlink:href='#g6-41'/><use x='56.317' y='61.836' xlink:href='#g6-61'/><use x='66.833' y='61.836' xlink:href='#g3-102'/><use x='72.783' y='61.836' xlink:href='#g6-40'/><use x='76.657' y='61.836' xlink:href='#g3-97'/><use x='81.923' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="177"></span>，证明：存在<span data-line="177"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:4.1817em" viewBox='88.468 54.164 39.826 10.361'><desc>$\xi\in(0,a)$</desc><g id='math-ce91b5'><use x='88.667' y='61.836' xlink:href='#g3-24'/><use x='96.252' y='61.836' xlink:href='#g0-50'/><use x='105.661' y='61.836' xlink:href='#g6-40'/><use x='109.535' y='61.836' xlink:href='#g6-48'/><use x='114.517' y='61.836' xlink:href='#g3-59'/><use x='118.944' y='61.836' xlink:href='#g3-97'/><use x='124.211' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="177"></span>，满足
+</p>
+<div class="math para-block" data-line="178">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="179" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:1.9175em;width:7.4074em" viewBox='171.451 52.6 70.547 18.262'><desc>\[f(\xi+\frac{a}2)=f(\xi)
+\]</desc><g id='math-3dba5d'><use x='171.651' y='63.828' xlink:href='#g3-102'/><use x='177.6' y='63.828' xlink:href='#g6-40'/><use x='181.475' y='63.828' xlink:href='#g3-24'/><use x='188.506' y='63.828' xlink:href='#g6-43'/><use x='199.664' y='57.088' xlink:href='#g3-97'/><rect x='199.664' y='61.138' height='.398' width='5.266'/><use x='199.806' y='70.662' xlink:href='#g6-50'/><use x='206.126' y='63.828' xlink:href='#g6-41'/><use x='212.767' y='63.828' xlink:href='#g6-61'/><use x='223.283' y='63.828' xlink:href='#g3-102'/><use x='229.233' y='63.828' xlink:href='#g6-40'/><use x='233.108' y='63.828' xlink:href='#g3-24'/><use x='237.925' y='63.828' xlink:href='#g6-41'/></g></svg></div></div></div>
+<div class="example" data-line="183" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:wechat(\9AD8 \6570 \53D4 )">
+<p class="p noindent para-continue" data-line="184"><span data-line="184"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">16</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="184"></span>函数<span data-line="184"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="184"></span>在<span data-line="184"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.1351em" viewBox='34.67 54.164 20.334 10.361'><desc>$[0,1]$</desc><g id='math-ccfcd3'><use x='34.869' y='61.836' xlink:href='#g6-91'/><use x='37.637' y='61.836' xlink:href='#g6-48'/><use x='42.618' y='61.836' xlink:href='#g3-59'/><use x='47.046' y='61.836' xlink:href='#g6-49'/><use x='52.027' y='61.836' xlink:href='#g6-93'/></g></svg><span data-line="184"></span>上连续，且<span data-line="184"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:7.2783em" viewBox='88.468 54.164 69.317 10.361'><desc>$f(0)=f(1)=0$</desc><g id='math-1da827'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g6-48'/><use x='103.473' y='61.836' xlink:href='#g6-41'/><use x='110.115' y='61.836' xlink:href='#g6-61'/><use x='120.631' y='61.836' xlink:href='#g3-102'/><use x='126.581' y='61.836' xlink:href='#g6-40'/><use x='130.455' y='61.836' xlink:href='#g6-49'/><use x='135.437' y='61.836' xlink:href='#g6-41'/><use x='142.078' y='61.836' xlink:href='#g6-61'/><use x='152.594' y='61.836' xlink:href='#g6-48'/></g></svg><span data-line="184"></span>，证明：存在<span data-line="184"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:4.1518em" viewBox='34.67 54.164 39.541 10.361'><desc>$\xi\in(0,1)$</desc><g id='math-8e9cb7'><use x='34.869' y='61.836' xlink:href='#g3-24'/><use x='42.454' y='61.836' xlink:href='#g0-50'/><use x='51.863' y='61.836' xlink:href='#g6-40'/><use x='55.737' y='61.836' xlink:href='#g6-48'/><use x='60.718' y='61.836' xlink:href='#g3-59'/><use x='65.146' y='61.836' xlink:href='#g6-49'/><use x='70.128' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="184"></span>，满足
+</p>
+<div class="math para-block" data-line="185">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="186" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:2.1413em;width:7.3775em" viewBox='225.392 52.67 70.262 20.393'><desc>\[f(\xi+\frac14)=f(\xi)
+\]</desc><g id='math-b89eac'><use x='225.591' y='66.029' xlink:href='#g3-102'/><use x='231.541' y='66.029' xlink:href='#g6-40'/><use x='235.416' y='66.029' xlink:href='#g3-24'/><use x='242.446' y='66.029' xlink:href='#g6-43'/><use x='253.605' y='59.29' xlink:href='#g6-49'/><rect x='253.605' y='63.339' height='.398' width='4.981'/><use x='253.605' y='72.863' xlink:href='#g6-52'/><use x='259.781' y='66.029' xlink:href='#g6-41'/><use x='266.423' y='66.029' xlink:href='#g6-61'/><use x='276.939' y='66.029' xlink:href='#g3-102'/><use x='282.889' y='66.029' xlink:href='#g6-40'/><use x='286.764' y='66.029' xlink:href='#g3-24'/><use x='291.581' y='66.029' xlink:href='#g6-41'/></g></svg></div></div></div>
+<div class="example" data-line="190" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="191"><span data-line="191"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">17</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="191"></span>设<span data-line="191"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="191"></span>在<span data-line="191"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.1351em" viewBox='34.67 54.164 20.334 10.361'><desc>$[0,1]$</desc><g id='math-ccfcd3'><use x='34.869' y='61.836' xlink:href='#g6-91'/><use x='37.637' y='61.836' xlink:href='#g6-48'/><use x='42.618' y='61.836' xlink:href='#g3-59'/><use x='47.046' y='61.836' xlink:href='#g6-49'/><use x='52.027' y='61.836' xlink:href='#g6-93'/></g></svg><span data-line="191"></span>上连续，<span data-line="191"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:5.3605em" viewBox='34.67 54.164 51.052 10.361'><desc>$f(0)=f(1)$</desc><g id='math-23e7b1'><use x='34.869' y='61.836' xlink:href='#g3-102'/><use x='40.819' y='61.836' xlink:href='#g6-40'/><use x='44.694' y='61.836' xlink:href='#g6-48'/><use x='49.675' y='61.836' xlink:href='#g6-41'/><use x='56.317' y='61.836' xlink:href='#g6-61'/><use x='66.833' y='61.836' xlink:href='#g3-102'/><use x='72.783' y='61.836' xlink:href='#g6-40'/><use x='76.657' y='61.836' xlink:href='#g6-49'/><use x='81.638' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="191"></span>。
+证明，对任意正整数<span data-line="192"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.4922em;width:0.6707em" viewBox='88.468 57.347 6.388 4.688'><desc>$n$</desc><g id='math-7b8b96'><use x='88.667' y='61.836' xlink:href='#g3-110'/></g></svg><span data-line="192"></span>，存在<span data-line="192"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:4.5808em" viewBox='34.67 54.164 43.627 10.361'><desc>$x_n\in[0,1]$</desc><g id='math-969fa5'><use x='34.869' y='61.836' xlink:href='#g3-120'/><use x='40.563' y='63.33' xlink:href='#g4-110'/><use x='48.753' y='61.836' xlink:href='#g0-50'/><use x='58.163' y='61.836' xlink:href='#g6-91'/><use x='60.93' y='61.836' xlink:href='#g6-48'/><use x='65.911' y='61.836' xlink:href='#g3-59'/><use x='70.339' y='61.836' xlink:href='#g6-49'/><use x='75.321' y='61.836' xlink:href='#g6-93'/></g></svg><span data-line="192"></span>，满足<span data-line="192"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.3939em;height:1.2864em;width:8.6956em" viewBox='88.468 53.219 82.815 12.251'><desc>$f(x_n)=f(x_n+\frac1n)$</desc><g id='math-45851d'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='63.33' xlink:href='#g4-110'/><use x='109.609' y='61.836' xlink:href='#g6-41'/><use x='116.25' y='61.836' xlink:href='#g6-61'/><use x='126.767' y='61.836' xlink:href='#g3-102'/><use x='132.716' y='61.836' xlink:href='#g6-40'/><use x='136.591' y='61.836' xlink:href='#g3-120'/><use x='142.285' y='63.33' xlink:href='#g4-110'/><use x='149.922' y='61.836' xlink:href='#g6-43'/><use x='161.557' y='57.913' xlink:href='#g7-49'/><rect x='161.08' y='59.146' height='.398' width='4.925'/><use x='161.08' y='65.271' xlink:href='#g4-110'/><use x='167.2' y='61.836' xlink:href='#g6-41'/></g></svg></p></div></section>
+<section class="slide section" data-line="197">
+<div class="example" data-line="198" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:wechat(\9AD8 \6570 \53D4 )">
+<p class="p noindent para-continue" data-line="199"><span data-line="199"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">18</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="199"></span>设<span data-line="199"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="199"></span>在<span data-line="199"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:5.0408em" viewBox='34.67 54.164 48.008 10.361'><desc>$(-\infty,+\infty)$</desc><g id='math-226e4e'><use x='34.869' y='61.836' xlink:href='#g6-40'/><use x='38.744' y='61.836' xlink:href='#g0-0'/><use x='46.492' y='61.836' xlink:href='#g0-49'/><use x='56.455' y='61.836' xlink:href='#g3-59'/><use x='60.883' y='61.836' xlink:href='#g6-43'/><use x='68.632' y='61.836' xlink:href='#g0-49'/><use x='78.594' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="199"></span>上连续，且
+</p>
+<div class="math para-block" data-line="200">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="201" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:2.2516em;width:6.5636em" viewBox='229.268 52.67 62.51 21.444'><desc>\[\lim_{x\to\infty}\frac{f(x)}{x}=0
+\]</desc><g id='math-503488'><use x='232.75' y='67.081' xlink:href='#g6-108'/><use x='235.518' y='67.081' xlink:href='#g6-105'/><use x='238.285' y='67.081' xlink:href='#g6-109'/><use x='229.467' y='73.059' xlink:href='#g4-120'/><use x='233.985' y='73.059' xlink:href='#g1-33'/><use x='241.928' y='73.059' xlink:href='#g1-49'/><use x='252.726' y='60.341' xlink:href='#g3-102'/><use x='258.676' y='60.341' xlink:href='#g6-40'/><use x='262.55' y='60.341' xlink:href='#g3-120'/><use x='268.244' y='60.341' xlink:href='#g6-41'/><rect x='252.726' y='64.391' height='.398' width='19.393'/><use x='259.575' y='73.915' xlink:href='#g3-120'/><use x='276.081' y='67.081' xlink:href='#g6-61'/><use x='286.597' y='67.081' xlink:href='#g6-48'/></g></svg></div></div>
+<p class="p noindent para-continued para-continue" data-line="203"><span data-line="203"></span>证明，存在<span data-line="203"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:6.8251em" viewBox='34.67 54.164 65.001 10.361'><desc>$\xi\in(-\infty,+\infty)$</desc><g id='math-9ca1fe'><use x='34.869' y='61.836' xlink:href='#g3-24'/><use x='42.454' y='61.836' xlink:href='#g0-50'/><use x='51.863' y='61.836' xlink:href='#g6-40'/><use x='55.737' y='61.836' xlink:href='#g0-0'/><use x='63.486' y='61.836' xlink:href='#g0-49'/><use x='73.449' y='61.836' xlink:href='#g3-59'/><use x='77.876' y='61.836' xlink:href='#g6-43'/><use x='85.625' y='61.836' xlink:href='#g0-49'/><use x='95.588' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="203"></span>，使
+</p>
+<div class="math para-block" data-line="204">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="205" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:1.0879em;width:5.6881em" viewBox='233.437 56.157 54.172 10.361'><desc>\[f(\xi)+\xi=0
+\]</desc><g id='math-d00dd5'><use x='233.636' y='63.828' xlink:href='#g3-102'/><use x='239.586' y='63.828' xlink:href='#g6-40'/><use x='243.46' y='63.828' xlink:href='#g3-24'/><use x='248.277' y='63.828' xlink:href='#g6-41'/><use x='254.366' y='63.828' xlink:href='#g6-43'/><use x='264.328' y='63.828' xlink:href='#g3-24'/><use x='271.913' y='63.828' xlink:href='#g6-61'/><use x='282.429' y='63.828' xlink:href='#g6-48'/></g></svg></div></div></div></section>
+<section class="slide section" data-line="210">
+
+<div class="example" data-line="212" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="213"><span data-line="213"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">19</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="213"></span>已知<span data-line="213"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.0288em;height:3.0111em;width:15.8124em" viewBox='88.468 51.674 150.594 28.677'><desc>$\displaystyle f(x)=\lim_{n\to\infty} \left(1+x^n+\left(\frac{x^2}2\right)^n\right)^{\frac1n}$</desc><g id='math-ff7f1f'><use x='88.667' y='70.687' xlink:href='#g3-102'/><use x='94.617' y='70.687' xlink:href='#g6-40'/><use x='98.492' y='70.687' xlink:href='#g3-120'/><use x='104.186' y='70.687' xlink:href='#g6-41'/><use x='110.827' y='70.687' xlink:href='#g6-61'/><use x='124.83' y='70.687' xlink:href='#g6-108'/><use x='127.597' y='70.687' xlink:href='#g6-105'/><use x='130.365' y='70.687' xlink:href='#g6-109'/><use x='121.344' y='76.664' xlink:href='#g4-110'/><use x='126.268' y='76.664' xlink:href='#g1-33'/><use x='134.211' y='76.664' xlink:href='#g1-49'/><use x='143.814' y='56.639' xlink:href='#g9-18'/><use x='151.147' y='70.687' xlink:href='#g6-49'/><use x='158.343' y='70.687' xlink:href='#g6-43'/><use x='168.305' y='70.687' xlink:href='#g3-120'/><use x='173.999' y='66.573' xlink:href='#g4-110'/><use x='181.636' y='70.687' xlink:href='#g6-43'/><use x='191.599' y='56.639' xlink:href='#g9-18'/><use x='200.128' y='63.947' xlink:href='#g3-120'/><use x='205.822' y='60.331' xlink:href='#g7-50'/><rect x='200.128' y='67.997' height='.398' width='10.163'/><use x='202.719' y='77.52' xlink:href='#g6-50'/><use x='211.487' y='56.639' xlink:href='#g9-19'/><use x='218.82' y='58.3' xlink:href='#g4-110'/><use x='224.243' y='56.639' xlink:href='#g9-19'/><use x='233.271' y='55.083' xlink:href='#g8-49'/><rect x='232.772' y='55.848' height='.339' width='4.388'/><use x='232.772' y='60.161' xlink:href='#g5-110'/></g></svg><span data-line="213"></span>, <span data-line="213"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.1705em;height:0.8583em;width:2.5585em" viewBox='34.67 55.216 24.367 8.174'><desc>$x\geq 0$</desc><g id='math-d7b89f'><use x='34.869' y='61.836' xlink:href='#g3-120'/><use x='43.331' y='61.836' xlink:href='#g0-21'/><use x='53.847' y='61.836' xlink:href='#g6-48'/></g></svg><span data-line="213"></span>。
+讨论<span data-line="214"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="214"></span>的连续性。</p></div>
+<div class="example" data-line="217" style="display:block;margin:1ex 0pt;theorem-caption-end: ;ref:wechat(\9AD8 \6570 \53D4 )">
+<p class="p noindent" data-line="218"><span data-line="218"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">20</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="218"></span>设<span data-line="218"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.0299em;height:2.8001em;width:12.7356em" viewBox='34.67 51.674 121.291 26.668'><desc>$\displaystyle f(x)=\lim_{t\to x}\left(\frac{\sin t}{\sin x}\right)^{\frac{x}{\sin t-\sin x}}$</desc><g id='math-434687'><use x='34.869' y='68.678' xlink:href='#g3-102'/><use x='40.819' y='68.678' xlink:href='#g6-40'/><use x='44.694' y='68.678' xlink:href='#g3-120'/><use x='50.387' y='68.678' xlink:href='#g6-41'/><use x='57.029' y='68.678' xlink:href='#g6-61'/><use x='68.362' y='68.678' xlink:href='#g6-108'/><use x='71.129' y='68.678' xlink:href='#g6-105'/><use x='73.896' y='68.678' xlink:href='#g6-109'/><use x='67.545' y='74.656' xlink:href='#g4-116'/><use x='70.555' y='74.656' xlink:href='#g1-33'/><use x='78.497' y='74.656' xlink:href='#g4-120'/><use x='84.675' y='54.63' xlink:href='#g9-18'/><use x='94.253' y='61.938' xlink:href='#g6-115'/><use x='98.183' y='61.938' xlink:href='#g6-105'/><use x='100.95' y='61.938' xlink:href='#g6-110'/><use x='108.145' y='61.938' xlink:href='#g3-116'/><rect x='93.205' y='65.988' height='.398' width='19.586'/><use x='93.205' y='75.512' xlink:href='#g6-115'/><use x='97.134' y='75.512' xlink:href='#g6-105'/><use x='99.902' y='75.512' xlink:href='#g6-110'/><use x='107.097' y='75.512' xlink:href='#g3-120'/><use x='113.986' y='54.63' xlink:href='#g9-19'/><use x='136.315' y='54.018' xlink:href='#g5-120'/><rect x='122.516' y='54.782' height='.339' width='31.543'/><use x='122.516' y='59.095' xlink:href='#g8-115'/><use x='125.248' y='59.095' xlink:href='#g8-105'/><use x='127.255' y='59.095' xlink:href='#g8-110'/><use x='132.213' y='59.095' xlink:href='#g5-116'/><use x='135.021' y='59.095' xlink:href='#g2-0'/><use x='140.417' y='59.095' xlink:href='#g8-115'/><use x='143.15' y='59.095' xlink:href='#g8-105'/><use x='145.157' y='59.095' xlink:href='#g8-110'/><use x='150.115' y='59.095' xlink:href='#g5-120'/></g></svg><span data-line="218"></span>，求<span data-line="218"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.0791em" viewBox='88.468 54.164 19.801 10.361'><desc>$f(x)$</desc><g id='math-50bbd3'><use x='88.667' y='61.836' xlink:href='#g3-102'/><use x='94.617' y='61.836' xlink:href='#g6-40'/><use x='98.492' y='61.836' xlink:href='#g3-120'/><use x='104.186' y='61.836' xlink:href='#g6-41'/></g></svg><span data-line="218"></span>的间断点。
+</p></div></section></div></div><span data-line=""></span></div>
+<svg id='math-svg-paths' style='display:none' version='1.1' viewBox='0 0 0 0' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<defs>
+<path id='g3-110' d='M.877-.588C.847-.438 .787-.209 .787-.159C.787 .02 .927 .11 1.076 .11C1.196 .11 1.375 .03 1.445-.169C1.455-.189 1.574-.658 1.634-.907L1.853-1.803C1.913-2.022 1.973-2.242 2.022-2.471C2.062-2.64 2.142-2.929 2.152-2.969C2.301-3.278 2.829-4.184 3.776-4.184C4.224-4.184 4.314-3.816 4.314-3.487C4.314-2.869 3.826-1.594 3.666-1.166C3.577-.936 3.567-.817 3.567-.707C3.567-.239 3.915 .11 4.384 .11C5.32 .11 5.689-1.345 5.689-1.425C5.689-1.524 5.599-1.524 5.569-1.524C5.469-1.524 5.469-1.494 5.42-1.345C5.22-.667 4.892-.11 4.403-.11C4.234-.11 4.164-.209 4.164-.438C4.164-.687 4.254-.927 4.344-1.146C4.533-1.674 4.951-2.77 4.951-3.337C4.951-4.005 4.523-4.403 3.806-4.403C2.909-4.403 2.421-3.766 2.252-3.537C2.202-4.095 1.793-4.403 1.335-4.403S.687-4.015 .588-3.836C.428-3.497 .289-2.909 .289-2.869C.289-2.77 .389-2.77 .408-2.77C.508-2.77 .518-2.78 .578-2.999C.747-3.706 .946-4.184 1.305-4.184C1.504-4.184 1.614-4.055 1.614-3.726C1.614-3.517 1.584-3.407 1.455-2.889L.877-.588Z'/>
+<path id='g0-112' d='M3.875 8.518L2.122 4.643C2.052 4.483 2.002 4.483 1.973 4.483C1.963 4.483 1.913 4.483 1.803 4.563L.857 5.28C.727 5.38 .727 5.41 .727 5.44C.727 5.489 .757 5.549 .827 5.549C.887 5.549 1.056 5.41 1.166 5.33C1.225 5.28 1.375 5.171 1.484 5.091L3.447 9.405C3.517 9.564 3.567 9.564 3.656 9.564C3.806 9.564 3.836 9.504 3.905 9.365L8.428 0C8.498-.139 8.498-.179 8.498-.199C8.498-.299 8.418-.399 8.299-.399C8.219-.399 8.149-.349 8.07-.189L3.875 8.518Z'/>
+<path id='g5-110' d='M.971-.488C.941-.364 .887-.144 .887-.12C.887-.01 .976 .055 1.071 .055C1.146 .055 1.255 .015 1.31-.11C1.315-.134 1.375-.369 1.405-.498C1.574-1.171 1.574-1.181 1.584-1.2C1.649-1.335 2.007-2.032 2.615-2.032C2.859-2.032 2.964-1.898 2.964-1.674C2.964-1.39 2.755-.877 2.64-.593C2.615-.533 2.59-.468 2.59-.384C2.59-.125 2.839 .055 3.133 .055C3.666 .055 3.94-.593 3.94-.717C3.94-.787 3.856-.787 3.836-.787C3.751-.787 3.746-.767 3.716-.672C3.621-.374 3.392-.115 3.153-.115C3.039-.115 3.004-.194 3.004-.304C3.004-.408 3.024-.458 3.068-.568C3.153-.767 3.382-1.335 3.382-1.609C3.382-1.978 3.118-2.202 2.645-2.202C2.192-2.202 1.878-1.928 1.704-1.709C1.679-2.117 1.28-2.202 1.096-2.202C.598-2.202 .453-1.44 .453-1.43C.453-1.36 .533-1.36 .558-1.36C.643-1.36 .653-1.39 .672-1.455C.747-1.743 .862-2.032 1.071-2.032C1.24-2.032 1.275-1.873 1.275-1.768C1.275-1.699 1.225-1.509 1.196-1.38C1.161-1.245 1.111-1.041 1.086-.932L.971-.488Z'/>
+<path id='g7-43' d='M3.229-1.576H5.363C5.454-1.576 5.621-1.576 5.621-1.743C5.621-1.918 5.461-1.918 5.363-1.918H3.229V-4.059C3.229-4.149 3.229-4.317 3.062-4.317C2.887-4.317 2.887-4.156 2.887-4.059V-1.918H.746C.656-1.918 .488-1.918 .488-1.75C.488-1.576 .649-1.576 .746-1.576H2.887V.565C2.887 .656 2.887 .823 3.055 .823C3.229 .823 3.229 .663 3.229 .565V-1.576Z'/>
+<path id='g1-33' d='M6.416-1.576C5.537-.934 5.419-.021 5.419-.014C5.419 .091 5.488 .091 5.586 .091C5.712 .091 5.733 .091 5.767-.028C5.809-.202 5.921-.649 6.283-1.032C6.688-1.458 7.037-1.562 7.33-1.653C7.371-1.667 7.399-1.709 7.399-1.743C7.399-1.813 7.357-1.827 7.267-1.855C6.263-2.176 5.907-2.887 5.76-3.501C5.733-3.585 5.684-3.585 5.586-3.585S5.419-3.585 5.419-3.48C5.419-3.466 5.488-2.999 5.83-2.518C5.991-2.28 6.186-2.085 6.416-1.918H.816C.704-1.918 .537-1.918 .537-1.75C.537-1.576 .697-1.576 .816-1.576H6.416Z'/>
+<path id='g1-49' d='M4.031-1.911C3.661-2.343 3.55-2.462 3.285-2.65C2.859-2.957 2.413-3.075 2.029-3.075C1.165-3.075 .537-2.336 .537-1.499C.537-.683 1.137 .07 2.008 .07C2.978 .07 3.654-.725 3.905-1.095C4.275-.663 4.387-.544 4.652-.356C5.077-.049 5.523 .07 5.907 .07C6.772 .07 7.399-.669 7.399-1.506C7.399-2.322 6.8-3.075 5.928-3.075C4.958-3.075 4.282-2.28 4.031-1.911ZM4.254-1.653C4.533-2.106 5.14-2.81 5.991-2.81C6.709-2.81 7.204-2.176 7.204-1.506S6.66-.314 6.018-.314C5.37-.314 4.924-.844 4.254-1.653ZM3.682-1.353C3.403-.9 2.797-.195 1.946-.195C1.227-.195 .732-.83 .732-1.499S1.276-2.692 1.918-2.692C2.566-2.692 3.013-2.162 3.682-1.353Z'/>
+<path id='g4-110' d='M.851-.439C.823-.349 .781-.174 .781-.153C.781 0 .907 .07 1.018 .07C1.144 .07 1.255-.021 1.29-.084S1.381-.37 1.416-.516C1.451-.649 1.527-.969 1.569-1.144C1.611-1.297 1.653-1.451 1.688-1.611C1.764-1.897 1.778-1.953 1.981-2.239C2.176-2.518 2.504-2.88 3.027-2.88C3.431-2.88 3.438-2.525 3.438-2.392C3.438-1.974 3.138-1.2 3.027-.907C2.95-.711 2.922-.649 2.922-.53C2.922-.16 3.229 .07 3.585 .07C4.282 .07 4.589-.893 4.589-.997C4.589-1.088 4.498-1.088 4.477-1.088C4.38-1.088 4.373-1.046 4.345-.969C4.184-.411 3.884-.126 3.605-.126C3.459-.126 3.431-.223 3.431-.37C3.431-.53 3.466-.621 3.592-.934C3.675-1.151 3.961-1.89 3.961-2.28C3.961-2.957 3.424-3.075 3.055-3.075C2.476-3.075 2.085-2.72 1.876-2.441C1.827-2.922 1.416-3.075 1.13-3.075C.83-3.075 .669-2.859 .579-2.699C.425-2.441 .328-2.043 .328-2.008C.328-1.918 .425-1.918 .446-1.918C.544-1.918 .551-1.939 .6-2.127C.704-2.538 .837-2.88 1.109-2.88C1.29-2.88 1.339-2.727 1.339-2.538C1.339-2.406 1.276-2.148 1.227-1.96S1.109-1.485 1.074-1.332L.851-.439Z'/>
+<path id='g6-33' d='M1.524-2.082L1.913-6.625C1.913-6.954 1.644-7.133 1.385-7.133S.857-6.954 .857-6.625L1.245-2.092C1.255-1.943 1.265-1.863 1.385-1.863C1.484-1.863 1.514-1.913 1.524-2.082ZM1.913-.528C1.913-.817 1.674-1.056 1.385-1.056S.857-.817 .857-.528S1.096 0 1.385 0S1.913-.239 1.913-.528Z'/>
+<path id='g6-105' d='M1.763-4.403L.369-4.294V-3.985C1.016-3.985 1.106-3.925 1.106-3.437V-.757C1.106-.309 .996-.309 .329-.309V0C.648-.01 1.186-.03 1.425-.03C1.773-.03 2.122-.01 2.461 0V-.309C1.803-.309 1.763-.359 1.763-.747V-4.403ZM1.803-6.137C1.803-6.456 1.554-6.665 1.275-6.665C.966-6.665 .747-6.396 .747-6.137C.747-5.868 .966-5.609 1.275-5.609C1.554-5.609 1.803-5.818 1.803-6.137Z'/>
+<path id='g6-108' d='M1.763-6.914L.329-6.804V-6.496C1.026-6.496 1.106-6.426 1.106-5.938V-.757C1.106-.309 .996-.309 .329-.309V0C.658-.01 1.186-.03 1.435-.03S2.172-.01 2.54 0V-.309C1.873-.309 1.763-.309 1.763-.757V-6.914Z'/>
+<path id='g6-109' d='M1.096-3.427V-.757C1.096-.309 .986-.309 .319-.309V0C.667-.01 1.176-.03 1.445-.03C1.704-.03 2.222-.01 2.56 0V-.309C1.893-.309 1.783-.309 1.783-.757V-2.59C1.783-3.626 2.491-4.184 3.128-4.184C3.756-4.184 3.866-3.646 3.866-3.078V-.757C3.866-.309 3.756-.309 3.088-.309V0C3.437-.01 3.945-.03 4.214-.03C4.473-.03 4.991-.01 5.33 0V-.309C4.663-.309 4.553-.309 4.553-.757V-2.59C4.553-3.626 5.26-4.184 5.898-4.184C6.526-4.184 6.635-3.646 6.635-3.078V-.757C6.635-.309 6.526-.309 5.858-.309V0C6.207-.01 6.715-.03 6.984-.03C7.243-.03 7.761-.01 8.1 0V-.309C7.582-.309 7.333-.309 7.323-.608V-2.511C7.323-3.367 7.323-3.676 7.014-4.035C6.874-4.204 6.545-4.403 5.968-4.403C5.131-4.403 4.692-3.806 4.523-3.427C4.384-4.294 3.646-4.403 3.198-4.403C2.471-4.403 2.002-3.975 1.724-3.357V-4.403L.319-4.294V-3.985C1.016-3.985 1.096-3.915 1.096-3.427Z'/>
+<path id='g0-0' d='M6.565-2.291C6.735-2.291 6.914-2.291 6.914-2.491S6.735-2.69 6.565-2.69H1.176C1.006-2.69 .827-2.69 .827-2.491S1.006-2.291 1.176-2.291H6.565Z'/>
+<path id='g7-49' d='M2.336-4.435C2.336-4.624 2.322-4.631 2.127-4.631C1.681-4.191 1.046-4.184 .76-4.184V-3.933C.928-3.933 1.388-3.933 1.771-4.129V-.572C1.771-.342 1.771-.251 1.074-.251H.809V0C.934-.007 1.792-.028 2.05-.028C2.267-.028 3.145-.007 3.299 0V-.251H3.034C2.336-.251 2.336-.342 2.336-.572V-4.435Z'/>
+<path id='g3-65' d='M1.783-1.146C1.385-.478 .996-.339 .558-.309C.438-.299 .349-.299 .349-.11C.349-.05 .399 0 .478 0C.747 0 1.056-.03 1.335-.03C1.664-.03 2.012 0 2.331 0C2.391 0 2.521 0 2.521-.189C2.521-.299 2.431-.309 2.361-.309C2.132-.329 1.893-.408 1.893-.658C1.893-.777 1.953-.887 2.032-1.026L2.79-2.301H5.29C5.31-2.092 5.45-.737 5.45-.638C5.45-.339 4.932-.309 4.732-.309C4.593-.309 4.493-.309 4.493-.11C4.493 0 4.613 0 4.633 0C5.041 0 5.469-.03 5.878-.03C6.127-.03 6.755 0 7.004 0C7.064 0 7.183 0 7.183-.199C7.183-.309 7.083-.309 6.954-.309C6.336-.309 6.336-.379 6.306-.667L5.699-6.894C5.679-7.093 5.679-7.133 5.509-7.133C5.35-7.133 5.31-7.064 5.25-6.964L1.783-1.146ZM2.979-2.61L4.941-5.898L5.26-2.61H2.979Z'/>
+<path id='g1-0' d='M5.189-1.576C5.3-1.576 5.467-1.576 5.467-1.743C5.467-1.918 5.307-1.918 5.189-1.918H1.032C.921-1.918 .753-1.918 .753-1.75C.753-1.576 .914-1.576 1.032-1.576H5.189Z'/>
+<path id='g6-40' d='M3.298 2.391C3.298 2.361 3.298 2.341 3.128 2.172C1.883 .917 1.564-.966 1.564-2.491C1.564-4.224 1.943-5.958 3.168-7.203C3.298-7.323 3.298-7.342 3.298-7.372C3.298-7.442 3.258-7.472 3.198-7.472C3.098-7.472 2.202-6.795 1.614-5.529C1.106-4.433 .986-3.328 .986-2.491C.986-1.714 1.096-.508 1.644 .618C2.242 1.843 3.098 2.491 3.198 2.491C3.258 2.491 3.298 2.461 3.298 2.391Z'/>
+<path id='g6-41' d='M2.879-2.491C2.879-3.268 2.77-4.473 2.222-5.599C1.624-6.824 .767-7.472 .667-7.472C.608-7.472 .568-7.432 .568-7.372C.568-7.342 .568-7.323 .757-7.143C1.733-6.157 2.301-4.573 2.301-2.491C2.301-.787 1.933 .966 .697 2.222C.568 2.341 .568 2.361 .568 2.391C.568 2.451 .608 2.491 .667 2.491C.767 2.491 1.664 1.813 2.252 .548C2.76-.548 2.879-1.654 2.879-2.491Z'/>
+<path id='g6-48' d='M4.583-3.188C4.583-3.985 4.533-4.782 4.184-5.519C3.726-6.476 2.909-6.635 2.491-6.635C1.893-6.635 1.166-6.376 .757-5.45C.438-4.762 .389-3.985 .389-3.188C.389-2.441 .428-1.544 .837-.787C1.265 .02 1.993 .219 2.481 .219C3.019 .219 3.776 .01 4.214-.936C4.533-1.624 4.583-2.401 4.583-3.188ZM2.481 0C2.092 0 1.504-.249 1.325-1.205C1.215-1.803 1.215-2.72 1.215-3.308C1.215-3.945 1.215-4.603 1.295-5.141C1.484-6.326 2.232-6.416 2.481-6.416C2.809-6.416 3.467-6.237 3.656-5.25C3.756-4.692 3.756-3.935 3.756-3.308C3.756-2.56 3.756-1.883 3.646-1.245C3.497-.299 2.929 0 2.481 0Z'/>
+<path id='g6-61' d='M6.844-3.258C6.994-3.258 7.183-3.258 7.183-3.457S6.994-3.656 6.854-3.656H.887C.747-3.656 .558-3.656 .558-3.457S.747-3.258 .897-3.258H6.844ZM6.854-1.325C6.994-1.325 7.183-1.325 7.183-1.524S6.994-1.724 6.844-1.724H.897C.747-1.724 .558-1.724 .558-1.524S.747-1.325 .887-1.325H6.854Z'/>
+<path id='g0-1' d='M1.913-2.491C1.913-2.78 1.674-3.019 1.385-3.019S.857-2.78 .857-2.491S1.096-1.963 1.385-1.963S1.913-2.202 1.913-2.491Z'/>
+<path id='g7-50' d='M3.522-1.269H3.285C3.264-1.116 3.194-.704 3.103-.635C3.048-.593 2.511-.593 2.413-.593H1.13C1.862-1.241 2.106-1.437 2.525-1.764C3.041-2.176 3.522-2.608 3.522-3.271C3.522-4.115 2.783-4.631 1.89-4.631C1.025-4.631 .439-4.024 .439-3.382C.439-3.027 .739-2.992 .809-2.992C.976-2.992 1.179-3.11 1.179-3.361C1.179-3.487 1.13-3.731 .767-3.731C.983-4.226 1.458-4.38 1.785-4.38C2.483-4.38 2.845-3.836 2.845-3.271C2.845-2.664 2.413-2.183 2.19-1.932L.509-.272C.439-.209 .439-.195 .439 0H3.313L3.522-1.269Z'/>
+<path id='g6-43' d='M4.075-2.291H6.854C6.994-2.291 7.183-2.291 7.183-2.491S6.994-2.69 6.854-2.69H4.075V-5.479C4.075-5.619 4.075-5.808 3.875-5.808S3.676-5.619 3.676-5.479V-2.69H.887C.747-2.69 .558-2.69 .558-2.491S.747-2.291 .887-2.291H3.676V.498C3.676 .638 3.676 .827 3.875 .827S4.075 .638 4.075 .498V-2.291Z'/>
+<path id='g3-97' d='M3.716-3.766C3.537-4.134 3.248-4.403 2.8-4.403C1.634-4.403 .399-2.939 .399-1.484C.399-.548 .946 .11 1.724 .11C1.923 .11 2.421 .07 3.019-.638C3.098-.219 3.447 .11 3.925 .11C4.274 .11 4.503-.12 4.663-.438C4.832-.797 4.961-1.405 4.961-1.425C4.961-1.524 4.872-1.524 4.842-1.524C4.742-1.524 4.732-1.484 4.702-1.345C4.533-.697 4.354-.11 3.945-.11C3.676-.11 3.646-.369 3.646-.568C3.646-.787 3.666-.867 3.776-1.305C3.885-1.724 3.905-1.823 3.995-2.202L4.354-3.597C4.423-3.875 4.423-3.895 4.423-3.935C4.423-4.105 4.304-4.204 4.134-4.204C3.895-4.204 3.746-3.985 3.716-3.766ZM3.068-1.186C3.019-1.006 3.019-.986 2.869-.817C2.431-.269 2.022-.11 1.743-.11C1.245-.11 1.106-.658 1.106-1.046C1.106-1.544 1.425-2.77 1.654-3.228C1.963-3.816 2.411-4.184 2.809-4.184C3.457-4.184 3.597-3.367 3.597-3.308S3.577-3.188 3.567-3.138L3.068-1.186Z'/>
+<path id='g3-98' d='M2.381-6.804C2.381-6.814 2.381-6.914 2.252-6.914C2.022-6.914 1.295-6.834 1.036-6.814C.956-6.804 .847-6.795 .847-6.615C.847-6.496 .936-6.496 1.086-6.496C1.564-6.496 1.584-6.426 1.584-6.326C1.584-6.257 1.494-5.918 1.445-5.709L.628-2.461C.508-1.963 .468-1.803 .468-1.455C.468-.508 .996 .11 1.733 .11C2.909 .11 4.134-1.375 4.134-2.809C4.134-3.716 3.606-4.403 2.809-4.403C2.351-4.403 1.943-4.115 1.644-3.806L2.381-6.804ZM1.445-3.039C1.504-3.258 1.504-3.278 1.594-3.387C2.082-4.035 2.531-4.184 2.79-4.184C3.148-4.184 3.417-3.885 3.417-3.248C3.417-2.66 3.088-1.514 2.909-1.136C2.58-.468 2.122-.11 1.733-.11C1.395-.11 1.066-.379 1.066-1.116C1.066-1.305 1.066-1.494 1.225-2.122L1.445-3.039Z'/>
+<path id='g0-21' d='M6.715-3.228C6.854-3.288 6.914-3.357 6.914-3.447C6.914-3.547 6.874-3.606 6.715-3.676L1.225-6.267C1.086-6.336 1.046-6.336 1.026-6.336C.907-6.336 .827-6.247 .827-6.137C.827-6.017 .907-5.968 1.016-5.918L6.247-3.457L1.036-.996C.837-.907 .827-.827 .827-.767C.827-.658 .917-.568 1.026-.568C1.056-.568 1.076-.568 1.205-.638L6.715-3.228ZM6.565 1.365C6.735 1.365 6.914 1.365 6.914 1.166S6.705 .966 6.555 .966H1.186C1.036 .966 .827 .966 .827 1.166S1.006 1.365 1.176 1.365H6.565Z'/>
+<path id='g0-56' d='M5.489-6.535C5.539-6.645 5.539-6.665 5.539-6.715C5.539-6.814 5.46-6.914 5.34-6.914C5.21-6.914 5.151-6.795 5.111-6.685L4.284-4.493H1.255L.428-6.685C.379-6.824 .329-6.914 .199-6.914C.1-6.914 0-6.814 0-6.715C0-6.695 0-6.675 .06-6.535L2.54-.01C2.59 .13 2.64 .219 2.77 .219C2.909 .219 2.949 .11 2.989 .01L5.489-6.535ZM1.415-4.095H4.125L2.77-.548L1.415-4.095Z'/>
+<path id='g4-120' d='M1.736-.739C1.667-.502 1.437-.126 1.081-.126C1.06-.126 .851-.126 .704-.223C.99-.314 1.011-.565 1.011-.607C1.011-.76 .893-.865 .732-.865C.537-.865 .335-.697 .335-.439C.335-.091 .725 .07 1.067 .07C1.388 .07 1.674-.133 1.848-.425C2.015-.056 2.399 .07 2.678 .07C3.48 .07 3.905-.802 3.905-.997C3.905-1.088 3.815-1.088 3.794-1.088C3.696-1.088 3.689-1.053 3.661-.969C3.515-.488 3.096-.126 2.706-.126C2.427-.126 2.28-.314 2.28-.579C2.28-.76 2.448-1.395 2.643-2.169C2.783-2.706 3.096-2.88 3.327-2.88C3.34-2.88 3.557-2.88 3.703-2.783C3.48-2.72 3.396-2.525 3.396-2.399C3.396-2.246 3.515-2.141 3.675-2.141S4.066-2.273 4.066-2.566C4.066-2.957 3.619-3.075 3.34-3.075C2.992-3.075 2.713-2.845 2.559-2.58C2.434-2.866 2.113-3.075 1.723-3.075C.941-3.075 .495-2.218 .495-2.008C.495-1.918 .593-1.918 .614-1.918C.704-1.918 .711-1.946 .746-2.036C.921-2.58 1.36-2.88 1.702-2.88C1.932-2.88 2.12-2.755 2.12-2.42C2.12-2.28 2.036-1.932 1.974-1.695L1.736-.739Z'/>
+<path id='g3-59' d='M2.022-.01C2.022-.667 1.773-1.056 1.385-1.056C1.056-1.056 .857-.807 .857-.528C.857-.259 1.056 0 1.385 0C1.504 0 1.634-.04 1.733-.13C1.763-.149 1.773-.159 1.783-.159S1.803-.149 1.803-.01C1.803 .727 1.455 1.325 1.126 1.654C1.016 1.763 1.016 1.783 1.016 1.813C1.016 1.883 1.066 1.923 1.116 1.923C1.225 1.923 2.022 1.156 2.022-.01Z'/>
+<path id='g3-62' d='M6.725-2.271C6.834-2.321 6.914-2.371 6.914-2.491S6.834-2.66 6.725-2.71L1.205-5.31C1.076-5.38 1.056-5.38 1.026-5.38C.917-5.38 .827-5.29 .827-5.181C.827-5.091 .877-5.031 1.016-4.961L6.247-2.491L1.016-.02C.877 .05 .827 .11 .827 .199C.827 .309 .917 .399 1.026 .399C1.056 .399 1.076 .399 1.205 .329L6.725-2.271Z'/>
+<path id='g3-120' d='M3.328-3.009C3.387-3.268 3.616-4.184 4.314-4.184C4.364-4.184 4.603-4.184 4.812-4.055C4.533-4.005 4.334-3.756 4.334-3.517C4.334-3.357 4.443-3.168 4.712-3.168C4.932-3.168 5.25-3.347 5.25-3.746C5.25-4.264 4.663-4.403 4.324-4.403C3.746-4.403 3.397-3.875 3.278-3.646C3.029-4.304 2.491-4.403 2.202-4.403C1.166-4.403 .598-3.118 .598-2.869C.598-2.77 .697-2.77 .717-2.77C.797-2.77 .827-2.79 .847-2.879C1.186-3.935 1.843-4.184 2.182-4.184C2.371-4.184 2.72-4.095 2.72-3.517C2.72-3.208 2.55-2.54 2.182-1.146C2.022-.528 1.674-.11 1.235-.11C1.176-.11 .946-.11 .737-.239C.986-.289 1.205-.498 1.205-.777C1.205-1.046 .986-1.126 .837-1.126C.538-1.126 .289-.867 .289-.548C.289-.09 .787 .11 1.225 .11C1.883 .11 2.242-.588 2.271-.648C2.391-.279 2.75 .11 3.347 .11C4.374 .11 4.941-1.176 4.941-1.425C4.941-1.524 4.852-1.524 4.822-1.524C4.732-1.524 4.712-1.484 4.692-1.415C4.364-.349 3.686-.11 3.367-.11C2.979-.11 2.819-.428 2.819-.767C2.819-.986 2.879-1.205 2.989-1.644L3.328-3.009Z'/>
+<path id='g6-49' d='M2.929-6.376C2.929-6.615 2.929-6.635 2.7-6.635C2.082-5.998 1.205-5.998 .887-5.998V-5.689C1.086-5.689 1.674-5.689 2.192-5.948V-.787C2.192-.428 2.162-.309 1.265-.309H.946V0C1.295-.03 2.162-.03 2.56-.03S3.826-.03 4.174 0V-.309H3.856C2.959-.309 2.929-.418 2.929-.787V-6.376Z'/>
+<path id='g6-110' d='M1.096-3.427V-.757C1.096-.309 .986-.309 .319-.309V0C.667-.01 1.176-.03 1.445-.03C1.704-.03 2.222-.01 2.56 0V-.309C1.893-.309 1.783-.309 1.783-.757V-2.59C1.783-3.626 2.491-4.184 3.128-4.184C3.756-4.184 3.866-3.646 3.866-3.078V-.757C3.866-.309 3.756-.309 3.088-.309V0C3.437-.01 3.945-.03 4.214-.03C4.473-.03 4.991-.01 5.33 0V-.309C4.812-.309 4.563-.309 4.553-.608V-2.511C4.553-3.367 4.553-3.676 4.244-4.035C4.105-4.204 3.776-4.403 3.198-4.403C2.471-4.403 2.002-3.975 1.724-3.357V-4.403L.319-4.294V-3.985C1.016-3.985 1.096-3.915 1.096-3.427Z'/>
+<path id='g0-102' d='M2.819-6.147C2.819-6.545 3.078-7.183 4.164-7.253C4.214-7.263 4.254-7.303 4.254-7.362C4.254-7.472 4.174-7.472 4.065-7.472C3.068-7.472 2.162-6.964 2.152-6.227V-3.955C2.152-3.567 2.152-3.248 1.753-2.919C1.405-2.63 1.026-2.61 .807-2.6C.757-2.59 .717-2.55 .717-2.491C.717-2.391 .777-2.391 .877-2.381C1.534-2.341 2.012-1.983 2.122-1.494C2.152-1.385 2.152-1.365 2.152-1.006V.966C2.152 1.385 2.152 1.704 2.63 2.082C3.019 2.381 3.676 2.491 4.065 2.491C4.174 2.491 4.254 2.491 4.254 2.381C4.254 2.281 4.194 2.281 4.095 2.271C3.467 2.232 2.979 1.913 2.849 1.405C2.819 1.315 2.819 1.295 2.819 .936V-1.156C2.819-1.614 2.74-1.783 2.421-2.102C2.212-2.311 1.923-2.411 1.644-2.491C2.461-2.72 2.819-3.178 2.819-3.756V-6.147Z'/>
+<path id='g0-103' d='M2.152 1.166C2.152 1.564 1.893 2.202 .807 2.271C.757 2.281 .717 2.321 .717 2.381C.717 2.491 .827 2.491 .917 2.491C1.883 2.491 2.809 2.002 2.819 1.245V-1.026C2.819-1.415 2.819-1.733 3.218-2.062C3.567-2.351 3.945-2.371 4.164-2.381C4.214-2.391 4.254-2.431 4.254-2.491C4.254-2.59 4.194-2.59 4.095-2.6C3.437-2.64 2.959-2.999 2.849-3.487C2.819-3.597 2.819-3.616 2.819-3.975V-5.948C2.819-6.366 2.819-6.685 2.341-7.064C1.943-7.372 1.255-7.472 .917-7.472C.827-7.472 .717-7.472 .717-7.362C.717-7.263 .777-7.263 .877-7.253C1.504-7.213 1.993-6.894 2.122-6.386C2.152-6.296 2.152-6.276 2.152-5.918V-3.826C2.152-3.367 2.232-3.198 2.55-2.879C2.76-2.67 3.049-2.57 3.328-2.491C2.511-2.262 2.152-1.803 2.152-1.225V1.166Z'/>
+<path id='g3-60' d='M6.725-4.961C6.844-5.021 6.914-5.071 6.914-5.181S6.824-5.38 6.715-5.38C6.685-5.38 6.665-5.38 6.535-5.31L1.016-2.71C.907-2.66 .827-2.61 .827-2.491S.907-2.321 1.016-2.271L6.535 .329C6.665 .399 6.685 .399 6.715 .399C6.824 .399 6.914 .309 6.914 .199S6.844 .04 6.725-.02L1.494-2.491L6.725-4.961Z'/>
+<path id='g8-108' d='M1.25-3.457L.413-3.402V-3.183C.782-3.183 .827-3.148 .827-2.904V-.418C.827-.264 .827-.219 .503-.219H.413V0C.623-.015 .827-.02 1.036-.02S1.455-.015 1.664 0V-.219H1.574C1.25-.219 1.25-.264 1.25-.418V-3.457Z'/>
+<path id='g8-110' d='M2.989-1.504C2.989-2.052 2.615-2.202 2.152-2.202C1.619-2.202 1.34-1.908 1.225-1.714V-2.202L.408-2.147V-1.928C.777-1.928 .822-1.893 .822-1.649V-.418C.822-.264 .822-.219 .498-.219H.408V0C.623-.015 .832-.02 1.046-.02C1.255-.02 1.469-.015 1.679 0V-.219H1.589C1.265-.219 1.265-.264 1.265-.418V-1.285C1.265-1.848 1.783-2.037 2.092-2.037C2.461-2.037 2.545-1.828 2.545-1.509V-.418C2.545-.264 2.545-.219 2.222-.219H2.132V0C2.346-.015 2.555-.02 2.77-.02C2.979-.02 3.193-.015 3.402 0V-.219H3.313C2.989-.219 2.989-.264 2.989-.418V-1.504Z'/>
+<path id='g9-18' d='M6.974 23.402C6.974 23.362 6.954 23.342 6.934 23.313C6.565 22.944 5.898 22.276 5.23 21.2C3.626 18.63 2.899 15.392 2.899 11.557C2.899 8.877 3.258 5.42 4.902 2.451C5.689 1.036 6.506 .219 6.944-.219C6.974-.249 6.974-.269 6.974-.299C6.974-.399 6.904-.399 6.765-.399S6.605-.399 6.456-.249C3.118 2.79 2.072 7.352 2.072 11.547C2.072 15.462 2.969 19.407 5.499 22.386C5.699 22.615 6.077 23.024 6.486 23.382C6.605 23.502 6.625 23.502 6.765 23.502S6.974 23.502 6.974 23.402Z'/>
+<path id='g9-19' d='M5.25 11.557C5.25 7.641 4.354 3.696 1.823 .717C1.624 .488 1.245 .08 .837-.279C.717-.399 .697-.399 .558-.399C.438-.399 .349-.399 .349-.299C.349-.259 .389-.219 .408-.199C.757 .159 1.425 .827 2.092 1.903C3.696 4.473 4.423 7.711 4.423 11.547C4.423 14.227 4.065 17.684 2.421 20.653C1.634 22.067 .807 22.894 .389 23.313C.369 23.342 .349 23.372 .349 23.402C.349 23.502 .438 23.502 .558 23.502C.697 23.502 .717 23.502 .867 23.352C4.204 20.314 5.25 15.751 5.25 11.557Z'/>
+<path id='g3-25' d='M2.64-3.716H3.766C3.437-2.242 3.347-1.813 3.347-1.146C3.347-.996 3.347-.727 3.427-.389C3.527 .05 3.636 .11 3.786 .11C3.985 .11 4.194-.07 4.194-.269C4.194-.329 4.194-.349 4.134-.488C3.846-1.205 3.846-1.853 3.846-2.132C3.846-2.66 3.915-3.198 4.025-3.716H5.161C5.29-3.716 5.649-3.716 5.649-4.055C5.649-4.294 5.44-4.294 5.25-4.294H1.913C1.694-4.294 1.315-4.294 .877-3.826C.528-3.437 .269-2.979 .269-2.929C.269-2.919 .269-2.829 .389-2.829C.468-2.829 .488-2.869 .548-2.949C1.036-3.716 1.614-3.716 1.813-3.716H2.381C2.062-2.511 1.524-1.305 1.106-.399C1.026-.249 1.026-.229 1.026-.159C1.026 .03 1.186 .11 1.315 .11C1.614 .11 1.694-.169 1.813-.538C1.953-.996 1.953-1.016 2.082-1.514L2.64-3.716Z'/>
+<path id='g9-16' d='M5.131 17.415C5.151 17.425 5.24 17.524 5.25 17.524H5.469C5.499 17.524 5.579 17.514 5.579 17.425C5.579 17.385 5.559 17.365 5.539 17.335C5.181 16.976 4.643 16.428 4.025 15.333C2.949 13.42 2.55 10.959 2.55 8.568C2.55 4.144 3.806 1.544 5.549-.219C5.579-.249 5.579-.279 5.579-.299C5.579-.399 5.509-.399 5.39-.399C5.26-.399 5.24-.399 5.151-.319C4.204 .498 3.138 1.883 2.451 3.985C2.022 5.3 1.793 6.904 1.793 8.558C1.793 10.919 2.222 13.589 3.786 15.9C4.055 16.289 4.423 16.697 4.423 16.707C4.523 16.827 4.663 16.986 4.742 17.056L5.131 17.415Z'/>
+<path id='g9-17' d='M4.144 8.558C4.144 5.699 3.477 2.66 1.514 .418C1.375 .259 1.006-.13 .767-.339C.697-.399 .677-.399 .548-.399C.448-.399 .359-.399 .359-.299C.359-.259 .399-.219 .418-.199C.757 .149 1.295 .697 1.913 1.793C2.989 3.706 3.387 6.167 3.387 8.558C3.387 12.882 2.192 15.522 .399 17.345C.379 17.365 .359 17.395 .359 17.425C.359 17.524 .448 17.524 .548 17.524C.677 17.524 .697 17.524 .787 17.445C1.733 16.628 2.8 15.243 3.487 13.141C3.925 11.776 4.144 10.162 4.144 8.558Z'/>
+<path id='g9-112' d='M4.224 11.557C4.533 11.557 4.543 11.547 4.643 11.357L10.092-.02C10.162-.149 10.162-.169 10.162-.199C10.162-.309 10.082-.399 9.963-.399C9.833-.399 9.793-.309 9.743-.199L4.603 10.521L2.481 5.579L1.096 6.645L1.245 6.804L1.953 6.267L4.224 11.557Z'/>
+<path id='g6-52' d='M2.929-1.644V-.777C2.929-.418 2.909-.309 2.172-.309H1.963V0C2.371-.03 2.889-.03 3.308-.03S4.254-.03 4.663 0V-.309H4.453C3.716-.309 3.696-.418 3.696-.777V-1.644H4.692V-1.953H3.696V-6.486C3.696-6.685 3.696-6.745 3.537-6.745C3.447-6.745 3.417-6.745 3.337-6.625L.279-1.953V-1.644H2.929ZM2.989-1.953H.558L2.989-5.669V-1.953Z'/>
+<path id='g6-115' d='M2.072-1.933C2.291-1.893 3.108-1.733 3.108-1.016C3.108-.508 2.76-.11 1.983-.11C1.146-.11 .787-.677 .598-1.524C.568-1.654 .558-1.694 .458-1.694C.329-1.694 .329-1.624 .329-1.445V-.13C.329 .04 .329 .11 .438 .11C.488 .11 .498 .1 .687-.09C.707-.11 .707-.13 .887-.319C1.325 .1 1.773 .11 1.983 .11C3.128 .11 3.587-.558 3.587-1.275C3.587-1.803 3.288-2.102 3.168-2.222C2.839-2.54 2.451-2.62 2.032-2.7C1.474-2.809 .807-2.939 .807-3.517C.807-3.866 1.066-4.274 1.923-4.274C3.019-4.274 3.068-3.377 3.088-3.068C3.098-2.979 3.188-2.979 3.208-2.979C3.337-2.979 3.337-3.029 3.337-3.218V-4.224C3.337-4.394 3.337-4.463 3.228-4.463C3.178-4.463 3.158-4.463 3.029-4.344C2.999-4.304 2.899-4.214 2.859-4.184C2.481-4.463 2.072-4.463 1.923-4.463C.707-4.463 .329-3.796 .329-3.238C.329-2.889 .488-2.61 .757-2.391C1.076-2.132 1.355-2.072 2.072-1.933Z'/>
+<path id='g5-107' d='M1.833-3.268C1.853-3.337 1.853-3.347 1.853-3.372C1.853-3.457 1.778-3.457 1.699-3.452L1.086-3.407C1.001-3.402 .991-3.397 .966-3.377C.946-3.352 .932-3.293 .932-3.263C.932-3.178 1.011-3.178 1.081-3.178C1.086-3.178 1.176-3.178 1.25-3.168C1.345-3.158 1.35-3.143 1.35-3.103C1.35-3.088 1.35-3.078 1.325-2.989L.638-.239C.618-.164 .618-.154 .618-.125C.618-.01 .707 .055 .807 .055C1.001 .055 1.046-.13 1.066-.199L1.29-1.116C1.42-1.111 2.042-1.076 2.042-.722C2.042-.687 2.042-.667 2.027-.608C2.012-.538 2.012-.508 2.012-.478C2.012-.125 2.331 .055 2.62 .055C3.128 .055 3.328-.658 3.328-.717C3.328-.787 3.243-.787 3.223-.787C3.138-.787 3.128-.762 3.103-.672C3.054-.498 2.909-.115 2.64-.115C2.456-.115 2.431-.299 2.431-.408C2.431-.413 2.431-.483 2.451-.568C2.471-.648 2.476-.697 2.476-.737C2.476-1.176 1.928-1.25 1.599-1.275C1.738-1.355 1.948-1.524 2.027-1.594C2.311-1.818 2.585-2.032 2.869-2.032C2.984-2.032 3.014-2.002 3.044-1.973C3.039-1.973 3.014-1.958 3.004-1.958C2.775-1.878 2.775-1.674 2.775-1.659C2.775-1.574 2.834-1.455 2.999-1.455C3.098-1.455 3.308-1.534 3.308-1.808C3.308-2.052 3.118-2.202 2.879-2.202C2.54-2.202 2.252-1.973 1.888-1.679C1.714-1.539 1.549-1.415 1.35-1.335L1.833-3.268Z'/>
+<path id='g4-107' d='M2.183-4.631C2.19-4.645 2.211-4.735 2.211-4.742C2.211-4.777 2.183-4.84 2.099-4.84C1.96-4.84 1.381-4.784 1.206-4.77C1.151-4.763 1.053-4.756 1.053-4.61C1.053-4.512 1.151-4.512 1.234-4.512C1.569-4.512 1.569-4.463 1.569-4.407C1.569-4.359 1.555-4.317 1.541-4.254L.558-.307C.523-.181 .523-.167 .523-.153C.523-.049 .607 .07 .76 .07C.948 .07 1.039-.07 1.081-.223C1.095-.251 1.395-1.478 1.423-1.576C1.918-1.527 2.315-1.367 2.315-1.004C2.315-.969 2.315-.934 2.301-.865C2.273-.76 2.273-.725 2.273-.649C2.273-.153 2.678 .07 3.013 .07C3.689 .07 3.898-.99 3.898-.997C3.898-1.088 3.808-1.088 3.787-1.088C3.689-1.088 3.682-1.053 3.647-.921C3.564-.621 3.375-.126 3.034-.126C2.845-.126 2.79-.3 2.79-.488C2.79-.607 2.79-.621 2.831-.802C2.838-.823 2.866-.941 2.866-1.018C2.866-1.639 2.029-1.736 1.736-1.757C1.939-1.883 2.197-2.113 2.315-2.218C2.671-2.552 3.02-2.88 3.41-2.88C3.494-2.88 3.585-2.859 3.64-2.79C3.34-2.741 3.278-2.504 3.278-2.399C3.278-2.246 3.396-2.141 3.557-2.141C3.745-2.141 3.954-2.294 3.954-2.587C3.954-2.817 3.787-3.075 3.417-3.075C3.02-3.075 2.657-2.79 2.301-2.462C2.008-2.183 1.778-1.967 1.492-1.848L2.183-4.631Z'/>
+<path id='g6-97' d='M3.318-.757C3.357-.359 3.626 .06 4.095 .06C4.304 .06 4.912-.08 4.912-.887V-1.445H4.663V-.887C4.663-.309 4.413-.249 4.304-.249C3.975-.249 3.935-.697 3.935-.747V-2.74C3.935-3.158 3.935-3.547 3.577-3.915C3.188-4.304 2.69-4.463 2.212-4.463C1.395-4.463 .707-3.995 .707-3.337C.707-3.039 .907-2.869 1.166-2.869C1.445-2.869 1.624-3.068 1.624-3.328C1.624-3.447 1.574-3.776 1.116-3.786C1.385-4.134 1.873-4.244 2.192-4.244C2.68-4.244 3.248-3.856 3.248-2.969V-2.6C2.74-2.57 2.042-2.54 1.415-2.242C.667-1.903 .418-1.385 .418-.946C.418-.139 1.385 .11 2.012 .11C2.67 .11 3.128-.289 3.318-.757ZM3.248-2.391V-1.395C3.248-.448 2.531-.11 2.082-.11C1.594-.11 1.186-.458 1.186-.956C1.186-1.504 1.604-2.331 3.248-2.391Z'/>
+<path id='g6-99' d='M1.166-2.172C1.166-3.796 1.983-4.214 2.511-4.214C2.6-4.214 3.228-4.204 3.577-3.846C3.168-3.816 3.108-3.517 3.108-3.387C3.108-3.128 3.288-2.929 3.567-2.929C3.826-2.929 4.025-3.098 4.025-3.397C4.025-4.075 3.268-4.463 2.501-4.463C1.255-4.463 .339-3.387 .339-2.152C.339-.877 1.325 .11 2.481 .11C3.816 .11 4.134-1.086 4.134-1.186S4.035-1.285 4.005-1.285C3.915-1.285 3.895-1.245 3.875-1.186C3.587-.259 2.939-.139 2.57-.139C2.042-.139 1.166-.568 1.166-2.172Z'/>
+<path id='g6-114' d='M1.664-3.308V-4.403L.279-4.294V-3.985C.976-3.985 1.056-3.915 1.056-3.427V-.757C1.056-.309 .946-.309 .279-.309V0C.667-.01 1.136-.03 1.415-.03C1.813-.03 2.281-.03 2.68 0V-.309H2.471C1.733-.309 1.714-.418 1.714-.777V-2.311C1.714-3.298 2.132-4.184 2.889-4.184C2.959-4.184 2.979-4.184 2.999-4.174C2.969-4.164 2.77-4.045 2.77-3.786C2.77-3.507 2.979-3.357 3.198-3.357C3.377-3.357 3.626-3.477 3.626-3.796S3.318-4.403 2.889-4.403C2.162-4.403 1.803-3.736 1.664-3.308Z'/>
+<path id='g6-116' d='M1.724-3.985H3.148V-4.294H1.724V-6.127H1.474C1.465-5.31 1.166-4.244 .189-4.204V-3.985H1.036V-1.235C1.036-.01 1.963 .11 2.321 .11C3.029 .11 3.308-.598 3.308-1.235V-1.803H3.059V-1.255C3.059-.518 2.76-.139 2.391-.139C1.724-.139 1.724-1.046 1.724-1.215V-3.985Z'/>
+<path id='g5-120' d='M3.093-1.953C2.864-1.883 2.864-1.664 2.864-1.659C2.864-1.574 2.924-1.455 3.088-1.455C3.228-1.455 3.397-1.574 3.397-1.793C3.397-2.087 3.068-2.202 2.804-2.202C2.481-2.202 2.271-1.993 2.172-1.863C2.007-2.147 1.689-2.202 1.509-2.202C.887-2.202 .533-1.614 .533-1.43C.533-1.36 .613-1.36 .638-1.36C.682-1.36 .722-1.365 .742-1.42C.892-1.908 1.3-2.032 1.489-2.032C1.654-2.032 1.843-1.963 1.843-1.699C1.843-1.574 1.753-1.23 1.584-.568C1.509-.284 1.28-.115 1.066-.115C1.031-.115 .887-.115 .767-.194C.991-.274 .991-.463 .991-.483C.991-.628 .882-.692 .772-.692C.648-.692 .463-.593 .463-.354C.463-.05 .802 .055 1.056 .055C1.33 .055 1.554-.105 1.674-.284C1.873 .015 2.192 .055 2.346 .055C2.974 .055 3.328-.538 3.328-.717C3.328-.787 3.243-.787 3.223-.787C3.138-.787 3.128-.757 3.113-.712C2.969-.264 2.585-.115 2.366-.115C2.217-.115 2.012-.169 2.012-.448C2.012-.508 2.012-.543 2.052-.712C2.137-1.061 2.271-1.614 2.311-1.704C2.376-1.833 2.54-2.032 2.795-2.032C2.809-2.032 2.979-2.032 3.093-1.953Z'/>
+<path id='g8-40' d='M2.197-3.616C2.197-3.621 2.212-3.641 2.212-3.666C2.212-3.686 2.202-3.736 2.127-3.736C2.027-3.736 .747-2.939 .747-1.245C.747 .443 2.027 1.245 2.127 1.245C2.202 1.245 2.212 1.196 2.212 1.176C2.212 1.141 2.192 1.126 2.172 1.111C1.29 .408 1.131-.603 1.131-1.245C1.131-2.466 1.694-3.268 2.197-3.616Z'/>
+<path id='g8-41' d='M1.948-1.245C1.948-2.934 .667-3.736 .568-3.736C.488-3.736 .488-3.676 .488-3.666C.488-3.661 .488-3.631 .518-3.601C1.265-3.009 1.564-2.142 1.564-1.245C1.564-.797 1.479-.329 1.31 .08C1.071 .648 .757 .922 .513 1.121C.498 1.131 .488 1.156 .488 1.176C.488 1.186 .488 1.245 .568 1.245C.667 1.245 1.948 .448 1.948-1.245Z'/>
+<path id='g8-49' d='M1.983-3.168C1.983-3.318 1.968-3.318 1.803-3.318C1.45-2.999 .897-2.999 .797-2.999H.712V-2.78H.797C.912-2.78 1.235-2.795 1.524-2.919V-.428C1.524-.274 1.524-.219 .996-.219H.747V0C1.021-.02 1.465-.02 1.753-.02S2.486-.02 2.76 0V-.219H2.511C1.983-.219 1.983-.274 1.983-.428V-3.168Z'/>
+<path id='g8-105' d='M1.26-3.068C1.26-3.233 1.126-3.372 .956-3.372C.802-3.372 .653-3.253 .653-3.068C.653-2.889 .802-2.765 .956-2.765C1.126-2.765 1.26-2.904 1.26-3.068ZM.433-2.147V-1.928C.787-1.928 .827-1.893 .827-1.649V-.418C.827-.264 .827-.219 .503-.219H.413V0C.618-.015 .827-.02 1.031-.02C1.22-.02 1.44-.015 1.624 0V-.219C1.29-.219 1.25-.219 1.25-.418V-2.202L.433-2.147Z'/>
+<path id='g8-115' d='M2.227-2.092C2.227-2.177 2.227-2.232 2.147-2.232C2.122-2.232 2.102-2.227 2.062-2.197C2.042-2.177 1.953-2.097 1.933-2.097C1.928-2.097 1.918-2.097 1.888-2.117C1.773-2.182 1.589-2.232 1.34-2.232C.518-2.232 .349-1.853 .349-1.624C.349-1.156 .927-1.066 1.385-.996C1.674-.951 2.132-.882 2.132-.543C2.132-.369 1.988-.11 1.385-.11C1.046-.11 .717-.234 .568-.762C.543-.852 .538-.867 .453-.867C.349-.867 .349-.827 .349-.722V-.085C.349 0 .349 .055 .428 .055C.468 .055 .473 .05 .568-.045L.697-.169C.946 .05 1.26 .055 1.385 .055C2.217 .055 2.381-.379 2.381-.628C2.381-.852 2.257-1.016 2.067-1.136C1.868-1.26 1.719-1.28 1.3-1.345C.981-1.395 .598-1.455 .598-1.719C.598-1.893 .792-2.082 1.335-2.082C1.748-2.082 1.988-1.918 2.017-1.574C2.022-1.499 2.027-1.469 2.122-1.469C2.227-1.469 2.227-1.504 2.227-1.609V-2.092Z'/>
+<path id='g3-101' d='M1.863-2.301C2.152-2.301 2.889-2.321 3.387-2.531C4.085-2.829 4.134-3.417 4.134-3.557C4.134-3.995 3.756-4.403 3.068-4.403C1.963-4.403 .458-3.437 .458-1.694C.458-.677 1.046 .11 2.022 .11C3.447 .11 4.284-.946 4.284-1.066C4.284-1.126 4.224-1.196 4.164-1.196C4.115-1.196 4.095-1.176 4.035-1.096C3.248-.11 2.162-.11 2.042-.11C1.265-.11 1.176-.946 1.176-1.265C1.176-1.385 1.186-1.694 1.335-2.301H1.863ZM1.395-2.521C1.783-4.035 2.809-4.184 3.068-4.184C3.537-4.184 3.806-3.895 3.806-3.557C3.806-2.521 2.212-2.521 1.803-2.521H1.395Z'/>
+<path id='g7-48' d='M3.599-2.225C3.599-2.992 3.508-3.543 3.187-4.031C2.971-4.352 2.538-4.631 1.981-4.631C.363-4.631 .363-2.727 .363-2.225S.363 .139 1.981 .139S3.599-1.723 3.599-2.225ZM1.981-.056C1.66-.056 1.234-.244 1.095-.816C.997-1.227 .997-1.799 .997-2.315C.997-2.824 .997-3.354 1.102-3.738C1.248-4.289 1.695-4.435 1.981-4.435C2.357-4.435 2.72-4.205 2.845-3.801C2.957-3.424 2.964-2.922 2.964-2.315C2.964-1.799 2.964-1.283 2.873-.844C2.734-.209 2.26-.056 1.981-.056Z'/>
+<path id='g6-63' d='M2.341-2.481C2.341-3.736 3.308-4.443 3.656-4.702C3.925-4.902 4.134-5.26 4.134-5.679C4.134-6.257 3.736-7.024 2.252-7.024C1.176-7.024 .558-6.346 .558-5.699C.558-5.36 .787-5.22 1.016-5.22C1.295-5.22 1.474-5.42 1.474-5.679C1.474-6.127 1.056-6.127 .917-6.127C1.225-6.655 1.803-6.804 2.222-6.804C3.308-6.804 3.308-6.127 3.308-5.738C3.308-5.151 3.148-4.971 2.969-4.792C2.311-4.075 2.092-3.158 2.092-2.55V-2.102C2.092-1.923 2.092-1.863 2.212-1.863C2.341-1.863 2.341-1.953 2.341-2.132V-2.481ZM2.74-.528C2.74-.817 2.501-1.056 2.212-1.056S1.684-.817 1.684-.528S1.923 0 2.212 0S2.74-.239 2.74-.528Z'/>
+<path id='g3-107' d='M2.859-6.804C2.859-6.814 2.859-6.914 2.73-6.914C2.501-6.914 1.773-6.834 1.514-6.814C1.435-6.804 1.325-6.795 1.325-6.615C1.325-6.496 1.415-6.496 1.564-6.496C2.042-6.496 2.062-6.426 2.062-6.326L2.032-6.127L.588-.389C.548-.249 .548-.229 .548-.169C.548 .06 .747 .11 .837 .11C.966 .11 1.116 .02 1.176-.1C1.225-.189 1.674-2.032 1.733-2.281C2.072-2.252 2.889-2.092 2.889-1.435C2.889-1.365 2.889-1.325 2.859-1.225C2.839-1.106 2.819-.986 2.819-.877C2.819-.289 3.218 .11 3.736 .11C4.035 .11 4.304-.05 4.523-.418C4.772-.857 4.882-1.405 4.882-1.425C4.882-1.524 4.792-1.524 4.762-1.524C4.663-1.524 4.653-1.484 4.623-1.345C4.423-.618 4.194-.11 3.756-.11C3.567-.11 3.437-.219 3.437-.578C3.437-.747 3.477-.976 3.517-1.136C3.557-1.305 3.557-1.345 3.557-1.445C3.557-2.092 2.929-2.381 2.082-2.491C2.391-2.67 2.71-2.989 2.939-3.228C3.417-3.756 3.875-4.184 4.364-4.184C4.423-4.184 4.433-4.184 4.453-4.174C4.573-4.154 4.583-4.154 4.663-4.095C4.682-4.085 4.682-4.075 4.702-4.055C4.224-4.025 4.134-3.636 4.134-3.517C4.134-3.357 4.244-3.168 4.513-3.168C4.772-3.168 5.061-3.387 5.061-3.776C5.061-4.075 4.832-4.403 4.384-4.403C4.105-4.403 3.646-4.324 2.929-3.527C2.59-3.148 2.202-2.75 1.823-2.6L2.859-6.804Z'/>
+<path id='g6-50' d='M1.265-.767L2.321-1.793C3.875-3.168 4.473-3.706 4.473-4.702C4.473-5.838 3.577-6.635 2.361-6.635C1.235-6.635 .498-5.719 .498-4.832C.498-4.274 .996-4.274 1.026-4.274C1.196-4.274 1.544-4.394 1.544-4.802C1.544-5.061 1.365-5.32 1.016-5.32C.936-5.32 .917-5.32 .887-5.31C1.116-5.958 1.654-6.326 2.232-6.326C3.138-6.326 3.567-5.519 3.567-4.702C3.567-3.905 3.068-3.118 2.521-2.501L.608-.369C.498-.259 .498-.239 .498 0H4.194L4.473-1.733H4.224C4.174-1.435 4.105-.996 4.005-.847C3.935-.767 3.278-.767 3.059-.767H1.265Z'/>
+<path id='g3-102' d='M3.656-3.985H4.513C4.712-3.985 4.812-3.985 4.812-4.184C4.812-4.294 4.712-4.294 4.543-4.294H3.716L3.925-5.43C3.965-5.639 4.105-6.346 4.164-6.466C4.254-6.655 4.423-6.804 4.633-6.804C4.672-6.804 4.932-6.804 5.121-6.625C4.682-6.585 4.583-6.237 4.583-6.087C4.583-5.858 4.762-5.738 4.951-5.738C5.21-5.738 5.499-5.958 5.499-6.336C5.499-6.795 5.041-7.024 4.633-7.024C4.294-7.024 3.666-6.844 3.367-5.858C3.308-5.649 3.278-5.549 3.039-4.294H2.351C2.162-4.294 2.052-4.294 2.052-4.105C2.052-3.985 2.142-3.985 2.331-3.985H2.989L2.242-.05C2.062 .917 1.893 1.823 1.375 1.823C1.335 1.823 1.086 1.823 .897 1.644C1.355 1.614 1.445 1.255 1.445 1.106C1.445 .877 1.265 .757 1.076 .757C.817 .757 .528 .976 .528 1.355C.528 1.803 .966 2.042 1.375 2.042C1.923 2.042 2.321 1.455 2.501 1.076C2.819 .448 3.049-.757 3.059-.827L3.656-3.985Z'/>
+<path id='g7-51' d='M1.904-2.329C2.448-2.329 2.838-1.953 2.838-1.206C2.838-.342 2.336-.084 1.932-.084C1.653-.084 1.039-.16 .746-.572C1.074-.586 1.151-.816 1.151-.962C1.151-1.186 .983-1.346 .767-1.346C.572-1.346 .377-1.227 .377-.941C.377-.286 1.102 .139 1.946 .139C2.915 .139 3.585-.509 3.585-1.206C3.585-1.75 3.138-2.294 2.371-2.455C3.103-2.72 3.368-3.243 3.368-3.668C3.368-4.219 2.734-4.631 1.96-4.631S.593-4.254 .593-3.696C.593-3.459 .746-3.327 .955-3.327C1.172-3.327 1.311-3.487 1.311-3.682C1.311-3.884 1.172-4.031 .955-4.045C1.2-4.352 1.681-4.428 1.939-4.428C2.253-4.428 2.692-4.275 2.692-3.668C2.692-3.375 2.594-3.055 2.413-2.838C2.183-2.573 1.988-2.559 1.639-2.538C1.465-2.525 1.451-2.525 1.416-2.518C1.402-2.518 1.346-2.504 1.346-2.427C1.346-2.329 1.409-2.329 1.527-2.329H1.904Z'/>
+<path id='g6-111' d='M4.692-2.132C4.692-3.407 3.696-4.463 2.491-4.463C1.245-4.463 .279-3.377 .279-2.132C.279-.847 1.315 .11 2.481 .11C3.686 .11 4.692-.867 4.692-2.132ZM2.491-.139C2.062-.139 1.624-.349 1.355-.807C1.106-1.245 1.106-1.853 1.106-2.212C1.106-2.6 1.106-3.138 1.345-3.577C1.614-4.035 2.082-4.244 2.481-4.244C2.919-4.244 3.347-4.025 3.606-3.597S3.866-2.59 3.866-2.212C3.866-1.853 3.866-1.315 3.646-.877C3.427-.428 2.989-.139 2.491-.139Z'/>
+<path id='g6-91' d='M2.54 2.491V2.092H1.574V-7.073H2.54V-7.472H1.176V2.491H2.54Z'/>
+<path id='g6-93' d='M1.584-7.472H.219V-7.073H1.186V2.092H.219V2.491H1.584V-7.472Z'/>
+<path id='g7-40' d='M2.476-5.23C1.151-4.296 .802-2.817 .802-1.75C.802-.767 1.095 .76 2.476 1.736C2.532 1.736 2.615 1.736 2.615 1.653C2.615 1.611 2.594 1.597 2.545 1.548C1.618 .711 1.276-.474 1.276-1.743C1.276-3.626 1.995-4.547 2.566-5.063C2.594-5.091 2.615-5.112 2.615-5.147C2.615-5.23 2.532-5.23 2.476-5.23Z'/>
+<path id='g7-41' d='M.628-5.23C.579-5.23 .495-5.23 .495-5.147C.495-5.112 .516-5.091 .558-5.042C1.158-4.491 1.827-3.55 1.827-1.75C1.827-.293 1.374 .809 .621 1.492C.502 1.611 .495 1.618 .495 1.653S.516 1.736 .586 1.736C.669 1.736 1.332 1.276 1.792 .404C2.099-.174 2.301-.928 2.301-1.743C2.301-2.727 2.008-4.254 .628-5.23Z'/>
+<path id='g7-61' d='M5.356-2.343C5.461-2.343 5.621-2.343 5.621-2.518C5.621-2.685 5.454-2.685 5.363-2.685H.746C.656-2.685 .488-2.685 .488-2.518C.488-2.343 .649-2.343 .753-2.343H5.356ZM5.363-.809C5.454-.809 5.621-.809 5.621-.976C5.621-1.151 5.461-1.151 5.356-1.151H.753C.649-1.151 .488-1.151 .488-.976C.488-.809 .656-.809 .746-.809H5.363Z'/>
+<path id='g9-88' d='M12.613 13.948L13.818 10.76H13.569C13.181 11.796 12.125 12.473 10.979 12.772C10.77 12.822 9.793 13.081 7.88 13.081H1.873L6.944 7.133C7.014 7.054 7.034 7.024 7.034 6.974C7.034 6.954 7.034 6.924 6.964 6.824L2.321 .478H7.781C9.116 .478 10.022 .618 10.112 .638C10.65 .717 11.517 .887 12.304 1.385C12.553 1.544 13.23 1.993 13.569 2.8H13.818L12.613 0H.837C.608 0 .598 .01 .568 .07C.558 .1 .558 .289 .558 .399L5.828 7.611L.667 13.659C.568 13.778 .568 13.828 .568 13.838C.568 13.948 .658 13.948 .837 13.948H12.613Z'/>
+<path id='g9-116' d='M6.994 17.933C7.372 17.933 7.392 17.873 7.392 17.574V.149C7.392-.02 7.392-.199 7.193-.199S6.994-.02 6.994 .149V15.392H6.984L2.491 1.773L1.106 4.493L1.255 4.653L2.082 3.039L6.994 17.933Z'/>
+<path id='g9-117' d='M6.994 5.828C6.994 5.998 6.994 6.177 7.193 6.177S7.392 5.998 7.392 5.828V.149C7.392-.02 7.392-.199 7.193-.199S6.994-.02 6.994 .149V5.828Z'/>
+<path id='g9-118' d='M7.352-.399C7.034-.399 6.994-.369 6.994-.04V5.43C6.994 5.599 6.994 5.778 7.193 5.778S7.392 5.599 7.392 5.43V0H10.371C10.54 0 10.72 0 10.72-.199S10.54-.399 10.371-.399H7.352Z'/>
+<path id='g4-102' d='M2.838-2.755H3.522C3.661-2.755 3.752-2.755 3.752-2.908C3.752-3.006 3.661-3.006 3.536-3.006H2.887C3.048-3.891 3.103-4.212 3.159-4.414C3.194-4.568 3.347-4.714 3.515-4.714C3.522-4.714 3.71-4.714 3.843-4.631C3.557-4.54 3.536-4.289 3.536-4.247C3.536-4.094 3.654-3.989 3.815-3.989C4.003-3.989 4.212-4.149 4.212-4.414C4.212-4.735 3.87-4.91 3.515-4.91C3.208-4.91 2.866-4.735 2.678-4.387C2.538-4.129 2.483-3.815 2.336-3.006H1.785C1.646-3.006 1.555-3.006 1.555-2.852C1.555-2.755 1.646-2.755 1.771-2.755H2.287C2.28-2.713 1.841-.202 1.674 .544C1.639 .697 1.52 1.227 1.186 1.227C1.179 1.227 1.011 1.227 .879 1.144C1.165 1.053 1.186 .802 1.186 .76C1.186 .607 1.067 .502 .907 .502C.718 .502 .509 .663 .509 .928C.509 1.241 .837 1.423 1.186 1.423C1.632 1.423 1.939 .962 2.022 .809C2.273 .342 2.434-.516 2.448-.6L2.838-2.755Z'/>
+<path id='g3-103' d='M4.692-3.756C4.702-3.816 4.722-3.866 4.722-3.935C4.722-4.105 4.603-4.204 4.433-4.204C4.334-4.204 4.065-4.134 4.025-3.776C3.846-4.144 3.497-4.403 3.098-4.403C1.963-4.403 .727-3.009 .727-1.574C.727-.588 1.335 0 2.052 0C2.64 0 3.108-.468 3.208-.578L3.218-.568C3.009 .319 2.889 .727 2.889 .747C2.849 .837 2.511 1.823 1.455 1.823C1.265 1.823 .936 1.813 .658 1.724C.956 1.634 1.066 1.375 1.066 1.205C1.066 1.046 .956 .857 .687 .857C.468 .857 .149 1.036 .149 1.435C.149 1.843 .518 2.042 1.474 2.042C2.72 2.042 3.437 1.265 3.587 .667L4.692-3.756ZM3.397-1.275C3.337-1.016 3.108-.767 2.889-.578C2.68-.399 2.371-.219 2.082-.219C1.584-.219 1.435-.737 1.435-1.136C1.435-1.614 1.724-2.79 1.993-3.298C2.262-3.786 2.69-4.184 3.108-4.184C3.766-4.184 3.905-3.377 3.905-3.328S3.885-3.218 3.875-3.178L3.397-1.275Z'/>
+<path id='g0-50' d='M5.46-2.291C5.629-2.291 5.808-2.291 5.808-2.491S5.629-2.69 5.46-2.69H1.235C1.355-4.025 2.501-4.981 3.905-4.981H5.46C5.629-4.981 5.808-4.981 5.808-5.181S5.629-5.38 5.46-5.38H3.885C2.182-5.38 .827-4.085 .827-2.491S2.182 .399 3.885 .399H5.46C5.629 .399 5.808 .399 5.808 .199S5.629 0 5.46 0H3.905C2.501 0 1.355-.956 1.235-2.291H5.46Z'/>
+<path id='g3-24' d='M1.534-3.049C.448-2.331 .229-1.395 .229-1.036C.229-.558 .498-.279 .518-.249C.837 .08 .927 .12 1.674 .399L2.879 .867C3.029 .936 3.228 1.006 3.228 1.295C3.228 1.524 3.049 1.823 2.74 1.823C2.301 1.823 1.973 1.584 1.863 1.504C1.803 1.465 1.793 1.455 1.753 1.455C1.674 1.455 1.654 1.524 1.654 1.564C1.654 1.684 2.182 2.042 2.74 2.042C3.357 2.042 3.776 1.465 3.776 .976C3.776 .498 3.407 .319 3.298 .269C3.158 .219 2.819 .09 2.69 .04C2.491-.04 2.291-.12 2.082-.189L1.484-.428C1.036-.608 .737-.897 .737-1.315C.737-1.724 1.126-2.59 1.963-3.009C2.331-2.879 2.63-2.879 2.839-2.879C3.138-2.879 3.766-2.879 3.766-3.188C3.766-3.437 3.337-3.457 2.949-3.457C2.77-3.457 2.481-3.457 2.112-3.337C1.853-3.597 1.813-3.925 1.813-4.115C1.813-4.672 2.172-5.44 2.919-5.808C3.098-5.589 3.328-5.589 3.557-5.589C3.806-5.589 4.443-5.589 4.443-5.898C4.443-6.157 4.005-6.167 3.616-6.167C3.487-6.167 3.248-6.167 2.989-6.117C2.959-6.207 2.939-6.276 2.939-6.446C2.939-6.585 2.989-6.795 2.989-6.814C2.989-6.894 2.939-6.944 2.869-6.944C2.69-6.944 2.69-6.486 2.69-6.456C2.69-6.257 2.75-6.107 2.76-6.067C1.694-5.768 1.016-4.971 1.016-4.204C1.016-3.836 1.196-3.417 1.664-3.148L1.534-3.049ZM3.148-5.898C3.308-5.948 3.517-5.948 3.626-5.948C3.965-5.948 4.005-5.938 4.184-5.888C4.105-5.858 4.005-5.808 3.567-5.808C3.377-5.808 3.258-5.808 3.148-5.898ZM2.371-3.178C2.6-3.238 2.819-3.238 2.939-3.238C3.288-3.238 3.328-3.228 3.507-3.178C3.427-3.138 3.328-3.098 2.869-3.098C2.64-3.098 2.55-3.098 2.371-3.178Z'/>
+<path id='g0-49' d='M5.061-2.7C4.523-3.377 4.403-3.527 4.095-3.776C3.537-4.224 2.979-4.403 2.471-4.403C1.305-4.403 .548-3.308 .548-2.142C.548-.996 1.285 .11 2.431 .11S4.403-.797 4.892-1.594C5.43-.917 5.549-.767 5.858-.518C6.416-.07 6.974 .11 7.482 .11C8.648 .11 9.405-.986 9.405-2.152C9.405-3.298 8.667-4.403 7.522-4.403S5.549-3.497 5.061-2.7ZM5.32-2.361C5.729-3.078 6.466-4.085 7.592-4.085C8.648-4.085 9.186-3.049 9.186-2.152C9.186-1.176 8.518-.369 7.641-.369C7.064-.369 6.615-.787 6.406-.996C6.157-1.265 5.928-1.574 5.32-2.361ZM4.633-1.933C4.224-1.215 3.487-.209 2.361-.209C1.305-.209 .767-1.245 .767-2.142C.767-3.118 1.435-3.925 2.311-3.925C2.889-3.925 3.337-3.507 3.547-3.298C3.796-3.029 4.025-2.72 4.633-1.933Z'/>
+<path id='g5-116' d='M1.564-1.923H2.152C2.257-1.923 2.262-1.928 2.286-1.948S2.326-2.032 2.326-2.062C2.326-2.147 2.252-2.147 2.167-2.147H1.619L1.724-2.56C1.753-2.69 1.813-2.914 1.813-2.944C1.813-3.029 1.748-3.118 1.629-3.118C1.544-3.118 1.425-3.064 1.385-2.929C1.36-2.844 1.42-3.078 1.186-2.147H.593C.493-2.147 .418-2.147 .418-2.007C.418-1.923 .488-1.923 .578-1.923H1.131L.837-.752C.812-.643 .772-.488 .772-.428C.772-.144 1.036 .055 1.385 .055C1.988 .055 2.356-.618 2.356-.717C2.356-.787 2.271-.787 2.252-.787C2.172-.787 2.162-.767 2.137-.702C1.973-.344 1.664-.115 1.405-.115C1.245-.115 1.196-.229 1.196-.379C1.196-.458 1.2-.473 1.21-.518L1.564-1.923Z'/>
+<path id='g2-0' d='M4.384-1.106C4.463-1.106 4.598-1.106 4.598-1.245S4.463-1.385 4.384-1.385H1.011C.932-1.385 .797-1.385 .797-1.245S.932-1.106 1.011-1.106H4.384Z'/>
+<path id='g4-116' d='M1.716-2.755H2.427C2.559-2.755 2.65-2.755 2.65-2.908C2.65-3.006 2.559-3.006 2.441-3.006H1.778L2.036-4.038C2.043-4.073 2.057-4.108 2.057-4.135C2.057-4.261 1.96-4.359 1.82-4.359C1.646-4.359 1.541-4.24 1.492-4.059C1.444-3.884 1.534-4.219 1.227-3.006H.516C.384-3.006 .293-3.006 .293-2.852C.293-2.755 .377-2.755 .502-2.755H1.165L.753-1.109C.711-.934 .649-.683 .649-.593C.649-.181 .997 .07 1.395 .07C2.169 .07 2.608-.907 2.608-.997S2.518-1.088 2.497-1.088C2.413-1.088 2.406-1.074 2.35-.955C2.155-.516 1.799-.126 1.416-.126C1.269-.126 1.172-.216 1.172-.467C1.172-.537 1.2-.683 1.213-.753L1.716-2.755Z'/>
+<path id='g3-116' d='M2.052-3.985H2.989C3.188-3.985 3.288-3.985 3.288-4.184C3.288-4.294 3.188-4.294 3.009-4.294H2.132C2.491-5.709 2.54-5.908 2.54-5.968C2.54-6.137 2.421-6.237 2.252-6.237C2.222-6.237 1.943-6.227 1.853-5.878L1.465-4.294H.528C.329-4.294 .229-4.294 .229-4.105C.229-3.985 .309-3.985 .508-3.985H1.385C.667-1.156 .628-.986 .628-.807C.628-.269 1.006 .11 1.544 .11C2.56 .11 3.128-1.345 3.128-1.425C3.128-1.524 3.049-1.524 3.009-1.524C2.919-1.524 2.909-1.494 2.859-1.385C2.431-.349 1.903-.11 1.564-.11C1.355-.11 1.255-.239 1.255-.568C1.255-.807 1.275-.877 1.315-1.046L2.052-3.985Z'/>
+</defs>
+</svg>
+
+</body>
+<script>
+    // initialize printing
+    revealConfig.initPrint();
+    // initialize background embedded images
+    revealConfig.getEmbeddedImages();
+    </script>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 1.2.3" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta name="author" content="张瑞" />
+  <title>习题</title>
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.25em;
+  }
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.5em;
+  }
+  .madoko .toc-contents>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  .madoko dl {
+    margin-left: 0em;
+  }
+  .madoko blockquote {
+    font-style: italic;
+  }
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  .madoko .footnote {
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  .madoko .equation-before {
+    float: right;
+  }
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  .madoko .hidden {
+    display: none;
+  }
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  .madoko ul.list-style-type-dash {
+      list-style-type: none !important;
+  }
+  .madoko ul.list-style-type-dash > li:before {
+      content: "\2013";
+      position: absolute;
+      margin-left: -1em;
+  }
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .math-rendering {
+    text-align: left;
+    white-space: pre;
+    color: gray;
+  }
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  .madoko span.math-rendering {
+    display:inline-block;
+    width:8em;
+    overflow-x:auto;
+    font-size:70%;
+  }
+  .madoko span.math-rendering::-webkit-scrollbar {
+    width:4px;
+  }
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  body.madoko, .madoko .serif {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+  }
+  .madoko .sans-serif {
+    font-family: "Calibri", "Optima", sans-serif;
+  }
+  .madoko .symbol {
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  body.madoko {
+    -webkit-text-size-adjust: 100%;       
+    text-rendering: optimizeLegibility;
+  }
+  body.madoko {
+    max-width: 88ex; 
+    margin: 1em auto;
+    padding: 0em 2em;
+  }
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  .madoko p {
+    text-align: justify;
+  }
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 {
+    margin-top: 1.22em;
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  {
+    margin-top: 1ex;
+  }
+  .madoko h5, .madoko h6 {
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 {
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 {
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt,
+  .madoko .monospace, .madoko .token-indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token-indent {
+    font-size: 0.95em;
+  }
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 0.5em;
+    }
+    .madoko li {
+      text-align: left;
+    }
+  }
+  
+    </style>
+  <link rel="stylesheet" type="text/css" href="../../../static/js/reveal.js-2.6.2/css/reveal.min.css"  class="link">
+  <link rel="stylesheet" type="text/css" href="../../../static/js/reveal.js-2.6.2/css/theme/sky.css"  class="link">
+  <script src="../../../static/js/reveal.js-2.6.2/lib/js/head.min.js"  class="script preview"></script>
+  <script src="../../../static/js/reveal.js-2.6.2/js/reveal.js"  class="script preview"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link rel="stylesheet" href="../../../static/js/reveal.js-2.6.2/css/theme/sky.css" id="theme">    
+      <!--[if lt IE 9]>
+      <script src="../../../static/js/reveal.js-2.6.2/lib/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      body.madoko {
+        margin: 0pt;
+        padding: 0pt;
+        max-width: 100%;      
+      }
+      .madoko .reveal h1 {
+          font-size: 3.7em;
+      }
+      .madoko .reveal h2 {
+          font-size: 2.1em;
+      }
+      .reveal .authorblock .author {
+          font-size: 120%;
+          margin-bottom: 1ex;
+      }        
+      .reveal table {
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .reveal pre table {
+        margin-left: 0pt;
+      }
+      .madoko .reveal pre.pretty {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+      }
+      .reveal li p {
+          text-align: left;
+      }
+      .reveal h2 {
+          margin-bottom: 0.7em;
+      }
+      .reveal section ul,
+      .reveal section ol {
+          margin-top: 0.35em;
+          margin-bottom: 0.35em;
+      }
+      .reveal section img.math-display {
+          padding: 1em;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img.math-inline {
+          margin: 0pt;
+          padding: 0pt;
+          background-color: none;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img {
+          box-shadow: none;
+          border: none;
+      }
+      .madoko .reveal pre {
+          border: 1px solid black;
+          word-wrap: normal;
+          background-color: white;
+          font-size: 0.7em;
+          padding: 0.7em;
+          line-height: 100%;
+          width: 100%;
+      }      
+      .reveal pre code, .reveal code {
+          padding: 0pt;
+      }
+      .reveal nav.toc {
+          line-height: 1em;
+          font-size: 60%;
+          overflow-y: auto;
+      }    
+      .reveal .tocitem {
+          text-align: left;
+      }
+      .reveal .toc>.tocblock .tocblock {
+          margin-left: 0.5em;
+      }   
+      .reveal .toc>.tocblock .tocblock .tocblock {
+          margin-left: 1em;
+      }
+      .reveal .bibliography {
+        height: 18em;
+        overflow-y: auto;
+        font-size: 0.8em;
+        line-height: 1.25;
+      }
+      .reveal section[data-smaller=""],
+      .reveal section[data-smaller="true"] {
+        font-size: 80%;
+        width: 110%;
+      }
+      .reveal .slides>section[data-smaller=""],
+      .reveal .slides>section[data-smaller="true"] {
+        left: -55%;
+      }
+      .reveal .details {
+        display: none;
+      }
+      .reveal[data-details=""] .details,
+      .reveal[data-details="true"] .details {
+        display: initial;
+      }
+      /* Display in the preview window */
+      html, body.madoko.preview, body.madoko.preview-full, .body.madoko {
+        height  : 100% !important;
+        width   : auto!important;
+        padding : 0pt !important;
+        margin  : 0pt !important;
+      }
+      body.madoko.preview, body.madoko.preview-full, .preview .body.madoko {
+        overflow: hidden !important;
+      }
+      body.preview .reveal .slides .fragment {
+        visibility: visible;
+        opacity: 0.5;
+      }
+      body.preview .reveal .slides .fragment.visible {
+        opacity: 1.0;
+      }
+      .preview .reveal div.notes,
+      .preview .reveal aside.notes {
+        display  : block;
+        position : absolute;
+        width    : 30%;
+        left     : 70%;
+        top      : -15%;
+        font-size: 50%;
+        border   : 1px solid black;
+        border-radius   : 10px;
+        background-color: white;
+      }
+      /* 'static' display in the preview window, unused for now */
+      body.preview.static div.reveal, 
+      body.preview.static div.ticreveal .slides, 
+      body.preview.static div.reveal section {
+        display: block !important;
+        position: relative !important;
+        width: auto !important;      
+      }
+      body.preview.static div.reveal section {
+        border: solid 1px black;
+        padding: 1em !important;
+        margin-top: 1em;
+        min-height: 15em;
+        top: 0pt;
+      }
+      body.madoko.preview.static section {
+        font-size: 75%;
+      }
+      body.madoko.preview.static {
+        padding: 0em 1em !important;
+      }
+      body.madoko.preview.static .reveal pre {
+        width: 95%;
+      }    
+      body.preview .reveal[data-details="false"] .details {
+        display: initial;
+        color: gray;
+      }
+      body.preview .reveal[data-long="false"] section[data-long] {
+        border-left: 2px black solid;
+      }
+      </style>
+      <script>    
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      window.revealConfig = {
+          controls: true,
+          progress: true,
+          history: true,
+          center: /^\s*(true|1)\s*$/i.test("true"),
+          slideNumber: /^\s*(true|1)\s*$/i.test("true"),
+          dependencies: [
+            { src: '../../../static/js/reveal.js-2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../../../static/js/reveal.js-2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: '../../../static/js/reveal.js-2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          ],
+      };
+      function revealAddFragments() {
+        [].forEach.call(document.querySelectorAll( ".fragmented" ), function(elem0) {
+          var elem = (/^H\d$/.test(elem0.nodeName) ? elem0.parentNode : elem0);
+          [].forEach.call(elem.children, function(item) {
+            if (item==elem0) return;
+            if (item && !/\bfragment(ed)?\b/.test(item.className) && item.nodeType===1) {
+              item.className = item.className + " fragment";
+            }
+          });
+        });
+      }
+      function revealQuotedList(listType) {
+        //compatibility with Rmarkdown slides
+        [].forEach.call( document.querySelectorAll("blockquote>" + listType), function(ul) {
+          if (!/\bfragmented\b/.test(ul.className)) {
+            ul.className = ul.className + " fragmented";
+          }        
+          var quote = ul.parentNode;
+          if (quote.childElementCount===1) {
+            quote.parentNode.replaceChild(ul,quote);
+          }
+        });
+      }
+      function revealBuildToFragmented() {
+        [].forEach.call(document.querySelectorAll( ".build" ), function(elem) {
+          if (elem && !/\bfragmented\b/.test(elem.className) && elem.nodeType===1) {
+            elem.className = elem.className + " fragmented";
+          }
+        });
+      }
+      function revealDivNotesToAside() {
+        [].forEach.call(document.querySelectorAll("div.notes"), function(elem) {
+          var aside = document.createElement("ASIDE");
+          if (elem.id) aside.id = elem.id;
+          aside.className = elem.className;
+          [].forEach.call(elem.attributes, function(attr) {
+            aside.setAttribute( attr.name, attr.value );
+          });
+          aside.innerHTML = elem.innerHTML;
+          elem.parentNode.replaceChild(aside,elem);
+        });
+      }
+      function revealDataQuery() {
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        window.location.search.replace(/\bdata-(\w+)(?:=(\w+))?\b/g, function(matched,key,value) {
+          reveal.setAttribute("data-" + key, (value ? value : ""));
+          return matched;
+        });
+      }
+      function revealRemoveLong() {
+        // remove parts for 'long' presentation
+        if (/\bpreview(?![\w\-])/.test(document.body.className)) return;
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        var value = reveal.hasAttribute("data-long") ? reveal.getAttribute("data-long") : null;
+        if (value==null || value=="false" || value=="0") {
+          [].forEach.call( document.querySelectorAll("section[data-long]"), function(elem) {
+            elem.parentNode.removeChild(elem);
+          });
+        }
+      }
+      revealConfig.onLoad = function() {
+        revealConfig.getEmbeddedImages();
+        revealDataQuery();
+        revealRemoveLong();
+        revealQuotedList("ul");
+        revealQuotedList("ol");
+        revealBuildToFragmented();
+        revealDivNotesToAside();
+        revealAddFragments();
+      };
+      document.addEventListener("load",revealConfig.onLoad);    
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof Reveal !== "undefined" && !Reveal.isReady()) {
+          revealConfig.onLoad();
+          Reveal.initialize(revealConfig);
+        }
+      });    
+      // add support for printing:
+      // use  ?print-pdf to get a pdf-printable version (in Chrome)
+      // use  ?print-paper to get a paper-printable version.
+      revealConfig.initPrint = function() {
+        var cssLink = null;
+        var bodyClass = null;
+        var cap = window.location.search.match(/\bprint-(\w+)\b/);
+        if (cap) {
+          bodyClass = cap[0];
+          cssLink = "../../../static/js/reveal.js-2.6.2/css/print/" + cap[1] + ".css";
+        }
+        if (cssLink) {
+          var link  = document.createElement( "link" );
+          link.rel  = "stylesheet";
+          link.type = "text/css";
+          link.href = cssLink;
+          var head = document.getElementsByTagName( 'head' )[0];
+          if (head) head.appendChild( link );
+        }
+        if (bodyClass) {
+          document.body.className = document.body.className + " " + bodyClass;
+        }
+      };
+      revealConfig.getEmbeddedImages = function() {
+        var images = {};
+        [].forEach.call( document.querySelectorAll("img[data-linkid]"), function(img) {
+          var linkid = img.getAttribute("data-linkid");
+          if (linkid) images["/" + linkid] = img.src;
+          var path = img.getAttribute("data-path");
+          if (path) images["/" + path] = img.src;
+        });     
+        [].forEach.call( document.querySelectorAll("section"), function(slide) {
+          var attrName = "data-background";
+          var image = slide.getAttribute(attrName);
+          if (!image) {
+            attrName = "data-background-image";
+            image = slide.getAttribute(attrName);
+          }
+          if (!image) return;
+          var cap = /^\s*!?\[([^\]]+)\]\s*$/.exec(image);
+          var href = images["/" + (cap ? cap[1] : image)];
+          if (!href) return;
+          if (attrName==="data-background" && /^data:/.test(href)) href = "url(" + href + ")";
+          slide.setAttribute(attrName, href);
+        });
+      };    
+      </script>
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0">
+<div class="reveal" data-long="false" data-details="false" data-line="12;../configs/latex.conf:11" style="line-adjust:0">
+<div class="slides" data-line="12;../configs/latex.conf:11" style="line-adjust:0">
+
+<div class="mathdefs input-mathdefs" data-line="13"></div>
+<section class="titleblock align-center para-block" data-line="17" style="text-align:center;line-adjust:0">
+<div class="titleheader align-center" data-line="17" style="text-align:center;line-adjust:0">
+<h1 class="title para-block" data-line="17" style="font-weight:bold;margin-bottom:0.5ex;font-size:3em;line-adjust:0"><span data-line="17"></span>习题</h1>
+<h2 class="subtitle para-block" data-line="20" style="margin-bottom:0.5ex;font-size:1.8em;line-adjust:0"><span data-line="20"></span>无穷级数</h2></div>
+<div class="authors align-center" data-line="25" style="text-align:center;width:80%;line-adjust:0"><table class="authorrow columns block" data-line="25" style="margin-top:2ex;width:100%;line-adjust:0">
+<tbody><tr><td class="author column" data-line="25" style="text-align:center;font-size:x-large;line-adjust:0">
+<div class="authorname" data-line="25" style="font-size:1.4em;line-adjust:0"><span data-line="25"></span>张瑞</div>
+<div class="authoraddress" data-line="28" style="line-adjust:0"><span data-line="28"></span>中国科学技术大学数学科学学院</div>
+<div class="authoremail email" data-line="31" style="line-adjust:0"><span data-line="31"></span>rui [at] ustc [dot] edu [dot] cn</div></td></tr></tbody></table></div></section>
+<section class="slide section" data-line="19">
+<div class="example" data-line="20" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="21"><span data-line="21"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">1</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="21"></span>[复习题(3)]<span data-line="21"></span>
+讨论级数<span data-line="22"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:2.9158em" viewBox='34.67 52.67 27.77 27.489'><desc>$\displaystyle \sum_{n=1}^\infty a_n$</desc><g id='math-8496e2'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='51.542' y='68.325' xlink:href='#g2-97'/><use x='56.808' y='69.82' xlink:href='#g3-110'/></g></svg><span data-line="22"></span>的敛散性。
+</p>
+<p class="p indent" data-line="24"><span data-line="24"></span>设<span data-line="24"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.1779em;height:1.1060em;width:3.8547em" viewBox='34.67 52.997 36.711 10.533'><desc>$a_1=\sqrt2$</desc><g id='math-445e13'><use x='34.869' y='61.836' xlink:href='#g2-97'/><use x='40.135' y='63.33' xlink:href='#g5-49'/><use x='47.372' y='61.836' xlink:href='#g4-61'/><use x='57.888' y='53.594' xlink:href='#g0-112'/><rect x='66.19' y='53.196' height='.398' width='4.981'/><use x='66.19' y='61.836' xlink:href='#g4-50'/></g></svg><span data-line="24"></span>, <span data-line="24"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.1965em;height:1.2972em;width:6.7023em" viewBox='88.468 52.072 63.831 12.354'><desc>$a_2=\sqrt{2-\sqrt2}$</desc><g id='math-5f08eb'><use x='88.667' y='62.555' xlink:href='#g2-97'/><use x='93.934' y='64.049' xlink:href='#g5-50'/><use x='101.17' y='62.555' xlink:href='#g4-61'/><use x='111.686' y='52.67' xlink:href='#g7-112'/><rect x='121.649' y='52.271' height='.398' width='30.441'/><use x='121.649' y='62.555' xlink:href='#g4-50'/><use x='128.844' y='62.555' xlink:href='#g0-0'/><use x='138.807' y='54.314' xlink:href='#g0-112'/><rect x='147.109' y='53.915' height='.398' width='4.981'/><use x='147.109' y='62.555' xlink:href='#g4-50'/></g></svg><span data-line="24"></span>, <span data-line="24"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.4423em;height:1.9248em;width:9.5500em" viewBox='88.468 52.072 90.952 18.331'><desc>$a_2=\sqrt{2-\sqrt{2+\sqrt 2}}$</desc><g id='math-2741e1'><use x='88.667' y='66.191' xlink:href='#g2-97'/><use x='93.934' y='67.686' xlink:href='#g5-50'/><use x='101.17' y='66.191' xlink:href='#g4-61'/><use x='111.686' y='52.67' xlink:href='#g7-113'/><rect x='121.649' y='52.271' height='.398' width='57.562'/><use x='121.649' y='66.191' xlink:href='#g4-50'/><use x='128.844' y='66.191' xlink:href='#g0-0'/><use x='138.807' y='56.306' xlink:href='#g7-112'/><rect x='148.77' y='55.908' height='.398' width='30.441'/><use x='148.77' y='66.191' xlink:href='#g4-50'/><use x='155.965' y='66.191' xlink:href='#g4-43'/><use x='165.927' y='57.95' xlink:href='#g0-112'/><rect x='174.23' y='57.552' height='.398' width='4.981'/><use x='174.23' y='66.191' xlink:href='#g4-50'/></g></svg><span data-line="24"></span>, <span data-line="24"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.5067em;width:1.4377em" viewBox='88.468 57.209 13.692 4.826'><desc>$\cdots$</desc><g id='math-749717'><use x='88.667' y='61.836' xlink:href='#g0-1'/><use x='93.095' y='61.836' xlink:href='#g0-1'/><use x='97.523' y='61.836' xlink:href='#g0-1'/></g></svg><span data-line="24"></span>,
+<span data-line="25"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.6882em;height:2.5524em;width:14.9966em" viewBox='34.67 52.072 142.825 24.309'><desc>$a_n=\sqrt{2-\sqrt{2+\sqrt{2+\cdots+\sqrt2}}}$</desc><g id='math-b1c319'><use x='34.869' y='69.828' xlink:href='#g2-97'/><use x='40.135' y='71.322' xlink:href='#g3-110'/><use x='48.326' y='69.828' xlink:href='#g4-61'/><use x='58.842' y='52.67' xlink:href='#g7-114'/><rect x='68.804' y='52.271' height='.398' width='108.482'/><use x='68.804' y='69.828' xlink:href='#g4-50'/><use x='76' y='69.828' xlink:href='#g0-0'/><use x='85.962' y='56.306' xlink:href='#g7-113'/><rect x='95.925' y='55.908' height='.398' width='81.361'/><use x='95.925' y='69.828' xlink:href='#g4-50'/><use x='103.12' y='69.828' xlink:href='#g4-43'/><use x='113.083' y='59.943' xlink:href='#g7-112'/><rect x='123.045' y='59.544' height='.398' width='54.241'/><use x='123.045' y='69.828' xlink:href='#g4-50'/><use x='130.241' y='69.828' xlink:href='#g4-43'/><use x='140.203' y='69.828' xlink:href='#g0-1'/><use x='144.631' y='69.828' xlink:href='#g0-1'/><use x='149.059' y='69.828' xlink:href='#g0-1'/><use x='154.04' y='69.828' xlink:href='#g4-43'/><use x='164.003' y='61.587' xlink:href='#g0-112'/><rect x='172.305' y='61.188' height='.398' width='4.981'/><use x='172.305' y='69.828' xlink:href='#g4-50'/></g></svg><span data-line="25"></span>, <span data-line="25"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.0210em;height:0.5067em;width:1.4377em" viewBox='88.468 57.209 13.692 4.826'><desc>$\cdots$</desc><g id='math-749717'><use x='88.667' y='61.836' xlink:href='#g0-1'/><use x='93.095' y='61.836' xlink:href='#g0-1'/><use x='97.523' y='61.836' xlink:href='#g0-1'/></g></svg></p></div>
+<div class="example" data-line="28" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="29"><span data-line="29"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">2</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="29"></span>讨论级数<span data-line="29"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:15.2209em" viewBox='88.468 52.67 144.961 27.489'><desc>$\displaystyle \sum_{n=0}^\infty (-1)^n\left(\frac1{\sqrt n}-\ln\left(1+\frac1{\sqrt n}\right)\right)$</desc><g id='math-0f75a2'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-48'/><use x='103.68' y='68.325' xlink:href='#g4-40'/><use x='107.554' y='68.325' xlink:href='#g0-0'/><use x='115.303' y='68.325' xlink:href='#g4-49'/><use x='120.284' y='68.325' xlink:href='#g4-41'/><use x='124.158' y='64.212' xlink:href='#g3-110'/><use x='131.242' y='54.278' xlink:href='#g7-18'/><use x='144.421' y='61.585' xlink:href='#g4-49'/><rect x='139.771' y='65.635' height='.398' width='14.282'/><use x='139.771' y='68.026' xlink:href='#g0-112'/><rect x='148.073' y='67.628' height='.398' width='5.98'/><use x='148.073' y='75.202' xlink:href='#g2-110'/><use x='157.462' y='68.325' xlink:href='#g0-0'/><use x='167.425' y='68.325' xlink:href='#g4-108'/><use x='170.193' y='68.325' xlink:href='#g4-110'/><use x='177.388' y='54.278' xlink:href='#g7-18'/><use x='184.721' y='68.325' xlink:href='#g4-49'/><use x='191.917' y='68.325' xlink:href='#g4-43'/><use x='207.725' y='61.585' xlink:href='#g4-49'/><rect x='203.075' y='65.635' height='.398' width='14.282'/><use x='203.075' y='68.026' xlink:href='#g0-112'/><rect x='211.377' y='67.628' height='.398' width='5.98'/><use x='211.377' y='75.202' xlink:href='#g2-110'/><use x='218.552' y='54.278' xlink:href='#g7-19'/><use x='225.886' y='54.278' xlink:href='#g7-19'/></g></svg><span data-line="29"></span>的敛散性。若收敛，是绝对收敛还是条件收敛？</p></div>
+<div class="example" data-line="32" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="33"><span data-line="33"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">3</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="33"></span>判定级数的收敛性
+</p>
+<p class="p indent" data-line="35"><span data-line="35"></span>(3) <span data-line="35"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:7.6936em" viewBox='34.67 52.67 73.272 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}(\frac{n}{3n-1})^{2n-1}$</desc><g id='math-ef9cf3'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='49.881' y='68.325' xlink:href='#g4-40'/><use x='66.021' y='61.585' xlink:href='#g2-110'/><rect x='54.951' y='65.635' height='.398' width='28.119'/><use x='54.951' y='75.159' xlink:href='#g4-51'/><use x='59.933' y='75.159' xlink:href='#g2-110'/><use x='68.126' y='75.159' xlink:href='#g0-0'/><use x='78.089' y='75.159' xlink:href='#g4-49'/><use x='84.266' y='68.325' xlink:href='#g4-41'/><use x='88.14' y='64.212' xlink:href='#g5-50'/><use x='92.111' y='64.212' xlink:href='#g3-110'/><use x='97.036' y='64.212' xlink:href='#g1-0'/><use x='103.263' y='64.212' xlink:href='#g5-49'/></g></svg><span data-line="35"></span>
+(4) <span data-line="36"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:5.8625em" viewBox='88.468 52.67 55.833 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}2^n\sin\frac{\pi}{3^n}$</desc><g id='math-62791a'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='105.34' y='68.325' xlink:href='#g4-50'/><use x='110.321' y='64.212' xlink:href='#g3-110'/><use x='117.405' y='68.325' xlink:href='#g4-115'/><use x='121.334' y='68.325' xlink:href='#g4-105'/><use x='124.102' y='68.325' xlink:href='#g4-110'/><use x='134.677' y='61.585' xlink:href='#g2-25'/><rect x='132.493' y='65.635' height='.398' width='10.404'/><use x='132.493' y='75.159' xlink:href='#g4-51'/><use x='137.474' y='72.281' xlink:href='#g3-110'/></g></svg><span data-line="36"></span>
+(5) <span data-line="37"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.3201em;height:3.0035em;width:3.5453em" viewBox='34.67 51.674 33.765 28.605'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{2^{n^2}}{n!}$</desc><g id='math-9befd3'><use x='38.404' y='55.991' xlink:href='#g1-49'/><use x='35.18' y='58.98' xlink:href='#g7-88'/><use x='34.869' y='80.079' xlink:href='#g3-110'/><use x='39.794' y='80.079' xlink:href='#g5-61'/><use x='45.91' y='80.079' xlink:href='#g5-49'/><use x='52.737' y='61.705' xlink:href='#g4-50'/><use x='57.719' y='58.09' xlink:href='#g3-110'/><use x='62.643' y='55.083' xlink:href='#g6-50'/><rect x='52.737' y='65.755' height='.398' width='14.293'/><use x='55.51' y='75.279' xlink:href='#g2-110'/><use x='61.49' y='75.279' xlink:href='#g4-33'/></g></svg><span data-line="37"></span>
+</p></div></section>
+<section class="slide section" data-line="42">
+
+<div class="example" data-line="44" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="45"><span data-line="45"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">4</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="45"></span>计算
+</p>
+<p class="p indent" data-line="47"><span data-line="47"></span>（1） <span data-line="47"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:3.2118em" viewBox='34.67 52.67 30.589 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{x^n}n$</desc><g id='math-9c1a7d'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='52.737' y='61.585' xlink:href='#g2-120'/><use x='58.431' y='57.97' xlink:href='#g3-110'/><rect x='52.737' y='65.635' height='.398' width='11.117'/><use x='55.306' y='75.159' xlink:href='#g2-110'/></g></svg><span data-line="47"></span>
+（2） <span data-line="48"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:4.7643em" viewBox='88.468 52.67 45.374 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^n}n$</desc><g id='math-c547a0'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='106.535' y='61.585' xlink:href='#g4-40'/><use x='110.41' y='61.585' xlink:href='#g0-0'/><use x='118.159' y='61.585' xlink:href='#g4-49'/><use x='123.14' y='61.585' xlink:href='#g4-41'/><use x='127.014' y='57.97' xlink:href='#g3-110'/><rect x='106.535' y='65.635' height='.398' width='25.902'/><use x='116.496' y='75.159' xlink:href='#g2-110'/></g></svg><span data-line="48"></span>
+（3） <span data-line="49"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:4.0159em" viewBox='34.67 52.67 38.247 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{1}n\frac{1}{2^n}$</desc><g id='math-fe3919'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='53.237' y='61.585' xlink:href='#g4-49'/><rect x='52.737' y='65.635' height='.398' width='5.98'/><use x='52.737' y='75.159' xlink:href='#g2-110'/><use x='63.82' y='61.585' xlink:href='#g4-49'/><rect x='61.108' y='65.635' height='.398' width='10.404'/><use x='61.108' y='75.159' xlink:href='#g4-50'/><use x='66.09' y='72.281' xlink:href='#g3-110'/></g></svg><span data-line="49"></span>
+</p>
+<p class="p indent" data-line="51"><span data-line="51"></span>（4） <span data-line="51"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:6.8317em" viewBox='88.468 52.67 65.064 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}n(n+1)x^n$</desc><g id='math-33d204'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='105.34' y='68.325' xlink:href='#g2-110'/><use x='111.32' y='68.325' xlink:href='#g4-40'/><use x='115.194' y='68.325' xlink:href='#g2-110'/><use x='123.388' y='68.325' xlink:href='#g4-43'/><use x='133.351' y='68.325' xlink:href='#g4-49'/><use x='138.332' y='68.325' xlink:href='#g4-41'/><use x='142.206' y='68.325' xlink:href='#g2-120'/><use x='147.9' y='64.212' xlink:href='#g3-110'/></g></svg><span data-line="51"></span>
+（5） <span data-line="52"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:5.1287em" viewBox='34.67 52.67 48.845 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}n^2x^{n-1}$</desc><g id='math-af7626'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='51.542' y='68.325' xlink:href='#g2-110'/><use x='57.522' y='64.212' xlink:href='#g5-50'/><use x='61.991' y='68.325' xlink:href='#g2-120'/><use x='67.685' y='64.212' xlink:href='#g3-110'/><use x='72.61' y='64.212' xlink:href='#g1-0'/><use x='78.836' y='64.212' xlink:href='#g5-49'/></g></svg><span data-line="52"></span>
+</p>
+<p class="p indent" data-line="54"><span data-line="54"></span>（6） <span data-line="54"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:6.9242em" viewBox='88.468 52.67 65.945 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{(n-1)^2}{n+1}x^n$</desc><g id='math-8cf94e'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='106.535' y='61.585' xlink:href='#g4-40'/><use x='110.41' y='61.585' xlink:href='#g2-110'/><use x='118.604' y='61.585' xlink:href='#g0-0'/><use x='128.566' y='61.585' xlink:href='#g4-49'/><use x='133.548' y='61.585' xlink:href='#g4-41'/><use x='137.422' y='57.97' xlink:href='#g5-50'/><rect x='106.535' y='65.635' height='.398' width='35.356'/><use x='112.645' y='75.159' xlink:href='#g2-110'/><use x='120.838' y='75.159' xlink:href='#g4-43'/><use x='130.801' y='75.159' xlink:href='#g4-49'/><use x='143.087' y='68.325' xlink:href='#g2-120'/><use x='148.781' y='64.212' xlink:href='#g3-110'/></g></svg><span data-line="54"></span>
+（7） <span data-line="55"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:6.5525em" viewBox='34.67 52.67 62.405 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}(2n-1)x^n$</desc><g id='math-a0db2b'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='49.881' y='68.325' xlink:href='#g4-40'/><use x='53.756' y='68.325' xlink:href='#g4-50'/><use x='58.737' y='68.325' xlink:href='#g2-110'/><use x='66.931' y='68.325' xlink:href='#g0-0'/><use x='76.893' y='68.325' xlink:href='#g4-49'/><use x='81.875' y='68.325' xlink:href='#g4-41'/><use x='85.749' y='68.325' xlink:href='#g2-120'/><use x='91.443' y='64.212' xlink:href='#g3-110'/></g></svg><span data-line="55"></span>
+</p></div></section>
+<section class="slide section" data-line="62">
+<div class="example" data-line="63" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="64"><span data-line="64"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">5</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="64"></span>计算收敛域，和函数，值
+</p>
+<p class="p indent" data-line="66"><span data-line="66"></span>(2) <span data-line="66"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:8.6419em" viewBox='88.468 52.67 82.304 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac1{2n-1}(\frac12)^{2n-1}$</desc><g id='math-e7d0c8'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='118.104' y='61.585' xlink:href='#g4-49'/><rect x='106.535' y='65.635' height='.398' width='28.119'/><use x='106.535' y='75.159' xlink:href='#g4-50'/><use x='111.517' y='75.159' xlink:href='#g2-110'/><use x='119.711' y='75.159' xlink:href='#g0-0'/><use x='129.673' y='75.159' xlink:href='#g4-49'/><use x='135.85' y='68.325' xlink:href='#g4-40'/><use x='140.92' y='61.585' xlink:href='#g4-49'/><rect x='140.92' y='65.635' height='.398' width='4.981'/><use x='140.92' y='75.159' xlink:href='#g4-50'/><use x='147.097' y='68.325' xlink:href='#g4-41'/><use x='150.971' y='64.212' xlink:href='#g5-50'/><use x='154.942' y='64.212' xlink:href='#g3-110'/><use x='159.867' y='64.212' xlink:href='#g1-0'/><use x='166.094' y='64.212' xlink:href='#g5-49'/></g></svg><span data-line="66"></span>
+(3) <span data-line="67"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:4.9971em" viewBox='34.67 52.67 47.591 27.489'><desc>$\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{3n+1}$</desc><g id='math-2383f6'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-48'/><use x='53.846' y='61.585' xlink:href='#g4-40'/><use x='57.72' y='61.585' xlink:href='#g0-0'/><use x='65.469' y='61.585' xlink:href='#g4-49'/><use x='70.45' y='61.585' xlink:href='#g4-41'/><use x='74.325' y='57.97' xlink:href='#g3-110'/><rect x='52.737' y='65.635' height='.398' width='28.119'/><use x='52.737' y='75.159' xlink:href='#g4-51'/><use x='57.719' y='75.159' xlink:href='#g2-110'/><use x='65.912' y='75.159' xlink:href='#g4-43'/><use x='75.875' y='75.159' xlink:href='#g4-49'/></g></svg><span data-line="67"></span>
+</p>
+<p class="p indent" data-line="69"><span data-line="69"></span>(1) <span data-line="69"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:7.6521em" viewBox='88.468 52.67 72.877 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac1{2n-1}x^{2n-1}$</desc><g id='math-c26dfb'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='118.104' y='61.585' xlink:href='#g4-49'/><rect x='106.535' y='65.635' height='.398' width='28.119'/><use x='106.535' y='75.159' xlink:href='#g4-50'/><use x='111.517' y='75.159' xlink:href='#g2-110'/><use x='119.711' y='75.159' xlink:href='#g0-0'/><use x='129.673' y='75.159' xlink:href='#g4-49'/><use x='135.85' y='68.325' xlink:href='#g2-120'/><use x='141.544' y='64.212' xlink:href='#g5-50'/><use x='145.515' y='64.212' xlink:href='#g3-110'/><use x='150.44' y='64.212' xlink:href='#g1-0'/><use x='156.667' y='64.212' xlink:href='#g5-49'/></g></svg><span data-line="69"></span>
+(4) <span data-line="70"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:7.6404em" viewBox='34.67 52.67 72.766 27.489'><desc>$\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{3n+1}x^{3n+1}$</desc><g id='math-fc6608'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-48'/><use x='53.846' y='61.585' xlink:href='#g4-40'/><use x='57.72' y='61.585' xlink:href='#g0-0'/><use x='65.469' y='61.585' xlink:href='#g4-49'/><use x='70.45' y='61.585' xlink:href='#g4-41'/><use x='74.325' y='57.97' xlink:href='#g3-110'/><rect x='52.737' y='65.635' height='.398' width='28.119'/><use x='52.737' y='75.159' xlink:href='#g4-51'/><use x='57.719' y='75.159' xlink:href='#g2-110'/><use x='65.912' y='75.159' xlink:href='#g4-43'/><use x='75.875' y='75.159' xlink:href='#g4-49'/><use x='82.052' y='68.325' xlink:href='#g2-120'/><use x='87.746' y='64.212' xlink:href='#g5-51'/><use x='91.717' y='64.212' xlink:href='#g3-110'/><use x='96.642' y='64.212' xlink:href='#g5-43'/><use x='102.758' y='64.212' xlink:href='#g5-49'/></g></svg></p></div>
+<div class="example" data-line="73" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="74"><span data-line="74"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">6</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="74"></span>计算 <span data-line="74"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:9.4800em" viewBox='88.468 52.67 90.286 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{4n^2+4n+3}{2n+1}x^{2n}$</desc><g id='math-d9464d'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='106.535' y='61.585' xlink:href='#g4-52'/><use x='111.517' y='61.585' xlink:href='#g2-110'/><use x='117.497' y='57.97' xlink:href='#g5-50'/><use x='124.18' y='61.585' xlink:href='#g4-43'/><use x='134.143' y='61.585' xlink:href='#g4-52'/><use x='139.124' y='61.585' xlink:href='#g2-110'/><use x='147.318' y='61.585' xlink:href='#g4-43'/><use x='157.28' y='61.585' xlink:href='#g4-51'/><rect x='106.535' y='65.635' height='.398' width='55.726'/><use x='120.339' y='75.159' xlink:href='#g4-50'/><use x='125.32' y='75.159' xlink:href='#g2-110'/><use x='133.514' y='75.159' xlink:href='#g4-43'/><use x='143.477' y='75.159' xlink:href='#g4-49'/><use x='163.457' y='68.325' xlink:href='#g2-120'/><use x='169.151' y='64.212' xlink:href='#g5-50'/><use x='173.122' y='64.212' xlink:href='#g3-110'/></g></svg><span data-line="74"></span>的收敛域，和函数<span data-line="74"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.2930em;height:1.0879em;width:2.1561em" viewBox='34.67 54.164 20.534 10.361'><desc>$S(x)$</desc><g id='math-34999b'><use x='34.869' y='61.836' xlink:href='#g2-83'/><use x='41.553' y='61.836' xlink:href='#g4-40'/><use x='45.427' y='61.836' xlink:href='#g2-120'/><use x='51.121' y='61.836' xlink:href='#g4-41'/></g></svg></p></div>
+<div class="example" data-line="77" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="78"><span data-line="78"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">7</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="78"></span>计算
+</p>
+<p class="p indent" data-line="80"><span data-line="80"></span>（1） <span data-line="80"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:3.1417em" viewBox='88.468 52.67 29.921 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{n^2}{n!}$</desc><g id='math-432064'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='106.535' y='61.585' xlink:href='#g2-110'/><use x='112.515' y='57.97' xlink:href='#g5-50'/><rect x='106.535' y='65.635' height='.398' width='10.449'/><use x='107.386' y='75.159' xlink:href='#g2-110'/><use x='113.366' y='75.159' xlink:href='#g4-33'/></g></svg><span data-line="80"></span>
+（2） <span data-line="81"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:5.5782em" viewBox='34.67 52.67 53.126 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{n}{(n+1)!}$</desc><g id='math-464d67'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='66.574' y='61.585' xlink:href='#g2-110'/><rect x='52.737' y='65.635' height='.398' width='33.654'/><use x='52.737' y='75.159' xlink:href='#g4-40'/><use x='56.612' y='75.159' xlink:href='#g2-110'/><use x='64.805' y='75.159' xlink:href='#g4-43'/><use x='74.768' y='75.159' xlink:href='#g4-49'/><use x='79.749' y='75.159' xlink:href='#g4-41'/><use x='83.624' y='75.159' xlink:href='#g4-33'/></g></svg><span data-line="81"></span>
+（3） <span data-line="82"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:3.1370em" viewBox='88.468 52.67 29.876 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{2^n}{n!}$</desc><g id='math-45bb8b'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='106.535' y='61.585' xlink:href='#g4-50'/><use x='111.517' y='57.97' xlink:href='#g3-110'/><rect x='106.535' y='65.635' height='.398' width='10.404'/><use x='107.364' y='75.159' xlink:href='#g2-110'/><use x='113.344' y='75.159' xlink:href='#g4-33'/></g></svg></p></div></section>
+<section class="slide section" data-line="87">
+<div id="ex8-1-0" class="example" data-line="88" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="89"><span data-line="89"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">8</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="89"></span>求级数的和
+</p>
+<p class="p indent" data-line="91"><span data-line="91"></span>(1) <span data-line="91"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:4.9971em" viewBox='34.67 52.67 47.591 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{x^{4n+1}}{4n+1}$</desc><g id='math-76cd31'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='54.209' y='61.585' xlink:href='#g2-120'/><use x='59.903' y='57.97' xlink:href='#g5-52'/><use x='63.874' y='57.97' xlink:href='#g3-110'/><use x='68.799' y='57.97' xlink:href='#g5-43'/><use x='74.915' y='57.97' xlink:href='#g5-49'/><rect x='52.737' y='65.635' height='.398' width='28.119'/><use x='52.737' y='75.159' xlink:href='#g4-52'/><use x='57.719' y='75.159' xlink:href='#g2-110'/><use x='65.912' y='75.159' xlink:href='#g4-43'/><use x='75.875' y='75.159' xlink:href='#g4-49'/></g></svg><span data-line="91"></span>
+(2) <span data-line="92"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:7.4193em" viewBox='88.468 52.67 70.66 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{2n-1}x^{2n}$</desc><g id='math-800b84'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='106.535' y='61.585' xlink:href='#g4-40'/><use x='110.41' y='61.585' xlink:href='#g0-0'/><use x='118.159' y='61.585' xlink:href='#g4-49'/><use x='123.14' y='61.585' xlink:href='#g4-41'/><use x='127.014' y='57.97' xlink:href='#g3-110'/><use x='131.939' y='57.97' xlink:href='#g1-0'/><use x='138.166' y='57.97' xlink:href='#g5-49'/><rect x='106.535' y='65.635' height='.398' width='36.1'/><use x='110.526' y='75.159' xlink:href='#g4-50'/><use x='115.507' y='75.159' xlink:href='#g2-110'/><use x='123.701' y='75.159' xlink:href='#g0-0'/><use x='133.664' y='75.159' xlink:href='#g4-49'/><use x='143.831' y='68.325' xlink:href='#g2-120'/><use x='149.525' y='64.212' xlink:href='#g5-50'/><use x='153.496' y='64.212' xlink:href='#g3-110'/></g></svg><span data-line="92"></span>
+</p></div>
+<div class="example" data-line="96" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="97"><span data-line="97"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">9</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="97"></span>求幂级数的收敛区间
+</p>
+<p class="p indent" data-line="99"><span data-line="99"></span>(1) <span data-line="99"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:5.8270em" viewBox='34.67 52.67 55.495 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{(x-6)^n}{\sqrt{n}}$</desc><g id='math-14bb10'><use x='38.404' y='55.872' xlink:href='#g1-49'/><use x='35.18' y='58.861' xlink:href='#g7-88'/><use x='34.869' y='79.959' xlink:href='#g3-110'/><use x='39.794' y='79.959' xlink:href='#g5-61'/><use x='45.91' y='79.959' xlink:href='#g5-49'/><use x='52.737' y='61.585' xlink:href='#g4-40'/><use x='56.612' y='61.585' xlink:href='#g2-120'/><use x='64.519' y='61.585' xlink:href='#g0-0'/><use x='74.482' y='61.585' xlink:href='#g4-54'/><use x='79.463' y='61.585' xlink:href='#g4-41'/><use x='83.338' y='57.97' xlink:href='#g3-110'/><rect x='52.737' y='65.635' height='.398' width='36.023'/><use x='63.608' y='68.026' xlink:href='#g0-112'/><rect x='71.91' y='67.628' height='.398' width='5.98'/><use x='71.91' y='75.202' xlink:href='#g2-110'/></g></svg><span data-line="99"></span>
+(2) <span data-line="100"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-1.2745em;height:2.8863em;width:6.6753em" viewBox='88.468 52.67 63.574 27.489'><desc>$\displaystyle\sum_{n=1}^{\infty}\frac{3^n+5^n}nx^n$</desc><g id='math-f3ea12'><use x='92.202' y='55.872' xlink:href='#g1-49'/><use x='88.978' y='58.861' xlink:href='#g7-88'/><use x='88.667' y='79.959' xlink:href='#g3-110'/><use x='93.592' y='79.959' xlink:href='#g5-61'/><use x='99.708' y='79.959' xlink:href='#g5-49'/><use x='106.535' y='61.585' xlink:href='#g4-51'/><use x='111.517' y='57.97' xlink:href='#g3-110'/><use x='119.154' y='61.585' xlink:href='#g4-43'/><use x='129.116' y='61.585' xlink:href='#g4-53'/><use x='134.098' y='57.97' xlink:href='#g3-110'/><rect x='106.535' y='65.635' height='.398' width='32.985'/><use x='120.038' y='75.159' xlink:href='#g2-110'/><use x='140.716' y='68.325' xlink:href='#g2-120'/><use x='146.41' y='64.212' xlink:href='#g3-110'/></g></svg><span data-line="100"></span>
+</p></div></section>
+<section class="slide section" data-line="105">
+<div class="example" data-line="106" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent" data-line="107"><span data-line="107"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">10</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="107"></span>计算
+</p>
+<p class="p indent" data-line="109"><span data-line="109"></span>（1） <span data-line="109"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.3939em;height:1.2864em;width:7.9925em" viewBox='88.468 53.219 76.119 12.251'><desc>$\frac1{1\cdot 2\cdot 3}+\frac1{2\cdot 3\cdot 4}+\cdots$</desc><g id='math-0e357d'><use x='96.2' y='57.913' xlink:href='#g5-49'/><rect x='89.863' y='59.146' height='.398' width='16.646'/><use x='89.863' y='65.271' xlink:href='#g5-49'/><use x='93.834' y='65.271' xlink:href='#g1-1'/><use x='96.2' y='65.271' xlink:href='#g5-50'/><use x='100.172' y='65.271' xlink:href='#g1-1'/><use x='102.538' y='65.271' xlink:href='#g5-51'/><use x='109.918' y='61.836' xlink:href='#g4-43'/><use x='127.414' y='57.913' xlink:href='#g5-49'/><rect x='121.076' y='59.146' height='.398' width='16.646'/><use x='121.076' y='65.271' xlink:href='#g5-50'/><use x='125.048' y='65.271' xlink:href='#g1-1'/><use x='127.414' y='65.271' xlink:href='#g5-51'/><use x='131.385' y='65.271' xlink:href='#g1-1'/><use x='133.751' y='65.271' xlink:href='#g5-52'/><use x='141.132' y='61.836' xlink:href='#g4-43'/><use x='151.094' y='61.836' xlink:href='#g0-1'/><use x='155.522' y='61.836' xlink:href='#g0-1'/><use x='159.95' y='61.836' xlink:href='#g0-1'/></g></svg><span data-line="109"></span>
+</p>
+<p class="p indent" data-line="111"><span data-line="111"></span>（2） <span data-line="111"></span><svg  class="math-inline math-render-svg math" style="vertical-align:-0.3939em;height:1.2864em;width:7.9925em" viewBox='34.67 53.219 76.119 12.251'><desc>$\frac{1}{1\cdot 2\cdot 3}+\frac1{3\cdot 4\cdot 5}+\cdots$</desc><g id='math-e55eaf'><use x='42.402' y='57.913' xlink:href='#g5-49'/><rect x='36.065' y='59.146' height='.398' width='16.646'/><use x='36.065' y='65.271' xlink:href='#g5-49'/><use x='40.036' y='65.271' xlink:href='#g1-1'/><use x='42.402' y='65.271' xlink:href='#g5-50'/><use x='46.373' y='65.271' xlink:href='#g1-1'/><use x='48.74' y='65.271' xlink:href='#g5-51'/><use x='56.12' y='61.836' xlink:href='#g4-43'/><use x='73.616' y='57.913' xlink:href='#g5-49'/><rect x='67.278' y='59.146' height='.398' width='16.646'/><use x='67.278' y='65.271' xlink:href='#g5-51'/><use x='71.249' y='65.271' xlink:href='#g1-1'/><use x='73.616' y='65.271' xlink:href='#g5-52'/><use x='77.587' y='65.271' xlink:href='#g1-1'/><use x='79.953' y='65.271' xlink:href='#g5-53'/><use x='87.334' y='61.836' xlink:href='#g4-43'/><use x='97.296' y='61.836' xlink:href='#g0-1'/><use x='101.724' y='61.836' xlink:href='#g0-1'/><use x='106.152' y='61.836' xlink:href='#g0-1'/></g></svg></p></div></section>
+<section class="slide section" data-line="117"><h4 id="section" class="h3" data-line="118" data-heading-depth="3" style="color:#006;background-color:#cff;display:block;position:relative;top:1px"><span data-line="118"></span>本节读完</h4></section></div></div><span data-line=""></span></div>
+<svg id='math-svg-paths' style='display:none' version='1.1' viewBox='0 0 0 0' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<defs>
+<path id='g3-110' d='M.851-.439C.823-.349 .781-.174 .781-.153C.781 0 .907 .07 1.018 .07C1.144 .07 1.255-.021 1.29-.084S1.381-.37 1.416-.516C1.451-.649 1.527-.969 1.569-1.144C1.611-1.297 1.653-1.451 1.688-1.611C1.764-1.897 1.778-1.953 1.981-2.239C2.176-2.518 2.504-2.88 3.027-2.88C3.431-2.88 3.438-2.525 3.438-2.392C3.438-1.974 3.138-1.2 3.027-.907C2.95-.711 2.922-.649 2.922-.53C2.922-.16 3.229 .07 3.585 .07C4.282 .07 4.589-.893 4.589-.997C4.589-1.088 4.498-1.088 4.477-1.088C4.38-1.088 4.373-1.046 4.345-.969C4.184-.411 3.884-.126 3.605-.126C3.459-.126 3.431-.223 3.431-.37C3.431-.53 3.466-.621 3.592-.934C3.675-1.151 3.961-1.89 3.961-2.28C3.961-2.957 3.424-3.075 3.055-3.075C2.476-3.075 2.085-2.72 1.876-2.441C1.827-2.922 1.416-3.075 1.13-3.075C.83-3.075 .669-2.859 .579-2.699C.425-2.441 .328-2.043 .328-2.008C.328-1.918 .425-1.918 .446-1.918C.544-1.918 .551-1.939 .6-2.127C.704-2.538 .837-2.88 1.109-2.88C1.29-2.88 1.339-2.727 1.339-2.538C1.339-2.406 1.276-2.148 1.227-1.96S1.109-1.485 1.074-1.332L.851-.439Z'/>
+<path id='g5-49' d='M2.336-4.435C2.336-4.624 2.322-4.631 2.127-4.631C1.681-4.191 1.046-4.184 .76-4.184V-3.933C.928-3.933 1.388-3.933 1.771-4.129V-.572C1.771-.342 1.771-.251 1.074-.251H.809V0C.934-.007 1.792-.028 2.05-.028C2.267-.028 3.145-.007 3.299 0V-.251H3.034C2.336-.251 2.336-.342 2.336-.572V-4.435Z'/>
+<path id='g5-61' d='M5.356-2.343C5.461-2.343 5.621-2.343 5.621-2.518C5.621-2.685 5.454-2.685 5.363-2.685H.746C.656-2.685 .488-2.685 .488-2.518C.488-2.343 .649-2.343 .753-2.343H5.356ZM5.363-.809C5.454-.809 5.621-.809 5.621-.976C5.621-1.151 5.461-1.151 5.356-1.151H.753C.649-1.151 .488-1.151 .488-.976C.488-.809 .656-.809 .746-.809H5.363Z'/>
+<path id='g7-88' d='M12.613 13.948L13.818 10.76H13.569C13.181 11.796 12.125 12.473 10.979 12.772C10.77 12.822 9.793 13.081 7.88 13.081H1.873L6.944 7.133C7.014 7.054 7.034 7.024 7.034 6.974C7.034 6.954 7.034 6.924 6.964 6.824L2.321 .478H7.781C9.116 .478 10.022 .618 10.112 .638C10.65 .717 11.517 .887 12.304 1.385C12.553 1.544 13.23 1.993 13.569 2.8H13.818L12.613 0H.837C.608 0 .598 .01 .568 .07C.558 .1 .558 .289 .558 .399L5.828 7.611L.667 13.659C.568 13.778 .568 13.828 .568 13.838C.568 13.948 .658 13.948 .837 13.948H12.613Z'/>
+<path id='g2-97' d='M3.716-3.766C3.537-4.134 3.248-4.403 2.8-4.403C1.634-4.403 .399-2.939 .399-1.484C.399-.548 .946 .11 1.724 .11C1.923 .11 2.421 .07 3.019-.638C3.098-.219 3.447 .11 3.925 .11C4.274 .11 4.503-.12 4.663-.438C4.832-.797 4.961-1.405 4.961-1.425C4.961-1.524 4.872-1.524 4.842-1.524C4.742-1.524 4.732-1.484 4.702-1.345C4.533-.697 4.354-.11 3.945-.11C3.676-.11 3.646-.369 3.646-.568C3.646-.787 3.666-.867 3.776-1.305C3.885-1.724 3.905-1.823 3.995-2.202L4.354-3.597C4.423-3.875 4.423-3.895 4.423-3.935C4.423-4.105 4.304-4.204 4.134-4.204C3.895-4.204 3.746-3.985 3.716-3.766ZM3.068-1.186C3.019-1.006 3.019-.986 2.869-.817C2.431-.269 2.022-.11 1.743-.11C1.245-.11 1.106-.658 1.106-1.046C1.106-1.544 1.425-2.77 1.654-3.228C1.963-3.816 2.411-4.184 2.809-4.184C3.457-4.184 3.597-3.367 3.597-3.308S3.577-3.188 3.567-3.138L3.068-1.186Z'/>
+<path id='g1-49' d='M4.031-1.911C3.661-2.343 3.55-2.462 3.285-2.65C2.859-2.957 2.413-3.075 2.029-3.075C1.165-3.075 .537-2.336 .537-1.499C.537-.683 1.137 .07 2.008 .07C2.978 .07 3.654-.725 3.905-1.095C4.275-.663 4.387-.544 4.652-.356C5.077-.049 5.523 .07 5.907 .07C6.772 .07 7.399-.669 7.399-1.506C7.399-2.322 6.8-3.075 5.928-3.075C4.958-3.075 4.282-2.28 4.031-1.911ZM4.254-1.653C4.533-2.106 5.14-2.81 5.991-2.81C6.709-2.81 7.204-2.176 7.204-1.506S6.66-.314 6.018-.314C5.37-.314 4.924-.844 4.254-1.653ZM3.682-1.353C3.403-.9 2.797-.195 1.946-.195C1.227-.195 .732-.83 .732-1.499S1.276-2.692 1.918-2.692C2.566-2.692 3.013-2.162 3.682-1.353Z'/>
+<path id='g4-50' d='M1.265-.767L2.321-1.793C3.875-3.168 4.473-3.706 4.473-4.702C4.473-5.838 3.577-6.635 2.361-6.635C1.235-6.635 .498-5.719 .498-4.832C.498-4.274 .996-4.274 1.026-4.274C1.196-4.274 1.544-4.394 1.544-4.802C1.544-5.061 1.365-5.32 1.016-5.32C.936-5.32 .917-5.32 .887-5.31C1.116-5.958 1.654-6.326 2.232-6.326C3.138-6.326 3.567-5.519 3.567-4.702C3.567-3.905 3.068-3.118 2.521-2.501L.608-.369C.498-.259 .498-.239 .498 0H4.194L4.473-1.733H4.224C4.174-1.435 4.105-.996 4.005-.847C3.935-.767 3.278-.767 3.059-.767H1.265Z'/>
+<path id='g4-61' d='M6.844-3.258C6.994-3.258 7.183-3.258 7.183-3.457S6.994-3.656 6.854-3.656H.887C.747-3.656 .558-3.656 .558-3.457S.747-3.258 .897-3.258H6.844ZM6.854-1.325C6.994-1.325 7.183-1.325 7.183-1.524S6.994-1.724 6.844-1.724H.897C.747-1.724 .558-1.724 .558-1.524S.747-1.325 .887-1.325H6.854Z'/>
+<path id='g0-112' d='M3.875 8.518L2.122 4.643C2.052 4.483 2.002 4.483 1.973 4.483C1.963 4.483 1.913 4.483 1.803 4.563L.857 5.28C.727 5.38 .727 5.41 .727 5.44C.727 5.489 .757 5.549 .827 5.549C.887 5.549 1.056 5.41 1.166 5.33C1.225 5.28 1.375 5.171 1.484 5.091L3.447 9.405C3.517 9.564 3.567 9.564 3.656 9.564C3.806 9.564 3.836 9.504 3.905 9.365L8.428 0C8.498-.139 8.498-.179 8.498-.199C8.498-.299 8.418-.399 8.299-.399C8.219-.399 8.149-.349 8.07-.189L3.875 8.518Z'/>
+<path id='g7-112' d='M4.224 11.557C4.533 11.557 4.543 11.547 4.643 11.357L10.092-.02C10.162-.149 10.162-.169 10.162-.199C10.162-.309 10.082-.399 9.963-.399C9.833-.399 9.793-.309 9.743-.199L4.603 10.521L2.481 5.579L1.096 6.645L1.245 6.804L1.953 6.267L4.224 11.557Z'/>
+<path id='g5-50' d='M3.522-1.269H3.285C3.264-1.116 3.194-.704 3.103-.635C3.048-.593 2.511-.593 2.413-.593H1.13C1.862-1.241 2.106-1.437 2.525-1.764C3.041-2.176 3.522-2.608 3.522-3.271C3.522-4.115 2.783-4.631 1.89-4.631C1.025-4.631 .439-4.024 .439-3.382C.439-3.027 .739-2.992 .809-2.992C.976-2.992 1.179-3.11 1.179-3.361C1.179-3.487 1.13-3.731 .767-3.731C.983-4.226 1.458-4.38 1.785-4.38C2.483-4.38 2.845-3.836 2.845-3.271C2.845-2.664 2.413-2.183 2.19-1.932L.509-.272C.439-.209 .439-.195 .439 0H3.313L3.522-1.269Z'/>
+<path id='g0-0' d='M6.565-2.291C6.735-2.291 6.914-2.291 6.914-2.491S6.735-2.69 6.565-2.69H1.176C1.006-2.69 .827-2.69 .827-2.491S1.006-2.291 1.176-2.291H6.565Z'/>
+<path id='g4-43' d='M4.075-2.291H6.854C6.994-2.291 7.183-2.291 7.183-2.491S6.994-2.69 6.854-2.69H4.075V-5.479C4.075-5.619 4.075-5.808 3.875-5.808S3.676-5.619 3.676-5.479V-2.69H.887C.747-2.69 .558-2.69 .558-2.491S.747-2.291 .887-2.291H3.676V.498C3.676 .638 3.676 .827 3.875 .827S4.075 .638 4.075 .498V-2.291Z'/>
+<path id='g7-113' d='M4.623 16.04L2.481 8.568L1.096 10.192L1.255 10.341L1.933 9.544L4.224 17.534C4.553 17.534 4.563 17.534 4.643 17.295L10.112 0C10.162-.149 10.162-.189 10.162-.199C10.162-.309 10.082-.399 9.963-.399C9.813-.399 9.773-.269 9.733-.139L4.623 16.04Z'/>
+<path id='g0-1' d='M1.913-2.491C1.913-2.78 1.674-3.019 1.385-3.019S.857-2.78 .857-2.491S1.096-1.963 1.385-1.963S1.913-2.202 1.913-2.491Z'/>
+<path id='g7-114' d='M4.643 21.539H4.633L2.481 11.557L1.176 13.609C1.106 13.699 1.106 13.719 1.106 13.729C1.106 13.768 1.235 13.878 1.245 13.888L1.923 12.822L4.224 23.512C4.553 23.512 4.583 23.512 4.643 23.253L10.122 .01C10.142-.06 10.162-.149 10.162-.199C10.162-.309 10.082-.399 9.963-.399C9.803-.399 9.773-.269 9.743-.13L4.643 21.539Z'/>
+<path id='g4-40' d='M3.298 2.391C3.298 2.361 3.298 2.341 3.128 2.172C1.883 .917 1.564-.966 1.564-2.491C1.564-4.224 1.943-5.958 3.168-7.203C3.298-7.323 3.298-7.342 3.298-7.372C3.298-7.442 3.258-7.472 3.198-7.472C3.098-7.472 2.202-6.795 1.614-5.529C1.106-4.433 .986-3.328 .986-2.491C.986-1.714 1.096-.508 1.644 .618C2.242 1.843 3.098 2.491 3.198 2.491C3.258 2.491 3.298 2.461 3.298 2.391Z'/>
+<path id='g4-41' d='M2.879-2.491C2.879-3.268 2.77-4.473 2.222-5.599C1.624-6.824 .767-7.472 .667-7.472C.608-7.472 .568-7.432 .568-7.372C.568-7.342 .568-7.323 .757-7.143C1.733-6.157 2.301-4.573 2.301-2.491C2.301-.787 1.933 .966 .697 2.222C.568 2.341 .568 2.361 .568 2.391C.568 2.451 .608 2.491 .667 2.491C.767 2.491 1.664 1.813 2.252 .548C2.76-.548 2.879-1.654 2.879-2.491Z'/>
+<path id='g4-49' d='M2.929-6.376C2.929-6.615 2.929-6.635 2.7-6.635C2.082-5.998 1.205-5.998 .887-5.998V-5.689C1.086-5.689 1.674-5.689 2.192-5.948V-.787C2.192-.428 2.162-.309 1.265-.309H.946V0C1.295-.03 2.162-.03 2.56-.03S3.826-.03 4.174 0V-.309H3.856C2.959-.309 2.929-.418 2.929-.787V-6.376Z'/>
+<path id='g4-108' d='M1.763-6.914L.329-6.804V-6.496C1.026-6.496 1.106-6.426 1.106-5.938V-.757C1.106-.309 .996-.309 .329-.309V0C.658-.01 1.186-.03 1.435-.03S2.172-.01 2.54 0V-.309C1.873-.309 1.763-.309 1.763-.757V-6.914Z'/>
+<path id='g4-110' d='M1.096-3.427V-.757C1.096-.309 .986-.309 .319-.309V0C.667-.01 1.176-.03 1.445-.03C1.704-.03 2.222-.01 2.56 0V-.309C1.893-.309 1.783-.309 1.783-.757V-2.59C1.783-3.626 2.491-4.184 3.128-4.184C3.756-4.184 3.866-3.646 3.866-3.078V-.757C3.866-.309 3.756-.309 3.088-.309V0C3.437-.01 3.945-.03 4.214-.03C4.473-.03 4.991-.01 5.33 0V-.309C4.812-.309 4.563-.309 4.553-.608V-2.511C4.553-3.367 4.553-3.676 4.244-4.035C4.105-4.204 3.776-4.403 3.198-4.403C2.471-4.403 2.002-3.975 1.724-3.357V-4.403L.319-4.294V-3.985C1.016-3.985 1.096-3.915 1.096-3.427Z'/>
+<path id='g5-48' d='M3.599-2.225C3.599-2.992 3.508-3.543 3.187-4.031C2.971-4.352 2.538-4.631 1.981-4.631C.363-4.631 .363-2.727 .363-2.225S.363 .139 1.981 .139S3.599-1.723 3.599-2.225ZM1.981-.056C1.66-.056 1.234-.244 1.095-.816C.997-1.227 .997-1.799 .997-2.315C.997-2.824 .997-3.354 1.102-3.738C1.248-4.289 1.695-4.435 1.981-4.435C2.357-4.435 2.72-4.205 2.845-3.801C2.957-3.424 2.964-2.922 2.964-2.315C2.964-1.799 2.964-1.283 2.873-.844C2.734-.209 2.26-.056 1.981-.056Z'/>
+<path id='g7-18' d='M6.974 23.402C6.974 23.362 6.954 23.342 6.934 23.313C6.565 22.944 5.898 22.276 5.23 21.2C3.626 18.63 2.899 15.392 2.899 11.557C2.899 8.877 3.258 5.42 4.902 2.451C5.689 1.036 6.506 .219 6.944-.219C6.974-.249 6.974-.269 6.974-.299C6.974-.399 6.904-.399 6.765-.399S6.605-.399 6.456-.249C3.118 2.79 2.072 7.352 2.072 11.547C2.072 15.462 2.969 19.407 5.499 22.386C5.699 22.615 6.077 23.024 6.486 23.382C6.605 23.502 6.625 23.502 6.765 23.502S6.974 23.502 6.974 23.402Z'/>
+<path id='g7-19' d='M5.25 11.557C5.25 7.641 4.354 3.696 1.823 .717C1.624 .488 1.245 .08 .837-.279C.717-.399 .697-.399 .558-.399C.438-.399 .349-.399 .349-.299C.349-.259 .389-.219 .408-.199C.757 .159 1.425 .827 2.092 1.903C3.696 4.473 4.423 7.711 4.423 11.547C4.423 14.227 4.065 17.684 2.421 20.653C1.634 22.067 .807 22.894 .389 23.313C.369 23.342 .349 23.372 .349 23.402C.349 23.502 .438 23.502 .558 23.502C.697 23.502 .717 23.502 .867 23.352C4.204 20.314 5.25 15.751 5.25 11.557Z'/>
+<path id='g2-110' d='M.877-.588C.847-.438 .787-.209 .787-.159C.787 .02 .927 .11 1.076 .11C1.196 .11 1.375 .03 1.445-.169C1.455-.189 1.574-.658 1.634-.907L1.853-1.803C1.913-2.022 1.973-2.242 2.022-2.471C2.062-2.64 2.142-2.929 2.152-2.969C2.301-3.278 2.829-4.184 3.776-4.184C4.224-4.184 4.314-3.816 4.314-3.487C4.314-2.869 3.826-1.594 3.666-1.166C3.577-.936 3.567-.817 3.567-.707C3.567-.239 3.915 .11 4.384 .11C5.32 .11 5.689-1.345 5.689-1.425C5.689-1.524 5.599-1.524 5.569-1.524C5.469-1.524 5.469-1.494 5.42-1.345C5.22-.667 4.892-.11 4.403-.11C4.234-.11 4.164-.209 4.164-.438C4.164-.687 4.254-.927 4.344-1.146C4.533-1.674 4.951-2.77 4.951-3.337C4.951-4.005 4.523-4.403 3.806-4.403C2.909-4.403 2.421-3.766 2.252-3.537C2.202-4.095 1.793-4.403 1.335-4.403S.687-4.015 .588-3.836C.428-3.497 .289-2.909 .289-2.869C.289-2.77 .389-2.77 .408-2.77C.508-2.77 .518-2.78 .578-2.999C.747-3.706 .946-4.184 1.305-4.184C1.504-4.184 1.614-4.055 1.614-3.726C1.614-3.517 1.584-3.407 1.455-2.889L.877-.588Z'/>
+<path id='g2-120' d='M3.328-3.009C3.387-3.268 3.616-4.184 4.314-4.184C4.364-4.184 4.603-4.184 4.812-4.055C4.533-4.005 4.334-3.756 4.334-3.517C4.334-3.357 4.443-3.168 4.712-3.168C4.932-3.168 5.25-3.347 5.25-3.746C5.25-4.264 4.663-4.403 4.324-4.403C3.746-4.403 3.397-3.875 3.278-3.646C3.029-4.304 2.491-4.403 2.202-4.403C1.166-4.403 .598-3.118 .598-2.869C.598-2.77 .697-2.77 .717-2.77C.797-2.77 .827-2.79 .847-2.879C1.186-3.935 1.843-4.184 2.182-4.184C2.371-4.184 2.72-4.095 2.72-3.517C2.72-3.208 2.55-2.54 2.182-1.146C2.022-.528 1.674-.11 1.235-.11C1.176-.11 .946-.11 .737-.239C.986-.289 1.205-.498 1.205-.777C1.205-1.046 .986-1.126 .837-1.126C.538-1.126 .289-.867 .289-.548C.289-.09 .787 .11 1.225 .11C1.883 .11 2.242-.588 2.271-.648C2.391-.279 2.75 .11 3.347 .11C4.374 .11 4.941-1.176 4.941-1.425C4.941-1.524 4.852-1.524 4.822-1.524C4.732-1.524 4.712-1.484 4.692-1.415C4.364-.349 3.686-.11 3.367-.11C2.979-.11 2.819-.428 2.819-.767C2.819-.986 2.879-1.205 2.989-1.644L3.328-3.009Z'/>
+<path id='g1-0' d='M5.189-1.576C5.3-1.576 5.467-1.576 5.467-1.743C5.467-1.918 5.307-1.918 5.189-1.918H1.032C.921-1.918 .753-1.918 .753-1.75C.753-1.576 .914-1.576 1.032-1.576H5.189Z'/>
+<path id='g4-51' d='M2.889-3.507C3.706-3.776 4.284-4.473 4.284-5.26C4.284-6.077 3.407-6.635 2.451-6.635C1.445-6.635 .687-6.037 .687-5.28C.687-4.951 .907-4.762 1.196-4.762C1.504-4.762 1.704-4.981 1.704-5.27C1.704-5.768 1.235-5.768 1.086-5.768C1.395-6.257 2.052-6.386 2.411-6.386C2.819-6.386 3.367-6.167 3.367-5.27C3.367-5.151 3.347-4.573 3.088-4.134C2.79-3.656 2.451-3.626 2.202-3.616C2.122-3.606 1.883-3.587 1.813-3.587C1.733-3.577 1.664-3.567 1.664-3.467C1.664-3.357 1.733-3.357 1.903-3.357H2.341C3.158-3.357 3.527-2.68 3.527-1.704C3.527-.349 2.839-.06 2.401-.06C1.973-.06 1.225-.229 .877-.817C1.225-.767 1.534-.986 1.534-1.365C1.534-1.724 1.265-1.923 .976-1.923C.737-1.923 .418-1.783 .418-1.345C.418-.438 1.345 .219 2.431 .219C3.646 .219 4.553-.687 4.553-1.704C4.553-2.521 3.925-3.298 2.889-3.507Z'/>
+<path id='g5-43' d='M3.229-1.576H5.363C5.454-1.576 5.621-1.576 5.621-1.743C5.621-1.918 5.461-1.918 5.363-1.918H3.229V-4.059C3.229-4.149 3.229-4.317 3.062-4.317C2.887-4.317 2.887-4.156 2.887-4.059V-1.918H.746C.656-1.918 .488-1.918 .488-1.75C.488-1.576 .649-1.576 .746-1.576H2.887V.565C2.887 .656 2.887 .823 3.055 .823C3.229 .823 3.229 .663 3.229 .565V-1.576Z'/>
+<path id='g5-51' d='M1.904-2.329C2.448-2.329 2.838-1.953 2.838-1.206C2.838-.342 2.336-.084 1.932-.084C1.653-.084 1.039-.16 .746-.572C1.074-.586 1.151-.816 1.151-.962C1.151-1.186 .983-1.346 .767-1.346C.572-1.346 .377-1.227 .377-.941C.377-.286 1.102 .139 1.946 .139C2.915 .139 3.585-.509 3.585-1.206C3.585-1.75 3.138-2.294 2.371-2.455C3.103-2.72 3.368-3.243 3.368-3.668C3.368-4.219 2.734-4.631 1.96-4.631S.593-4.254 .593-3.696C.593-3.459 .746-3.327 .955-3.327C1.172-3.327 1.311-3.487 1.311-3.682C1.311-3.884 1.172-4.031 .955-4.045C1.2-4.352 1.681-4.428 1.939-4.428C2.253-4.428 2.692-4.275 2.692-3.668C2.692-3.375 2.594-3.055 2.413-2.838C2.183-2.573 1.988-2.559 1.639-2.538C1.465-2.525 1.451-2.525 1.416-2.518C1.402-2.518 1.346-2.504 1.346-2.427C1.346-2.329 1.409-2.329 1.527-2.329H1.904Z'/>
+<path id='g4-52' d='M2.929-1.644V-.777C2.929-.418 2.909-.309 2.172-.309H1.963V0C2.371-.03 2.889-.03 3.308-.03S4.254-.03 4.663 0V-.309H4.453C3.716-.309 3.696-.418 3.696-.777V-1.644H4.692V-1.953H3.696V-6.486C3.696-6.685 3.696-6.745 3.537-6.745C3.447-6.745 3.417-6.745 3.337-6.625L.279-1.953V-1.644H2.929ZM2.989-1.953H.558L2.989-5.669V-1.953Z'/>
+<path id='g2-83' d='M6.426-6.924C6.426-6.954 6.406-7.024 6.316-7.024C6.267-7.024 6.257-7.014 6.137-6.874L5.659-6.306C5.4-6.775 4.882-7.024 4.234-7.024C2.969-7.024 1.773-5.878 1.773-4.672C1.773-3.866 2.301-3.407 2.809-3.258L3.875-2.979C4.244-2.889 4.792-2.74 4.792-1.923C4.792-1.026 3.975-.09 2.999-.09C2.361-.09 1.255-.309 1.255-1.544C1.255-1.783 1.305-2.022 1.315-2.082C1.325-2.122 1.335-2.132 1.335-2.152C1.335-2.252 1.265-2.262 1.215-2.262S1.146-2.252 1.116-2.222C1.076-2.182 .518 .09 .518 .12C.518 .179 .568 .219 .628 .219C.677 .219 .687 .209 .807 .07L1.295-.498C1.724 .08 2.401 .219 2.979 .219C4.334 .219 5.509-1.106 5.509-2.341C5.509-3.029 5.171-3.367 5.021-3.507C4.792-3.736 4.643-3.776 3.756-4.005C3.537-4.065 3.178-4.164 3.088-4.184C2.819-4.274 2.481-4.563 2.481-5.091C2.481-5.898 3.278-6.745 4.224-6.745C5.051-6.745 5.659-6.316 5.659-5.2C5.659-4.882 5.619-4.702 5.619-4.643C5.619-4.633 5.619-4.543 5.738-4.543C5.838-4.543 5.848-4.573 5.888-4.742L6.426-6.924Z'/>
+<path id='g4-33' d='M1.524-2.082L1.913-6.625C1.913-6.954 1.644-7.133 1.385-7.133S.857-6.954 .857-6.625L1.245-2.092C1.255-1.943 1.265-1.863 1.385-1.863C1.484-1.863 1.514-1.913 1.524-2.082ZM1.913-.528C1.913-.817 1.674-1.056 1.385-1.056S.857-.817 .857-.528S1.096 0 1.385 0S1.913-.239 1.913-.528Z'/>
+<path id='g5-52' d='M3.689-1.144V-1.395H2.915V-4.505C2.915-4.652 2.915-4.7 2.762-4.7C2.678-4.7 2.65-4.7 2.58-4.603L.272-1.395V-1.144H2.322V-.572C2.322-.335 2.322-.251 1.757-.251H1.569V0C1.918-.014 2.364-.028 2.615-.028C2.873-.028 3.32-.014 3.668 0V-.251H3.48C2.915-.251 2.915-.335 2.915-.572V-1.144H3.689ZM2.371-3.947V-1.395H.53L2.371-3.947Z'/>
+<path id='g4-54' d='M1.315-3.268V-3.507C1.315-6.027 2.55-6.386 3.059-6.386C3.298-6.386 3.716-6.326 3.935-5.988C3.786-5.988 3.387-5.988 3.387-5.539C3.387-5.23 3.626-5.081 3.846-5.081C4.005-5.081 4.304-5.171 4.304-5.559C4.304-6.157 3.866-6.635 3.039-6.635C1.763-6.635 .418-5.35 .418-3.148C.418-.488 1.574 .219 2.501 .219C3.606 .219 4.553-.717 4.553-2.032C4.553-3.298 3.666-4.254 2.56-4.254C1.883-4.254 1.514-3.746 1.315-3.268ZM2.501-.06C1.873-.06 1.574-.658 1.514-.807C1.335-1.275 1.335-2.072 1.335-2.252C1.335-3.029 1.654-4.025 2.55-4.025C2.71-4.025 3.168-4.025 3.477-3.407C3.656-3.039 3.656-2.531 3.656-2.042C3.656-1.564 3.656-1.066 3.487-.707C3.188-.11 2.73-.06 2.501-.06Z'/>
+<path id='g4-53' d='M4.473-2.002C4.473-3.188 3.656-4.184 2.58-4.184C2.102-4.184 1.674-4.025 1.315-3.676V-5.619C1.514-5.559 1.843-5.489 2.162-5.489C3.387-5.489 4.085-6.396 4.085-6.526C4.085-6.585 4.055-6.635 3.985-6.635C3.975-6.635 3.955-6.635 3.905-6.605C3.706-6.516 3.218-6.316 2.55-6.316C2.152-6.316 1.694-6.386 1.225-6.595C1.146-6.625 1.126-6.625 1.106-6.625C1.006-6.625 1.006-6.545 1.006-6.386V-3.437C1.006-3.258 1.006-3.178 1.146-3.178C1.215-3.178 1.235-3.208 1.275-3.268C1.385-3.427 1.753-3.965 2.56-3.965C3.078-3.965 3.328-3.507 3.407-3.328C3.567-2.959 3.587-2.57 3.587-2.072C3.587-1.724 3.587-1.126 3.347-.707C3.108-.319 2.74-.06 2.281-.06C1.554-.06 .986-.588 .817-1.176C.847-1.166 .877-1.156 .986-1.156C1.315-1.156 1.484-1.405 1.484-1.644S1.315-2.132 .986-2.132C.847-2.132 .498-2.062 .498-1.604C.498-.747 1.186 .219 2.301 .219C3.457 .219 4.473-.737 4.473-2.002Z'/>
+<path id='g4-105' d='M1.763-4.403L.369-4.294V-3.985C1.016-3.985 1.106-3.925 1.106-3.437V-.757C1.106-.309 .996-.309 .329-.309V0C.648-.01 1.186-.03 1.425-.03C1.773-.03 2.122-.01 2.461 0V-.309C1.803-.309 1.763-.359 1.763-.747V-4.403ZM1.803-6.137C1.803-6.456 1.554-6.665 1.275-6.665C.966-6.665 .747-6.396 .747-6.137C.747-5.868 .966-5.609 1.275-5.609C1.554-5.609 1.803-5.818 1.803-6.137Z'/>
+<path id='g4-115' d='M2.072-1.933C2.291-1.893 3.108-1.733 3.108-1.016C3.108-.508 2.76-.11 1.983-.11C1.146-.11 .787-.677 .598-1.524C.568-1.654 .558-1.694 .458-1.694C.329-1.694 .329-1.624 .329-1.445V-.13C.329 .04 .329 .11 .438 .11C.488 .11 .498 .1 .687-.09C.707-.11 .707-.13 .887-.319C1.325 .1 1.773 .11 1.983 .11C3.128 .11 3.587-.558 3.587-1.275C3.587-1.803 3.288-2.102 3.168-2.222C2.839-2.54 2.451-2.62 2.032-2.7C1.474-2.809 .807-2.939 .807-3.517C.807-3.866 1.066-4.274 1.923-4.274C3.019-4.274 3.068-3.377 3.088-3.068C3.098-2.979 3.188-2.979 3.208-2.979C3.337-2.979 3.337-3.029 3.337-3.218V-4.224C3.337-4.394 3.337-4.463 3.228-4.463C3.178-4.463 3.158-4.463 3.029-4.344C2.999-4.304 2.899-4.214 2.859-4.184C2.481-4.463 2.072-4.463 1.923-4.463C.707-4.463 .329-3.796 .329-3.238C.329-2.889 .488-2.61 .757-2.391C1.076-2.132 1.355-2.072 2.072-1.933Z'/>
+<path id='g2-25' d='M2.64-3.716H3.766C3.437-2.242 3.347-1.813 3.347-1.146C3.347-.996 3.347-.727 3.427-.389C3.527 .05 3.636 .11 3.786 .11C3.985 .11 4.194-.07 4.194-.269C4.194-.329 4.194-.349 4.134-.488C3.846-1.205 3.846-1.853 3.846-2.132C3.846-2.66 3.915-3.198 4.025-3.716H5.161C5.29-3.716 5.649-3.716 5.649-4.055C5.649-4.294 5.44-4.294 5.25-4.294H1.913C1.694-4.294 1.315-4.294 .877-3.826C.528-3.437 .269-2.979 .269-2.929C.269-2.919 .269-2.829 .389-2.829C.468-2.829 .488-2.869 .548-2.949C1.036-3.716 1.614-3.716 1.813-3.716H2.381C2.062-2.511 1.524-1.305 1.106-.399C1.026-.249 1.026-.229 1.026-.159C1.026 .03 1.186 .11 1.315 .11C1.614 .11 1.694-.169 1.813-.538C1.953-.996 1.953-1.016 2.082-1.514L2.64-3.716Z'/>
+<path id='g6-50' d='M2.934-.961H2.725C2.71-.867 2.66-.558 2.58-.508C2.54-.478 2.122-.478 2.047-.478H1.071C1.4-.722 1.768-1.001 2.067-1.2C2.516-1.509 2.934-1.798 2.934-2.326C2.934-2.964 2.331-3.318 1.619-3.318C.946-3.318 .453-2.929 .453-2.441C.453-2.182 .672-2.137 .742-2.137C.877-2.137 1.036-2.227 1.036-2.431C1.036-2.61 .907-2.71 .752-2.725C.892-2.949 1.181-3.098 1.514-3.098C1.998-3.098 2.401-2.809 2.401-2.321C2.401-1.903 2.112-1.584 1.729-1.26L.513-.229C.463-.184 .458-.184 .453-.149V0H2.77L2.934-.961Z'/>
+<path id='g1-1' d='M1.583-1.743C1.583-1.995 1.374-2.148 1.186-2.148C.955-2.148 .781-1.96 .781-1.75C.781-1.499 .99-1.346 1.179-1.346C1.409-1.346 1.583-1.534 1.583-1.743Z'/>
+<path id='g5-53' d='M1.081-3.891C1.437-3.801 1.646-3.801 1.757-3.801C2.678-3.801 3.222-4.428 3.222-4.533C3.222-4.61 3.173-4.631 3.138-4.631C3.124-4.631 3.11-4.631 3.082-4.61C2.915-4.547 2.545-4.407 2.029-4.407C1.834-4.407 1.465-4.421 1.011-4.596C.941-4.631 .928-4.631 .921-4.631C.83-4.631 .83-4.554 .83-4.442V-2.385C.83-2.267 .83-2.183 .941-2.183C1.004-2.183 1.011-2.197 1.081-2.28C1.381-2.664 1.806-2.72 2.05-2.72C2.469-2.72 2.657-2.385 2.692-2.329C2.817-2.099 2.859-1.834 2.859-1.43C2.859-1.22 2.859-.809 2.65-.502C2.476-.251 2.176-.084 1.834-.084C1.381-.084 .914-.335 .739-.795C1.004-.774 1.137-.948 1.137-1.137C1.137-1.437 .879-1.492 .788-1.492C.774-1.492 .439-1.492 .439-1.116C.439-.488 1.011 .139 1.848 .139C2.741 .139 3.522-.523 3.522-1.402C3.522-2.19 2.922-2.915 2.057-2.915C1.75-2.915 1.388-2.838 1.081-2.573V-3.891Z'/>
+</defs>
+</svg>
+
+</body>
+<script>
+    // initialize printing
+    revealConfig.initPrint();
+    // initialize background embedded images
+    revealConfig.getEmbeddedImages();
+    </script>
+</html>

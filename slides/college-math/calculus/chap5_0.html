@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 1.2.3" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta name="author" content="张瑞" />
+  <title>常微分方程</title>
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.25em;
+  }
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.5em;
+  }
+  .madoko .toc-contents>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  .madoko dl {
+    margin-left: 0em;
+  }
+  .madoko blockquote {
+    font-style: italic;
+  }
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  .madoko .footnote {
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  .madoko .equation-before {
+    float: right;
+  }
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  .madoko .hidden {
+    display: none;
+  }
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  .madoko ul.list-style-type-dash {
+      list-style-type: none !important;
+  }
+  .madoko ul.list-style-type-dash > li:before {
+      content: "\2013";
+      position: absolute;
+      margin-left: -1em;
+  }
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .math-rendering {
+    text-align: left;
+    white-space: pre;
+    color: gray;
+  }
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  .madoko span.math-rendering {
+    display:inline-block;
+    width:8em;
+    overflow-x:auto;
+    font-size:70%;
+  }
+  .madoko span.math-rendering::-webkit-scrollbar {
+    width:4px;
+  }
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  body.madoko, .madoko .serif {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+  }
+  .madoko .sans-serif {
+    font-family: "Calibri", "Optima", sans-serif;
+  }
+  .madoko .symbol {
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  body.madoko {
+    -webkit-text-size-adjust: 100%;       
+    text-rendering: optimizeLegibility;
+  }
+  body.madoko {
+    max-width: 88ex; 
+    margin: 1em auto;
+    padding: 0em 2em;
+  }
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  .madoko p {
+    text-align: justify;
+  }
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 {
+    margin-top: 1.22em;
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  {
+    margin-top: 1ex;
+  }
+  .madoko h5, .madoko h6 {
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 {
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 {
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt,
+  .madoko .monospace, .madoko .token-indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token-indent {
+    font-size: 0.95em;
+  }
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 0.5em;
+    }
+    .madoko li {
+      text-align: left;
+    }
+  }
+  
+    </style>
+  <link rel="stylesheet" type="text/css" href="../../../static/js/reveal.js-2.6.2/css/reveal.min.css"  class="link">
+  <link rel="stylesheet" type="text/css" href="../../../static/js/reveal.js-2.6.2/css/theme/sky.css"  class="link">
+  <script src="../../../static/js/reveal.js-2.6.2/lib/js/head.min.js"  class="script preview"></script>
+  <script src="../../../static/js/reveal.js-2.6.2/js/reveal.js"  class="script preview"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link rel="stylesheet" href="../../../static/js/reveal.js-2.6.2/css/theme/sky.css" id="theme">    
+      <!--[if lt IE 9]>
+      <script src="../../../static/js/reveal.js-2.6.2/lib/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      body.madoko {
+        margin: 0pt;
+        padding: 0pt;
+        max-width: 100%;      
+      }
+      .madoko .reveal h1 {
+          font-size: 3.7em;
+      }
+      .madoko .reveal h2 {
+          font-size: 2.1em;
+      }
+      .reveal .authorblock .author {
+          font-size: 120%;
+          margin-bottom: 1ex;
+      }        
+      .reveal table {
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .reveal pre table {
+        margin-left: 0pt;
+      }
+      .madoko .reveal pre.pretty {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+      }
+      .reveal li p {
+          text-align: left;
+      }
+      .reveal h2 {
+          margin-bottom: 0.7em;
+      }
+      .reveal section ul,
+      .reveal section ol {
+          margin-top: 0.35em;
+          margin-bottom: 0.35em;
+      }
+      .reveal section img.math-display {
+          padding: 1em;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img.math-inline {
+          margin: 0pt;
+          padding: 0pt;
+          background-color: none;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img {
+          box-shadow: none;
+          border: none;
+      }
+      .madoko .reveal pre {
+          border: 1px solid black;
+          word-wrap: normal;
+          background-color: white;
+          font-size: 0.7em;
+          padding: 0.7em;
+          line-height: 100%;
+          width: 100%;
+      }      
+      .reveal pre code, .reveal code {
+          padding: 0pt;
+      }
+      .reveal nav.toc {
+          line-height: 1em;
+          font-size: 60%;
+          overflow-y: auto;
+      }    
+      .reveal .tocitem {
+          text-align: left;
+      }
+      .reveal .toc>.tocblock .tocblock {
+          margin-left: 0.5em;
+      }   
+      .reveal .toc>.tocblock .tocblock .tocblock {
+          margin-left: 1em;
+      }
+      .reveal .bibliography {
+        height: 18em;
+        overflow-y: auto;
+        font-size: 0.8em;
+        line-height: 1.25;
+      }
+      .reveal section[data-smaller=""],
+      .reveal section[data-smaller="true"] {
+        font-size: 80%;
+        width: 110%;
+      }
+      .reveal .slides>section[data-smaller=""],
+      .reveal .slides>section[data-smaller="true"] {
+        left: -55%;
+      }
+      .reveal .details {
+        display: none;
+      }
+      .reveal[data-details=""] .details,
+      .reveal[data-details="true"] .details {
+        display: initial;
+      }
+      /* Display in the preview window */
+      html, body.madoko.preview, body.madoko.preview-full, .body.madoko {
+        height  : 100% !important;
+        width   : auto!important;
+        padding : 0pt !important;
+        margin  : 0pt !important;
+      }
+      body.madoko.preview, body.madoko.preview-full, .preview .body.madoko {
+        overflow: hidden !important;
+      }
+      body.preview .reveal .slides .fragment {
+        visibility: visible;
+        opacity: 0.5;
+      }
+      body.preview .reveal .slides .fragment.visible {
+        opacity: 1.0;
+      }
+      .preview .reveal div.notes,
+      .preview .reveal aside.notes {
+        display  : block;
+        position : absolute;
+        width    : 30%;
+        left     : 70%;
+        top      : -15%;
+        font-size: 50%;
+        border   : 1px solid black;
+        border-radius   : 10px;
+        background-color: white;
+      }
+      /* 'static' display in the preview window, unused for now */
+      body.preview.static div.reveal, 
+      body.preview.static div.ticreveal .slides, 
+      body.preview.static div.reveal section {
+        display: block !important;
+        position: relative !important;
+        width: auto !important;      
+      }
+      body.preview.static div.reveal section {
+        border: solid 1px black;
+        padding: 1em !important;
+        margin-top: 1em;
+        min-height: 15em;
+        top: 0pt;
+      }
+      body.madoko.preview.static section {
+        font-size: 75%;
+      }
+      body.madoko.preview.static {
+        padding: 0em 1em !important;
+      }
+      body.madoko.preview.static .reveal pre {
+        width: 95%;
+      }    
+      body.preview .reveal[data-details="false"] .details {
+        display: initial;
+        color: gray;
+      }
+      body.preview .reveal[data-long="false"] section[data-long] {
+        border-left: 2px black solid;
+      }
+      </style>
+      <script>    
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      window.revealConfig = {
+          controls: true,
+          progress: true,
+          history: true,
+          center: /^\s*(true|1)\s*$/i.test("true"),
+          slideNumber: /^\s*(true|1)\s*$/i.test("true"),
+          dependencies: [
+            { src: '../../../static/js/reveal.js-2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../../../static/js/reveal.js-2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: '../../../static/js/reveal.js-2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          ],
+      };
+      function revealAddFragments() {
+        [].forEach.call(document.querySelectorAll( ".fragmented" ), function(elem0) {
+          var elem = (/^H\d$/.test(elem0.nodeName) ? elem0.parentNode : elem0);
+          [].forEach.call(elem.children, function(item) {
+            if (item==elem0) return;
+            if (item && !/\bfragment(ed)?\b/.test(item.className) && item.nodeType===1) {
+              item.className = item.className + " fragment";
+            }
+          });
+        });
+      }
+      function revealQuotedList(listType) {
+        //compatibility with Rmarkdown slides
+        [].forEach.call( document.querySelectorAll("blockquote>" + listType), function(ul) {
+          if (!/\bfragmented\b/.test(ul.className)) {
+            ul.className = ul.className + " fragmented";
+          }        
+          var quote = ul.parentNode;
+          if (quote.childElementCount===1) {
+            quote.parentNode.replaceChild(ul,quote);
+          }
+        });
+      }
+      function revealBuildToFragmented() {
+        [].forEach.call(document.querySelectorAll( ".build" ), function(elem) {
+          if (elem && !/\bfragmented\b/.test(elem.className) && elem.nodeType===1) {
+            elem.className = elem.className + " fragmented";
+          }
+        });
+      }
+      function revealDivNotesToAside() {
+        [].forEach.call(document.querySelectorAll("div.notes"), function(elem) {
+          var aside = document.createElement("ASIDE");
+          if (elem.id) aside.id = elem.id;
+          aside.className = elem.className;
+          [].forEach.call(elem.attributes, function(attr) {
+            aside.setAttribute( attr.name, attr.value );
+          });
+          aside.innerHTML = elem.innerHTML;
+          elem.parentNode.replaceChild(aside,elem);
+        });
+      }
+      function revealDataQuery() {
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        window.location.search.replace(/\bdata-(\w+)(?:=(\w+))?\b/g, function(matched,key,value) {
+          reveal.setAttribute("data-" + key, (value ? value : ""));
+          return matched;
+        });
+      }
+      function revealRemoveLong() {
+        // remove parts for 'long' presentation
+        if (/\bpreview(?![\w\-])/.test(document.body.className)) return;
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        var value = reveal.hasAttribute("data-long") ? reveal.getAttribute("data-long") : null;
+        if (value==null || value=="false" || value=="0") {
+          [].forEach.call( document.querySelectorAll("section[data-long]"), function(elem) {
+            elem.parentNode.removeChild(elem);
+          });
+        }
+      }
+      revealConfig.onLoad = function() {
+        revealConfig.getEmbeddedImages();
+        revealDataQuery();
+        revealRemoveLong();
+        revealQuotedList("ul");
+        revealQuotedList("ol");
+        revealBuildToFragmented();
+        revealDivNotesToAside();
+        revealAddFragments();
+      };
+      document.addEventListener("load",revealConfig.onLoad);    
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof Reveal !== "undefined" && !Reveal.isReady()) {
+          revealConfig.onLoad();
+          Reveal.initialize(revealConfig);
+        }
+      });    
+      // add support for printing:
+      // use  ?print-pdf to get a pdf-printable version (in Chrome)
+      // use  ?print-paper to get a paper-printable version.
+      revealConfig.initPrint = function() {
+        var cssLink = null;
+        var bodyClass = null;
+        var cap = window.location.search.match(/\bprint-(\w+)\b/);
+        if (cap) {
+          bodyClass = cap[0];
+          cssLink = "../../../static/js/reveal.js-2.6.2/css/print/" + cap[1] + ".css";
+        }
+        if (cssLink) {
+          var link  = document.createElement( "link" );
+          link.rel  = "stylesheet";
+          link.type = "text/css";
+          link.href = cssLink;
+          var head = document.getElementsByTagName( 'head' )[0];
+          if (head) head.appendChild( link );
+        }
+        if (bodyClass) {
+          document.body.className = document.body.className + " " + bodyClass;
+        }
+      };
+      revealConfig.getEmbeddedImages = function() {
+        var images = {};
+        [].forEach.call( document.querySelectorAll("img[data-linkid]"), function(img) {
+          var linkid = img.getAttribute("data-linkid");
+          if (linkid) images["/" + linkid] = img.src;
+          var path = img.getAttribute("data-path");
+          if (path) images["/" + path] = img.src;
+        });     
+        [].forEach.call( document.querySelectorAll("section"), function(slide) {
+          var attrName = "data-background";
+          var image = slide.getAttribute(attrName);
+          if (!image) {
+            attrName = "data-background-image";
+            image = slide.getAttribute(attrName);
+          }
+          if (!image) return;
+          var cap = /^\s*!?\[([^\]]+)\]\s*$/.exec(image);
+          var href = images["/" + (cap ? cap[1] : image)];
+          if (!href) return;
+          if (attrName==="data-background" && /^data:/.test(href)) href = "url(" + href + ")";
+          slide.setAttribute(attrName, href);
+        });
+      };    
+      </script>
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0">
+<div class="reveal" data-long="false" data-details="false" data-line="14;../configs/latex.conf:11" style="line-adjust:0">
+<div class="slides" data-line="14;../configs/latex.conf:11" style="line-adjust:0">
+
+<div class="mathdefs input-mathdefs" data-line="15"></div>
+<section class="titleblock align-center para-block" data-line="20" style="text-align:center;line-adjust:0">
+<div class="titleheader align-center" data-line="20" style="text-align:center;line-adjust:0">
+<h1 class="title para-block" data-line="20" style="font-weight:bold;margin-bottom:0.5ex;font-size:3em;line-adjust:0"><span data-line="20"></span>常微分方程</h1>
+<h2 class="subtitle para-block" data-line="23" style="margin-bottom:0.5ex;font-size:1.8em;line-adjust:0"><span data-line="23"></span>复习题</h2></div>
+<div class="authors align-center" data-line="28" style="text-align:center;width:80%;line-adjust:0"><table class="authorrow columns block" data-line="28" style="margin-top:2ex;width:100%;line-adjust:0">
+<tbody><tr><td class="author column" data-line="28" style="text-align:center;font-size:x-large;line-adjust:0">
+<div class="authorname" data-line="28" style="font-size:1.4em;line-adjust:0"><span data-line="28"></span>张瑞</div>
+<div class="authoraddress" data-line="31" style="line-adjust:0"><span data-line="31"></span>中国科学技术大学数学科学学院</div>
+<div class="authoremail email" data-line="34" style="line-adjust:0"><span data-line="34"></span>rui [at] ustc [dot] edu [dot] cn</div></td></tr></tbody></table></div></section>
+<section class="slide section" data-line="23">
+<div class="center align-center" data-line="24" style="text-align:center">
+<p class="p noindent" data-line="25"><span data-line="25"></span><img src="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap5.png" alt="chap5" data-path="http://staff.ustc.edu.cn/~rui/ppt/calculus/img/chap5.png" data-linkid="chap5" style="width:800px"></p></div></section>
+<section id="chap5-exercise" class="section section2" data-section-depth="2" data-line="32"><h3 id="heading-chap5-exercise" class="h2" data-heading-depth="2" style="display:block;position:relative;top:1px">例题</h3></section>
+<section id="content" class="section section2" data-section-depth="2" data-line="35"><h3 id="heading-content" class="h2" data-heading-depth="2" style="display:block;position:relative;top:1px">目录</h3><span data-line="37"></span>
+<nav class="toc toc-contents" style="height:20em">
+<div class="tocblock tocblock1">~ Begin TocBlock { .tocblock1 }
+
+<div class="tocitem tocitem2" data-toc-target-elem="h2" data-toc-target="chap5-exercise" data-toc-depth="2" data-toc-line="[0.1]{.heading-label}.&#8194;\u4F8B\u9898" style="toctarget:chap5-exercise"><a href="#chap5-exercise" class="localref"><span class="heading-label">0.1</span>.&#8194;例题</a></div>
+<div class="tocitem tocitem2" data-toc-target-elem="h2" data-toc-target="content" data-toc-depth="2" data-toc-line="[0.2]{.heading-label}.&#8194;\u76EE\u5F55" style="toctarget:content"><a href="#content" class="localref"><span class="heading-label">0.2</span>.&#8194;目录</a></div></div>
+<p class="p noindent">~ End TocBlock
+</p></nav></section>
+<section class="vertical section" data-line="40">
+
+<section class="slide section" data-line="42">
+<div id="ex5-0-16" class="example" data-line="43" style="display:block;margin:1ex 0pt;theorem-caption-end: ">
+<p class="p noindent para-continue" data-line="44"><span data-line="44"></span><span class="example-before"><strong class="strong-star2" style="color:blue">例&#160;<span class="example-label">1</span>.</strong> <span class="theorem-caption"></span> </span><span data-line="44"></span>求
+</p>
+<div class="math para-block" data-line="45">
+<div class="mathdisplay para-block input-math" data-math-full="" data-line="46" style="line-adjust:0"><svg  class="mathdisplay math-display math-render-svg math" data-math-full="" style="vertical-align:-0.0210em;height:3.2413em;width:7.3512em" viewBox='171.121 52.67 70.011 30.87'><desc>\[\lim_{x\to\infty}\dfrac{(\int_0^x e^{t^2}dt)^2}{\int_0^{x^2}e^tdt}
+\]</desc><g id='math-bc4efa'><use x='174.604' y='70.129' xlink:href='#g3-108'/><use x='177.371' y='70.129' xlink:href='#g3-105'/><use x='180.138' y='70.129' xlink:href='#g3-109'/><use x='171.321' y='76.107' xlink:href='#g2-120'/><use x='175.838' y='76.107' xlink:href='#g0-33'/><use x='183.781' y='76.107' xlink:href='#g0-49'/><use x='194.579' y='62.701' xlink:href='#g3-40'/><use x='198.454' y='54.676' xlink:href='#g6-82'/><use x='205.095' y='57.139' xlink:href='#g2-120'/><use x='203.158' y='66.244' xlink:href='#g4-48'/><use x='211.772' y='62.701' xlink:href='#g1-101'/><use x='216.411' y='59.086' xlink:href='#g2-116'/><use x='219.42' y='56.079' xlink:href='#g5-50'/><use x='223.807' y='62.701' xlink:href='#g1-100'/><use x='228.992' y='62.701' xlink:href='#g1-116'/><use x='232.59' y='62.701' xlink:href='#g3-41'/><use x='236.464' y='59.086' xlink:href='#g4-50'/><rect x='194.579' y='67.439' height='.398' width='46.354'/><use x='200.688' y='71.773' xlink:href='#g6-82'/><use x='207.33' y='74.236' xlink:href='#g2-120'/><use x='211.848' y='72.243' xlink:href='#g5-50'/><use x='205.393' y='83.341' xlink:href='#g4-48'/><use x='217.895' y='79.798' xlink:href='#g1-101'/><use x='222.534' y='76.92' xlink:href='#g2-116'/><use x='226.041' y='79.798' xlink:href='#g1-100'/><use x='231.227' y='79.798' xlink:href='#g1-116'/></g></svg></div></div></div></section>
+<section class="slide section" data-line="51"><h4 id="section" class="h3" data-line="52" data-heading-depth="3" style="color:#006;background-color:#cff;display:block;position:relative;top:1px"><span data-line="52"></span>谢谢</h4></section></section></div></div><span data-line=""></span></div>
+<svg id='math-svg-paths' style='display:none' version='1.1' viewBox='0 0 0 0' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<defs>
+<path id='g5-50' d='M2.934-.961H2.725C2.71-.867 2.66-.558 2.58-.508C2.54-.478 2.122-.478 2.047-.478H1.071C1.4-.722 1.768-1.001 2.067-1.2C2.516-1.509 2.934-1.798 2.934-2.326C2.934-2.964 2.331-3.318 1.619-3.318C.946-3.318 .453-2.929 .453-2.441C.453-2.182 .672-2.137 .742-2.137C.877-2.137 1.036-2.227 1.036-2.431C1.036-2.61 .907-2.71 .752-2.725C.892-2.949 1.181-3.098 1.514-3.098C1.998-3.098 2.401-2.809 2.401-2.321C2.401-1.903 2.112-1.584 1.729-1.26L.513-.229C.463-.184 .458-.184 .453-.149V0H2.77L2.934-.961Z'/>
+<path id='g4-48' d='M3.599-2.225C3.599-2.992 3.508-3.543 3.187-4.031C2.971-4.352 2.538-4.631 1.981-4.631C.363-4.631 .363-2.727 .363-2.225S.363 .139 1.981 .139S3.599-1.723 3.599-2.225ZM1.981-.056C1.66-.056 1.234-.244 1.095-.816C.997-1.227 .997-1.799 .997-2.315C.997-2.824 .997-3.354 1.102-3.738C1.248-4.289 1.695-4.435 1.981-4.435C2.357-4.435 2.72-4.205 2.845-3.801C2.957-3.424 2.964-2.922 2.964-2.315C2.964-1.799 2.964-1.283 2.873-.844C2.734-.209 2.26-.056 1.981-.056Z'/>
+<path id='g4-50' d='M3.522-1.269H3.285C3.264-1.116 3.194-.704 3.103-.635C3.048-.593 2.511-.593 2.413-.593H1.13C1.862-1.241 2.106-1.437 2.525-1.764C3.041-2.176 3.522-2.608 3.522-3.271C3.522-4.115 2.783-4.631 1.89-4.631C1.025-4.631 .439-4.024 .439-3.382C.439-3.027 .739-2.992 .809-2.992C.976-2.992 1.179-3.11 1.179-3.361C1.179-3.487 1.13-3.731 .767-3.731C.983-4.226 1.458-4.38 1.785-4.38C2.483-4.38 2.845-3.836 2.845-3.271C2.845-2.664 2.413-2.183 2.19-1.932L.509-.272C.439-.209 .439-.195 .439 0H3.313L3.522-1.269Z'/>
+<path id='g6-82' d='M2.71 8.767C2.58 10.401 2.222 10.849 1.654 10.849C1.524 10.849 1.225 10.819 1.016 10.64C1.305 10.6 1.385 10.371 1.385 10.232C1.385 9.943 1.166 9.813 .976 9.813C.777 9.813 .558 9.943 .558 10.242C.558 10.72 1.056 11.068 1.654 11.068C2.6 11.068 3.078 10.202 3.298 9.305C3.427 8.787 3.786 5.888 3.866 4.782L4.055 2.301C4.194 .468 4.533 .219 4.981 .219C5.081 .219 5.39 .239 5.609 .428C5.32 .468 5.24 .697 5.24 .837C5.24 1.126 5.46 1.255 5.649 1.255C5.848 1.255 6.067 1.126 6.067 .827C6.067 .349 5.569 0 4.971 0C4.025 0 3.636 .966 3.467 1.724C3.347 2.271 2.989 5.081 2.899 6.286L2.71 8.767Z'/>
+<path id='g0-33' d='M6.416-1.576C5.537-.934 5.419-.021 5.419-.014C5.419 .091 5.488 .091 5.586 .091C5.712 .091 5.733 .091 5.767-.028C5.809-.202 5.921-.649 6.283-1.032C6.688-1.458 7.037-1.562 7.33-1.653C7.371-1.667 7.399-1.709 7.399-1.743C7.399-1.813 7.357-1.827 7.267-1.855C6.263-2.176 5.907-2.887 5.76-3.501C5.733-3.585 5.684-3.585 5.586-3.585S5.419-3.585 5.419-3.48C5.419-3.466 5.488-2.999 5.83-2.518C5.991-2.28 6.186-2.085 6.416-1.918H.816C.704-1.918 .537-1.918 .537-1.75C.537-1.576 .697-1.576 .816-1.576H6.416Z'/>
+<path id='g0-49' d='M4.031-1.911C3.661-2.343 3.55-2.462 3.285-2.65C2.859-2.957 2.413-3.075 2.029-3.075C1.165-3.075 .537-2.336 .537-1.499C.537-.683 1.137 .07 2.008 .07C2.978 .07 3.654-.725 3.905-1.095C4.275-.663 4.387-.544 4.652-.356C5.077-.049 5.523 .07 5.907 .07C6.772 .07 7.399-.669 7.399-1.506C7.399-2.322 6.8-3.075 5.928-3.075C4.958-3.075 4.282-2.28 4.031-1.911ZM4.254-1.653C4.533-2.106 5.14-2.81 5.991-2.81C6.709-2.81 7.204-2.176 7.204-1.506S6.66-.314 6.018-.314C5.37-.314 4.924-.844 4.254-1.653ZM3.682-1.353C3.403-.9 2.797-.195 1.946-.195C1.227-.195 .732-.83 .732-1.499S1.276-2.692 1.918-2.692C2.566-2.692 3.013-2.162 3.682-1.353Z'/>
+<path id='g2-116' d='M1.716-2.755H2.427C2.559-2.755 2.65-2.755 2.65-2.908C2.65-3.006 2.559-3.006 2.441-3.006H1.778L2.036-4.038C2.043-4.073 2.057-4.108 2.057-4.135C2.057-4.261 1.96-4.359 1.82-4.359C1.646-4.359 1.541-4.24 1.492-4.059C1.444-3.884 1.534-4.219 1.227-3.006H.516C.384-3.006 .293-3.006 .293-2.852C.293-2.755 .377-2.755 .502-2.755H1.165L.753-1.109C.711-.934 .649-.683 .649-.593C.649-.181 .997 .07 1.395 .07C2.169 .07 2.608-.907 2.608-.997S2.518-1.088 2.497-1.088C2.413-1.088 2.406-1.074 2.35-.955C2.155-.516 1.799-.126 1.416-.126C1.269-.126 1.172-.216 1.172-.467C1.172-.537 1.2-.683 1.213-.753L1.716-2.755Z'/>
+<path id='g2-120' d='M1.736-.739C1.667-.502 1.437-.126 1.081-.126C1.06-.126 .851-.126 .704-.223C.99-.314 1.011-.565 1.011-.607C1.011-.76 .893-.865 .732-.865C.537-.865 .335-.697 .335-.439C.335-.091 .725 .07 1.067 .07C1.388 .07 1.674-.133 1.848-.425C2.015-.056 2.399 .07 2.678 .07C3.48 .07 3.905-.802 3.905-.997C3.905-1.088 3.815-1.088 3.794-1.088C3.696-1.088 3.689-1.053 3.661-.969C3.515-.488 3.096-.126 2.706-.126C2.427-.126 2.28-.314 2.28-.579C2.28-.76 2.448-1.395 2.643-2.169C2.783-2.706 3.096-2.88 3.327-2.88C3.34-2.88 3.557-2.88 3.703-2.783C3.48-2.72 3.396-2.525 3.396-2.399C3.396-2.246 3.515-2.141 3.675-2.141S4.066-2.273 4.066-2.566C4.066-2.957 3.619-3.075 3.34-3.075C2.992-3.075 2.713-2.845 2.559-2.58C2.434-2.866 2.113-3.075 1.723-3.075C.941-3.075 .495-2.218 .495-2.008C.495-1.918 .593-1.918 .614-1.918C.704-1.918 .711-1.946 .746-2.036C.921-2.58 1.36-2.88 1.702-2.88C1.932-2.88 2.12-2.755 2.12-2.42C2.12-2.28 2.036-1.932 1.974-1.695L1.736-.739Z'/>
+<path id='g1-100' d='M5.141-6.804C5.141-6.814 5.141-6.914 5.011-6.914C4.862-6.914 3.915-6.824 3.746-6.804C3.666-6.795 3.606-6.745 3.606-6.615C3.606-6.496 3.696-6.496 3.846-6.496C4.324-6.496 4.344-6.426 4.344-6.326L4.314-6.127L3.716-3.766C3.537-4.134 3.248-4.403 2.8-4.403C1.634-4.403 .399-2.939 .399-1.484C.399-.548 .946 .11 1.724 .11C1.923 .11 2.421 .07 3.019-.638C3.098-.219 3.447 .11 3.925 .11C4.274 .11 4.503-.12 4.663-.438C4.832-.797 4.961-1.405 4.961-1.425C4.961-1.524 4.872-1.524 4.842-1.524C4.742-1.524 4.732-1.484 4.702-1.345C4.533-.697 4.354-.11 3.945-.11C3.676-.11 3.646-.369 3.646-.568C3.646-.807 3.666-.877 3.706-1.046L5.141-6.804ZM3.068-1.186C3.019-1.006 3.019-.986 2.869-.817C2.431-.269 2.022-.11 1.743-.11C1.245-.11 1.106-.658 1.106-1.046C1.106-1.544 1.425-2.77 1.654-3.228C1.963-3.816 2.411-4.184 2.809-4.184C3.457-4.184 3.597-3.367 3.597-3.308S3.577-3.188 3.567-3.138L3.068-1.186Z'/>
+<path id='g1-101' d='M1.863-2.301C2.152-2.301 2.889-2.321 3.387-2.531C4.085-2.829 4.134-3.417 4.134-3.557C4.134-3.995 3.756-4.403 3.068-4.403C1.963-4.403 .458-3.437 .458-1.694C.458-.677 1.046 .11 2.022 .11C3.447 .11 4.284-.946 4.284-1.066C4.284-1.126 4.224-1.196 4.164-1.196C4.115-1.196 4.095-1.176 4.035-1.096C3.248-.11 2.162-.11 2.042-.11C1.265-.11 1.176-.946 1.176-1.265C1.176-1.385 1.186-1.694 1.335-2.301H1.863ZM1.395-2.521C1.783-4.035 2.809-4.184 3.068-4.184C3.537-4.184 3.806-3.895 3.806-3.557C3.806-2.521 2.212-2.521 1.803-2.521H1.395Z'/>
+<path id='g1-116' d='M2.052-3.985H2.989C3.188-3.985 3.288-3.985 3.288-4.184C3.288-4.294 3.188-4.294 3.009-4.294H2.132C2.491-5.709 2.54-5.908 2.54-5.968C2.54-6.137 2.421-6.237 2.252-6.237C2.222-6.237 1.943-6.227 1.853-5.878L1.465-4.294H.528C.329-4.294 .229-4.294 .229-4.105C.229-3.985 .309-3.985 .508-3.985H1.385C.667-1.156 .628-.986 .628-.807C.628-.269 1.006 .11 1.544 .11C2.56 .11 3.128-1.345 3.128-1.425C3.128-1.524 3.049-1.524 3.009-1.524C2.919-1.524 2.909-1.494 2.859-1.385C2.431-.349 1.903-.11 1.564-.11C1.355-.11 1.255-.239 1.255-.568C1.255-.807 1.275-.877 1.315-1.046L2.052-3.985Z'/>
+<path id='g3-40' d='M3.298 2.391C3.298 2.361 3.298 2.341 3.128 2.172C1.883 .917 1.564-.966 1.564-2.491C1.564-4.224 1.943-5.958 3.168-7.203C3.298-7.323 3.298-7.342 3.298-7.372C3.298-7.442 3.258-7.472 3.198-7.472C3.098-7.472 2.202-6.795 1.614-5.529C1.106-4.433 .986-3.328 .986-2.491C.986-1.714 1.096-.508 1.644 .618C2.242 1.843 3.098 2.491 3.198 2.491C3.258 2.491 3.298 2.461 3.298 2.391Z'/>
+<path id='g3-41' d='M2.879-2.491C2.879-3.268 2.77-4.473 2.222-5.599C1.624-6.824 .767-7.472 .667-7.472C.608-7.472 .568-7.432 .568-7.372C.568-7.342 .568-7.323 .757-7.143C1.733-6.157 2.301-4.573 2.301-2.491C2.301-.787 1.933 .966 .697 2.222C.568 2.341 .568 2.361 .568 2.391C.568 2.451 .608 2.491 .667 2.491C.767 2.491 1.664 1.813 2.252 .548C2.76-.548 2.879-1.654 2.879-2.491Z'/>
+<path id='g3-105' d='M1.763-4.403L.369-4.294V-3.985C1.016-3.985 1.106-3.925 1.106-3.437V-.757C1.106-.309 .996-.309 .329-.309V0C.648-.01 1.186-.03 1.425-.03C1.773-.03 2.122-.01 2.461 0V-.309C1.803-.309 1.763-.359 1.763-.747V-4.403ZM1.803-6.137C1.803-6.456 1.554-6.665 1.275-6.665C.966-6.665 .747-6.396 .747-6.137C.747-5.868 .966-5.609 1.275-5.609C1.554-5.609 1.803-5.818 1.803-6.137Z'/>
+<path id='g3-108' d='M1.763-6.914L.329-6.804V-6.496C1.026-6.496 1.106-6.426 1.106-5.938V-.757C1.106-.309 .996-.309 .329-.309V0C.658-.01 1.186-.03 1.435-.03S2.172-.01 2.54 0V-.309C1.873-.309 1.763-.309 1.763-.757V-6.914Z'/>
+<path id='g3-109' d='M1.096-3.427V-.757C1.096-.309 .986-.309 .319-.309V0C.667-.01 1.176-.03 1.445-.03C1.704-.03 2.222-.01 2.56 0V-.309C1.893-.309 1.783-.309 1.783-.757V-2.59C1.783-3.626 2.491-4.184 3.128-4.184C3.756-4.184 3.866-3.646 3.866-3.078V-.757C3.866-.309 3.756-.309 3.088-.309V0C3.437-.01 3.945-.03 4.214-.03C4.473-.03 4.991-.01 5.33 0V-.309C4.663-.309 4.553-.309 4.553-.757V-2.59C4.553-3.626 5.26-4.184 5.898-4.184C6.526-4.184 6.635-3.646 6.635-3.078V-.757C6.635-.309 6.526-.309 5.858-.309V0C6.207-.01 6.715-.03 6.984-.03C7.243-.03 7.761-.01 8.1 0V-.309C7.582-.309 7.333-.309 7.323-.608V-2.511C7.323-3.367 7.323-3.676 7.014-4.035C6.874-4.204 6.545-4.403 5.968-4.403C5.131-4.403 4.692-3.806 4.523-3.427C4.384-4.294 3.646-4.403 3.198-4.403C2.471-4.403 2.002-3.975 1.724-3.357V-4.403L.319-4.294V-3.985C1.016-3.985 1.096-3.915 1.096-3.427Z'/>
+</defs>
+</svg>
+
+</body>
+<script>
+    // initialize printing
+    revealConfig.initPrint();
+    // initialize background embedded images
+    revealConfig.getEmbeddedImages();
+    </script>
+</html>

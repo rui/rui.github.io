@@ -1,0 +1,28 @@
+---
+layout: page
+title: 微积分(I)
+# permalink: /courses/
+---
+
+{% assign courses = site.data.ppt-calculus1 %}
+<!-- h2> {{ courses.head }} </h2 -->
+
+{% assign base_url = courses.baseurl %}
+{% assign base_url2 = courses.baseurl2 %}
+
+{% assign chapters = courses.chapters %}
+
+{% for ppt in chapters %}
+    <h3> {{ ppt.chapter }} </h3>
+<ul class="courses">
+    {% for cc in ppt.sections %}
+    <li>
+      {% if cc.url %}
+      <a href='{{base_url}}{{ cc.url }}' target=_blank> {{ cc.section }} </a> ==|== <a href='{{base_url2}}{{cc.url}}' target=_blank>备用</a>
+      {% else %}
+      {{ cc.name_cn }}
+      {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+ {% endfor %}
